@@ -1,0 +1,331 @@
+#!/usr/bin/env python3
+"""
+Artrovex Blog — Daily Article Generator
+Runs every day via GitHub Actions, generates a new wellness article
+in 5 languages and adds it to the site.
+NO medical claims — cosmetic product mentions only.
+"""
+
+import os, json, datetime, re, sys
+import urllib.request, urllib.error
+
+API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
+MODEL   = "claude-sonnet-4-6"
+
+TOPICS = [
+    "Calf muscle massage and recovery after walking",
+    "Wrist and hand care for desk workers",
+    "Ankle mobility and balance training",
+    "Posture correction — simple daily habits",
+    "Foot care and reflexology basics",
+    "Elbow tension relief for athletes and office workers",
+    "Lower back and glutes — the forgotten connection",
+    "Active recovery — what it is and why it matters",
+    "Foam rolling guide for beginners",
+    "Warm-up vs cool-down — what most people get wrong",
+    "The science of muscle soreness (DOMS) explained simply",
+    "Joint health and hydration — the overlooked link",
+    "Stretching before bed — a 5-minute evening routine",
+    "Upper back and thoracic mobility",
+    "Knee-friendly cardio options for every fitness level",
+    "Breathing and its surprising effect on muscle tension",
+    "How to massage your own feet properly",
+    "Shoulder impingement — prevention through movement",
+    "Core stability vs core strength — understanding the difference",
+    "The hip-lower back connection most people ignore",
+    "Hamstring flexibility — why it matters beyond the gym",
+    "Neck care for people who work from home",
+    "Running and joint care — what every runner should know",
+    "Swimming as joint-friendly exercise",
+    "Self-massage tools — what works and what doesn't",
+    "Morning stiffness — causes and solutions",
+    "The role of sleep in muscle and joint recovery",
+    "Walking technique — small adjustments, big difference",
+    "Grip strength and its surprising health connections",
+    "Cold and warm sensations in muscle care — how they work",
+]
+
+PLATFORMS = [
+    "artrovex.shop (official store)",
+    "Amazon",
+    "Etsy",
+    "Emag",
+    "Allegro",
+    "TikTok Shop",
+]
+
+LANGS = ["en", "de", "it", "es", "fr"]
+
+LANG_NAMES = {
+    "en": "English",
+    "de": "German",
+    "it": "Italian",
+    "es": "Spanish",
+    "fr": "French",
+}
+
+def get_topic_for_today():
+    day = (datetime.date.today() - datetime.date(2024, 1, 1)).days
+    return TOPICS[day % len(TOPICS)]
+
+def get_platform_for_today():
+    day = (datetime.date.today() - datetime.date(2024, 1, 1)).days
+    return PLATFORMS[day % len(PLATFORMS)]
+
+def call_claude(prompt):
+    payload = json.dumps({
+        "model": MODEL,
+        "max_tokens": 1800,
+        "messages": [{"role": "user", "content": prompt}]
+    }).encode()
+
+    req = urllib.request.Request(
+        "https://api.anthropic.com/v1/messages",
+        data=payload,
+        headers={
+            "Content-Type": "application/json",
+            "x-api-key": API_KEY,
+            "anthropic-version": "2023-06-01",
+        },
+        method="POST"
+    )
+    with urllib.request.urlopen(req) as r:
+        data = json.loads(r.read())
+    return data["content"][0]["text"]
+
+def generate_article(topic, platform, lang):
+    lang_name = LANG_NAMES[lang]
+    prompt = f"""You are a wellness blog writer. Write a high-quality wellness article in {lang_name}.
+
+TOPIC: {topic}
+
+STRICT RULES — read carefully:
+1. Write ENTIRELY in {lang_name}. Not a single word in another language.
+2. NO medical claims whatsoever. No "treats", "heals", "cures", "relieves pain", "therapeutic", "medicinal". Zero.
+3. Mention massage creams naturally as cosmetic/wellness products only, like "as part of a massage routine" or "many people enjoy using a warming massage cream here".
+4. Mention Artrovex cream (dual effect: first cooling, then warming — two distinct phases) OR Hondrocream (immediate, direct warmth from first application — no cooling phase). Alternate between them naturally.
+5. Include this platform mention naturally: {platform}
+6. Include a "double application tip": apply cream, massage 2-3 minutes, wait 10 minutes, apply second layer, massage again — effect lasts noticeably longer.
+7. Include a handwashing reminder: always wash hands thoroughly after applying any topical product.
+8. Write like a real person who lives an active life — warm, direct, honest tone. No AI-sounding phrases.
+9. The article should feel genuinely useful and informative, not like an advertisement.
+
+RESPOND WITH VALID JSON ONLY. No markdown, no explanation, no backticks:
+{{
+  "title": "engaging, human title (not clickbait)",
+  "intro": "2-3 sentence hook that feels personal and real",
+  "sections": [
+    {{"heading": "section heading", "text": "2-3 paragraph section text"}},
+    {{"heading": "section heading", "text": "2-3 paragraph section text"}},
+    {{"heading": "section heading", "text": "2-3 paragraph section text"}}
+  ],
+  "product_mention": "1-2 sentences mentioning the cream naturally as a massage aid, no medical claims",
+  "double_tip": "the double application tip in natural language",
+  "wash_reminder": "handwashing reminder, friendly tone",
+  "cta": "closing motivational line"
+}}"""
+
+    raw = call_claude(prompt)
+    raw = re.sub(r'^```[a-z]*\n?', '', raw.strip())
+    raw = re.sub(r'\n?```$', '', raw.strip())
+    return json.loads(raw)
+
+def slugify(text):
+    text = text.lower()
+    text = re.sub(r'[^a-z0-9\s-]', '', text)
+    text = re.sub(r'\s+', '-', text.strip())
+    return text[:60]
+
+def build_article_html(data, lang, topic, platform, date_str, slug):
+    sections_html = ""
+    for s in data.get("sections", []):
+        sections_html += f"""
+        <div class="art-sec">
+          <h3>{s['heading']}</h3>
+          <p>{s['text']}</p>
+        </div>"""
+
+    return f"""<!DOCTYPE html>
+<html lang="{lang}">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{data['title']} | Artrovex Wellness Blog</title>
+<meta name="description" content="{data['intro'][:160]}">
+<meta name="keywords" content="joint wellness, muscle care, massage, {topic.lower()}, wellness routine">
+<link rel="canonical" href="https://wellness.artrovex.shop/articles/{slug}-{lang}.html">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{{box-sizing:border-box;margin:0;padding:0}}
+body{{font-family:'Inter',sans-serif;background:#faf8f3;color:#1c1c1c;line-height:1.7;font-size:16px}}
+nav{{background:#183d2f;padding:14px 20px;display:flex;justify-content:space-between;align-items:center}}
+.nb{{font-family:'Lora',serif;color:#52c48a;font-size:17px;text-decoration:none}}
+.ns{{background:#52c48a;color:#183d2f;padding:7px 14px;border-radius:6px;font-size:13px;font-weight:700;text-decoration:none}}
+.wrap{{max-width:720px;margin:0 auto;padding:32px 18px 60px}}
+.date{{font-size:12px;color:#888;letter-spacing:1px;text-transform:uppercase;margin-bottom:14px}}
+h1{{font-family:'Lora',serif;font-size:clamp(22px,4vw,34px);line-height:1.25;color:#183d2f;margin-bottom:18px;font-style:italic}}
+.lead{{font-size:16px;line-height:1.85;border-left:3px solid #52c48a;padding-left:16px;margin-bottom:28px;font-weight:300;color:#2a2a2a}}
+.art-sec{{margin-bottom:24px}}
+.art-sec h3{{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:#183d2f;margin-bottom:9px}}
+.art-sec p{{font-size:15px;line-height:1.78;color:#3a3a3a}}
+.prod-box{{border-radius:10px;padding:16px 18px;margin:26px 0 16px;font-size:14px;line-height:1.7;background:#eef6ff;border:1px solid #b3d4f0}}
+.prod-box h4{{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#1a6699;margin-bottom:8px}}
+.tip-box{{background:#f2f7f4;border:1px solid #c8e0d2;border-radius:8px;padding:13px 15px;margin:12px 0;font-size:14px;color:#183d2f;line-height:1.65}}
+.tip-box strong{{display:block;font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:#2d7d5a;margin-bottom:5px}}
+.cta{{background:#183d2f;color:#52c48a;border-radius:8px;padding:14px;text-align:center;font-weight:700;font-size:15px;margin:20px 0 14px}}
+.back{{display:inline-block;color:#2d7d5a;font-size:14px;text-decoration:none;margin-bottom:24px}}
+.disc{{font-size:11px;color:#999;border-top:1px solid #e5e0d5;padding-top:16px;margin-top:32px;line-height:1.6}}
+footer{{background:#183d2f;color:rgba(255,255,255,.4);text-align:center;padding:18px;font-size:12px}}
+footer a{{color:#52c48a;text-decoration:none}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nb" href="../index.html">🌿 Wellness & Movement</a>
+  <a class="ns" href="https://www.artrovex.shop" target="_blank">🛍 Shop</a>
+</nav>
+<div class="wrap">
+  <a class="back" href="../index.html">← Back to all articles</a>
+  <div class="date">{date_str} · Wellness Guide</div>
+  <h1>{data['title']}</h1>
+  <p class="lead">{data['intro']}</p>
+  {sections_html}
+  <div class="prod-box">
+    <h4>💆 Massage & Wellness</h4>
+    <p>{data['product_mention']} Available at <a href="https://www.artrovex.shop" target="_blank">artrovex.shop</a>.</p>
+  </div>
+  <div class="tip-box"><strong>💡 Pro tip</strong>{data['double_tip']}</div>
+  <div class="tip-box"><strong>🧼 Good to know</strong>{data['wash_reminder']}</div>
+  <div class="cta">{data['cta']}</div>
+  <p class="disc"><strong>Disclaimer:</strong> This article is for general wellness and informational purposes only. It does not constitute medical advice and is not intended to diagnose, treat, cure, or prevent any condition. Products mentioned are cosmetic items. Consult a healthcare professional for medical concerns.</p>
+</div>
+<footer><a href="https://www.artrovex.shop" target="_blank">artrovex.shop</a> · Wellness & Movement Blog</footer>
+</body>
+</html>"""
+
+def update_index(articles_meta):
+    """Read existing index, prepend new articles."""
+    index_path = "docs/index.html"
+
+    cards_html = ""
+    for m in sorted(articles_meta, key=lambda x: x["date"], reverse=True)[:60]:
+        cards_html += f"""
+    <div class="card" onclick="location.href='articles/{m['slug']}-{m['lang']}.html'">
+      <div class="card-stripe"></div>
+      <div class="card-body">
+        <div class="card-tag">{m['date']} · {m['lang'].upper()}</div>
+        <div class="card-title">{m['title']}</div>
+        <div class="card-topic">{m['topic']}</div>
+      </div>
+    </div>"""
+
+    html = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Joint & Muscle Wellness Blog | Expert Tips for Active Living</title>
+<meta name="description" content="Daily expert tips on joint mobility, muscle care, massage techniques and wellness routines. Updated every day.">
+<link rel="canonical" href="https://wellness.artrovex.shop">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{{box-sizing:border-box;margin:0;padding:0}}
+body{{font-family:'Inter',sans-serif;background:#faf8f3;color:#1c1c1c}}
+nav{{background:#183d2f;height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;position:sticky;top:0;z-index:100}}
+.nb{{font-family:'Lora',serif;color:#52c48a;font-size:17px;text-decoration:none}}
+.ns{{background:#52c48a;color:#183d2f;padding:7px 13px;border-radius:6px;font-size:13px;font-weight:700;text-decoration:none}}
+.hero{{background:linear-gradient(150deg,#183d2f,#1e5c40);padding:48px 20px 40px;text-align:center;color:#fff}}
+.hero h1{{font-family:'Lora',serif;font-size:clamp(22px,5vw,40px);font-weight:400;margin-bottom:12px}}
+.hero h1 em{{color:#52c48a;font-style:italic}}
+.hero p{{color:rgba(255,255,255,.65);font-size:15px;max-width:480px;margin:0 auto 22px}}
+.hero a{{background:#52c48a;color:#183d2f;padding:11px 24px;border-radius:7px;font-weight:700;font-size:14px;text-decoration:none}}
+.wrap{{max-width:960px;margin:0 auto;padding:0 16px 50px}}
+.sec-title{{font-family:'Lora',serif;font-size:20px;font-weight:400;color:#183d2f;margin:32px 0 16px;border-bottom:1px solid #e0e8e3;padding-bottom:10px}}
+.grid{{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}}
+.card{{background:#fff;border-radius:10px;overflow:hidden;cursor:pointer;transition:transform .15s;border:1.5px solid #e0e8e3;box-shadow:0 1px 6px rgba(0,0,0,.06)}}
+.card:hover{{transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,.1)}}
+.card-stripe{{height:4px;background:linear-gradient(90deg,#183d2f,#52c48a)}}
+.card-body{{padding:14px}}
+.card-tag{{font-size:10px;color:#2d7d5a;letter-spacing:1.5px;text-transform:uppercase;font-weight:600;margin-bottom:5px}}
+.card-title{{font-family:'Lora',serif;font-size:14px;line-height:1.4;font-style:italic;color:#1c1c1c}}
+.card-topic{{font-size:11px;color:#888;margin-top:6px}}
+footer{{background:#183d2f;color:rgba(255,255,255,.4);text-align:center;padding:20px;font-size:12px}}
+footer a{{color:#52c48a;text-decoration:none}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nb" href="#">🌿 Wellness & Movement</a>
+  <a class="ns" href="https://www.artrovex.shop" target="_blank">🛍 Shop</a>
+</nav>
+<div class="hero">
+  <h1>Move better.<br><em>Feel better.</em> Live fully.</h1>
+  <p>Daily expert tips on joint care, muscle recovery and massage — updated every day.</p>
+  <a href="https://www.artrovex.shop" target="_blank">Discover massage creams →</a>
+</div>
+<div class="wrap">
+  <div class="sec-title">Latest Articles</div>
+  <div class="grid">{cards_html}</div>
+</div>
+<footer><a href="https://www.artrovex.shop" target="_blank">artrovex.shop</a> · Wellness & Movement Blog · Updated daily</footer>
+</body>
+</html>"""
+
+    os.makedirs("docs", exist_ok=True)
+    with open(index_path, "w", encoding="utf-8") as f:
+        f.write(html)
+    print(f"✅ Index updated with {len(articles_meta)} articles")
+
+def main():
+    if not API_KEY:
+        print("❌ ANTHROPIC_API_KEY not set")
+        sys.exit(1)
+
+    topic    = get_topic_for_today()
+    platform = get_platform_for_today()
+    date_str = datetime.date.today().strftime("%B %d, %Y")
+    slug     = slugify(topic)
+
+    print(f"📝 Topic: {topic}")
+    print(f"🛍 Platform: {platform}")
+
+    os.makedirs("docs/articles", exist_ok=True)
+
+    # Load existing metadata
+    meta_path = "docs/articles_meta.json"
+    if os.path.exists(meta_path):
+        with open(meta_path, "r") as f:
+            articles_meta = json.load(f)
+    else:
+        articles_meta = []
+
+    for lang in LANGS:
+        print(f"  🌐 Generating {lang.upper()}...")
+        try:
+            data = generate_article(topic, platform, lang)
+            html = build_article_html(data, lang, topic, platform, date_str, slug)
+            path = f"docs/articles/{slug}-{lang}.html"
+            with open(path, "w", encoding="utf-8") as f:
+                f.write(html)
+            articles_meta.append({
+                "date": datetime.date.today().isoformat(),
+                "lang": lang,
+                "slug": slug,
+                "title": data["title"],
+                "topic": topic,
+                "file": f"articles/{slug}-{lang}.html"
+            })
+            print(f"  ✅ {lang.upper()} saved → {path}")
+        except Exception as e:
+            print(f"  ❌ {lang.upper()} failed: {e}")
+
+    # Save metadata
+    with open(meta_path, "w") as f:
+        json.dump(articles_meta, f, indent=2)
+
+    # Rebuild index
+    update_index(articles_meta)
+    print("🎉 Done!")
+
+if __name__ == "__main__":
+    main()
