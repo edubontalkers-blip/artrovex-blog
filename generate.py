@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 """
 Artrovex Blog — Daily Article Generator
-Runs every day via GitHub Actions, generates a new wellness article
-in 5 languages and adds it to the site.
+Runs every day via GitHub Actions.
 NO medical claims — cosmetic product mentions only.
 """
 
@@ -11,6 +10,7 @@ import urllib.request, urllib.error
 
 API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
 MODEL   = "claude-sonnet-4-6"
+DOMAIN  = "https://www.bodyadvice.site"
 
 TOPICS = [
     "Calf muscle massage and recovery after walking",
@@ -37,7 +37,7 @@ TOPICS = [
     "Neck care for people who work from home",
     "Running and joint care — what every runner should know",
     "Swimming as joint-friendly exercise",
-    "Self-massage tools — what works and what doesn't",
+    "Self-massage tools — what works and what doesnt",
     "Morning stiffness — causes and solutions",
     "The role of sleep in muscle and joint recovery",
     "Walking technique — small adjustments, big difference",
@@ -78,7 +78,6 @@ def call_claude(prompt):
         "max_tokens": 1800,
         "messages": [{"role": "user", "content": prompt}]
     }).encode()
-
     req = urllib.request.Request(
         "https://api.anthropic.com/v1/messages",
         data=payload,
@@ -99,32 +98,30 @@ def generate_article(topic, platform, lang):
 
 TOPIC: {topic}
 
-STRICT RULES — read carefully:
+STRICT RULES:
 1. Write ENTIRELY in {lang_name}. Not a single word in another language.
-2. NO medical claims whatsoever. No "treats", "heals", "cures", "relieves pain", "therapeutic", "medicinal". Zero.
-3. Mention massage creams naturally as cosmetic/wellness products only, like "as part of a massage routine" or "many people enjoy using a warming massage cream here".
-4. Mention Artrovex cream (dual effect: first cooling, then warming — two distinct phases) OR Hondrocream (immediate, direct warmth from first application — no cooling phase). Alternate between them naturally.
+2. NO medical claims. No "treats", "heals", "cures", "relieves pain", "therapeutic", "medicinal".
+3. Mention massage creams naturally as cosmetic/wellness products only.
+4. Mention Artrovex cream (dual effect: first cooling, then warming) OR Hondrocream (immediate warmth, no cooling phase). Alternate naturally.
 5. Include this platform mention naturally: {platform}
-6. Include a "double application tip": apply cream, massage 2-3 minutes, wait 10 minutes, apply second layer, massage again — effect lasts noticeably longer.
-7. Include a handwashing reminder: always wash hands thoroughly after applying any topical product.
-8. Write like a real person who lives an active life — warm, direct, honest tone. No AI-sounding phrases.
-9. The article should feel genuinely useful and informative, not like an advertisement.
+6. Include double application tip: apply cream, massage 2-3 min, wait 10 min, apply second layer, massage again.
+7. Include handwashing reminder after applying any topical product.
+8. Write like a real person — warm, direct, honest. No AI-sounding phrases.
 
-RESPOND WITH VALID JSON ONLY. No markdown, no explanation, no backticks:
+RESPOND WITH VALID JSON ONLY. No markdown, no backticks:
 {{
-  "title": "engaging, human title (not clickbait)",
-  "intro": "2-3 sentence hook that feels personal and real",
+  "title": "engaging human title",
+  "intro": "2-3 sentence personal hook",
   "sections": [
-    {{"heading": "section heading", "text": "2-3 paragraph section text"}},
-    {{"heading": "section heading", "text": "2-3 paragraph section text"}},
-    {{"heading": "section heading", "text": "2-3 paragraph section text"}}
+    {{"heading": "heading", "text": "section text"}},
+    {{"heading": "heading", "text": "section text"}},
+    {{"heading": "heading", "text": "section text"}}
   ],
-  "product_mention": "1-2 sentences mentioning the cream naturally as a massage aid, no medical claims",
-  "double_tip": "the double application tip in natural language",
-  "wash_reminder": "handwashing reminder, friendly tone",
+  "product_mention": "natural cream mention, no medical claims",
+  "double_tip": "double application tip",
+  "wash_reminder": "handwashing reminder",
   "cta": "closing motivational line"
 }}"""
-
     raw = call_claude(prompt)
     raw = re.sub(r'^```[a-z]*\n?', '', raw.strip())
     raw = re.sub(r'\n?```$', '', raw.strip())
@@ -136,7 +133,7 @@ def slugify(text):
     text = re.sub(r'\s+', '-', text.strip())
     return text[:60]
 
-def build_article_html(data, lang, topic, platform, date_str, slug):
+def build_article_html(data, lang, topic, date_str, slug):
     sections_html = ""
     for s in data.get("sections", []):
         sections_html += f"""
@@ -144,16 +141,15 @@ def build_article_html(data, lang, topic, platform, date_str, slug):
           <h3>{s['heading']}</h3>
           <p>{s['text']}</p>
         </div>"""
-
     return f"""<!DOCTYPE html>
 <html lang="{lang}">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{data['title']} | Artrovex Wellness Blog</title>
+<title>{data['title']} | Body Advice Wellness Blog</title>
 <meta name="description" content="{data['intro'][:160]}">
 <meta name="keywords" content="joint wellness, muscle care, massage, {topic.lower()}, wellness routine">
-<link rel="canonical" href="https://wellness.artrovex.shop/articles/{slug}-{lang}.html">
+<link rel="canonical" href="{DOMAIN}/articles/{slug}-{lang}.html">
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *{{box-sizing:border-box;margin:0;padding:0}}
@@ -181,7 +177,7 @@ footer a{{color:#52c48a;text-decoration:none}}
 </head>
 <body>
 <nav>
-  <a class="nb" href="../index.html">🌿 Wellness & Movement</a>
+  <a class="nb" href="../index.html">🌿 Body Advice</a>
   <a class="ns" href="https://www.artrovex.shop" target="_blank">🛍 Shop</a>
 </nav>
 <div class="wrap">
@@ -199,14 +195,11 @@ footer a{{color:#52c48a;text-decoration:none}}
   <div class="cta">{data['cta']}</div>
   <p class="disc"><strong>Disclaimer:</strong> This article is for general wellness and informational purposes only. It does not constitute medical advice and is not intended to diagnose, treat, cure, or prevent any condition. Products mentioned are cosmetic items. Consult a healthcare professional for medical concerns.</p>
 </div>
-<footer><a href="https://www.artrovex.shop" target="_blank">artrovex.shop</a> · Wellness & Movement Blog</footer>
+<footer><a href="{DOMAIN}" target="_blank">bodyadvice.site</a> · Wellness & Movement Blog</footer>
 </body>
 </html>"""
 
 def update_index(articles_meta):
-    """Read existing index, prepend new articles."""
-    index_path = "docs/index.html"
-
     cards_html = ""
     for m in sorted(articles_meta, key=lambda x: x["date"], reverse=True)[:60]:
         cards_html += f"""
@@ -224,9 +217,9 @@ def update_index(articles_meta):
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Joint & Muscle Wellness Blog | Expert Tips for Active Living</title>
-<meta name="description" content="Daily expert tips on joint mobility, muscle care, massage techniques and wellness routines. Updated every day.">
-<link rel="canonical" href="https://wellness.artrovex.shop">
+<title>Body Advice | Joint & Muscle Wellness Blog</title>
+<meta name="description" content="Daily expert tips on joint mobility, muscle care, massage techniques and wellness routines. Updated every day in 5 languages.">
+<link rel="canonical" href="{DOMAIN}">
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *{{box-sizing:border-box;margin:0;padding:0}}
@@ -255,7 +248,7 @@ footer a{{color:#52c48a;text-decoration:none}}
 </head>
 <body>
 <nav>
-  <a class="nb" href="#">🌿 Wellness & Movement</a>
+  <a class="nb" href="#">🌿 Body Advice</a>
   <a class="ns" href="https://www.artrovex.shop" target="_blank">🛍 Shop</a>
 </nav>
 <div class="hero">
@@ -267,14 +260,40 @@ footer a{{color:#52c48a;text-decoration:none}}
   <div class="sec-title">Latest Articles</div>
   <div class="grid">{cards_html}</div>
 </div>
-<footer><a href="https://www.artrovex.shop" target="_blank">artrovex.shop</a> · Wellness & Movement Blog · Updated daily</footer>
+<footer><a href="{DOMAIN}">bodyadvice.site</a> · Wellness & Movement Blog · Updated daily</footer>
 </body>
 </html>"""
 
     os.makedirs("docs", exist_ok=True)
-    with open(index_path, "w", encoding="utf-8") as f:
+    with open("docs/index.html", "w", encoding="utf-8") as f:
         f.write(html)
     print(f"✅ Index updated with {len(articles_meta)} articles")
+
+def generate_sitemap(articles_meta):
+    today = datetime.date.today().isoformat()
+    urls = f"""  <url>
+    <loc>{DOMAIN}/</loc>
+    <lastmod>{today}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>"""
+    for m in articles_meta:
+        urls += f"""
+  <url>
+    <loc>{DOMAIN}/articles/{m['slug']}-{m['lang']}.html</loc>
+    <lastmod>{m['date']}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>"""
+    sitemap = f"""<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{urls}
+</urlset>"""
+    with open("docs/sitemap.xml", "w", encoding="utf-8") as f:
+        f.write(sitemap)
+    with open("docs/robots.txt", "w", encoding="utf-8") as f:
+        f.write(f"User-agent: *\nAllow: /\n\nSitemap: {DOMAIN}/sitemap.xml")
+    print("✅ sitemap.xml and robots.txt generated")
 
 def main():
     if not API_KEY:
@@ -291,7 +310,6 @@ def main():
 
     os.makedirs("docs/articles", exist_ok=True)
 
-    # Load existing metadata
     meta_path = "docs/articles_meta.json"
     if os.path.exists(meta_path):
         with open(meta_path, "r") as f:
@@ -303,7 +321,7 @@ def main():
         print(f"  🌐 Generating {lang.upper()}...")
         try:
             data = generate_article(topic, platform, lang)
-            html = build_article_html(data, lang, topic, platform, date_str, slug)
+            html = build_article_html(data, lang, topic, date_str, slug)
             path = f"docs/articles/{slug}-{lang}.html"
             with open(path, "w", encoding="utf-8") as f:
                 f.write(html)
@@ -319,12 +337,11 @@ def main():
         except Exception as e:
             print(f"  ❌ {lang.upper()} failed: {e}")
 
-    # Save metadata
     with open(meta_path, "w") as f:
         json.dump(articles_meta, f, indent=2)
 
-    # Rebuild index
     update_index(articles_meta)
+    generate_sitemap(articles_meta)
     print("🎉 Done!")
 
 if __name__ == "__main__":
