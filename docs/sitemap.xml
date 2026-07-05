@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.bodyadvice.site/</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-07-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -357,6 +357,36 @@
   <url>
     <loc>https://www.bodyadvice.site/articles/ankle-circles-and-foot-doming-for-flat-arch-support-fr.html</loc>
     <lastmod>2026-07-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.bodyadvice.site/articles/elbow-mobility-warm-ups-for-tennis-and-racket-sports-en.html</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.bodyadvice.site/articles/elbow-mobility-warm-ups-for-tennis-and-racket-sports-de.html</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.bodyadvice.site/articles/elbow-mobility-warm-ups-for-tennis-and-racket-sports-it.html</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.bodyadvice.site/articles/elbow-mobility-warm-ups-for-tennis-and-racket-sports-es.html</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.bodyadvice.site/articles/elbow-mobility-warm-ups-for-tennis-and-racket-sports-fr.html</loc>
+    <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
