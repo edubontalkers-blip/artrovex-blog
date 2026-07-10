@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.bodyadvice.site/</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -507,6 +507,36 @@
   <url>
     <loc>https://www.bodyadvice.site/articles/gentle-hip-rotations-for-more-comfortable-cross-legged-sitti-fr.html</loc>
     <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.bodyadvice.site/articles/thumb-joint-care-for-knitters-and-crochet-enthusiasts-en.html</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.bodyadvice.site/articles/thumb-joint-care-for-knitters-and-crochet-enthusiasts-de.html</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.bodyadvice.site/articles/thumb-joint-care-for-knitters-and-crochet-enthusiasts-it.html</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.bodyadvice.site/articles/thumb-joint-care-for-knitters-and-crochet-enthusiasts-es.html</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.bodyadvice.site/articles/thumb-joint-care-for-knitters-and-crochet-enthusiasts-fr.html</loc>
+    <lastmod>2026-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
