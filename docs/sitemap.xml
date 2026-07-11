@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.bodyadvice.site/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -537,6 +537,36 @@
   <url>
     <loc>https://www.bodyadvice.site/articles/thumb-joint-care-for-knitters-and-crochet-enthusiasts-fr.html</loc>
     <lastmod>2026-07-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.bodyadvice.site/articles/sacroiliac-joint-relief-through-targeted-glute-stretching-en.html</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.bodyadvice.site/articles/sacroiliac-joint-relief-through-targeted-glute-stretching-de.html</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.bodyadvice.site/articles/sacroiliac-joint-relief-through-targeted-glute-stretching-it.html</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.bodyadvice.site/articles/sacroiliac-joint-relief-through-targeted-glute-stretching-es.html</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.bodyadvice.site/articles/sacroiliac-joint-relief-through-targeted-glute-stretching-fr.html</loc>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
