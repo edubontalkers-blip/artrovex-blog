@@ -108,7 +108,7 @@ def get_cream_for_today():
 def call_claude(prompt):
     payload = json.dumps({
         "model": MODEL,
-        "max_tokens": 2000,
+        "max_tokens": 8000,
         "messages": [{"role": "user", "content": prompt}]
     }).encode()
     req = urllib.request.Request(
@@ -682,9 +682,6 @@ def main():
     generate_llms_txt()
     generate_enhanced_robots()
     print(f"\n🎉 Done! 2 topics × 5 languages = 10 new pages today!")
-
-if __name__ == "__main__":
-    main()
 
 
 def generate_seo_landing_pages():
@@ -1692,3 +1689,6 @@ footer a{{color:#52c48a;text-decoration:none}}
     with open("docs/claim-review.html", "w", encoding="utf-8") as f:
         f.write(html)
     print("✅ claim-review.html generated")
+
+if __name__ == "__main__":
+    main()
