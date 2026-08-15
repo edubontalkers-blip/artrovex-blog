@@ -161,59 +161,43 @@ def generate_all_languages(topic, platform, cream_of_day):
     ]
     persona = personas[day % len(personas)]
 
-    prompt = f"""You are {persona}. You write a personal wellness blog that readers love because it sounds REAL — like a knowledgeable friend talking, not a marketing brochure or an AI.
-
-Write ONE wellness article on this topic for ALL 5 languages (EN, DE, IT, ES, FR).
+    prompt = f"""You are {persona}. Write a wellness blog article on this topic for ALL 5 languages.
 
 TOPIC: {topic}
-CREAM TO FEATURE: {cream_of_day}
-PLATFORM TO MENTION: {platform}
+CREAM: {cream_of_day}
+PLATFORM: {platform}
 
-HUMAN WRITING RULES — this is the most important part:
-1. Start with a personal observation or moment — something that feels lived-in. "Last Tuesday, a client came in and..." or "I have been noticing lately that..." or "Three years ago I would have told you..."
-2. Use imperfect, natural sentence structures. Mix short punchy sentences with longer ones. Vary rhythm.
-3. Include ONE small personal opinion or mild disagreement with common advice — real people have opinions.
-4. Use concrete specifics — body parts, positions, timing, sensations — not vague generalities.
-5. Avoid these AI giveaway phrases completely: "In today's fast-paced world", "it is important to note", "delve into", "in conclusion", "furthermore", "moreover", "it goes without saying", "a testament to", "game-changer", "holistic", "leverage", "journey".
-6. Write with appropriate cultural voice for each language — a German speaker writes differently than a French speaker. Match the natural rhythm and idioms of each language.
-7. Include a small honest limitation or caveat — real writers admit when something doesn't work for everyone.
-8. Each language version must feel INDEPENDENTLY written — not translated. Different opening, different personal reference, same topic.
+RULES:
+1. Each language: start with a personal real-life moment, mix short/long sentences, add one personal opinion.
+2. NO AI phrases: "furthermore", "moreover", "game-changer", "holistic", "leverage", "in today's world", "it is important to note".
+3. NO medical claims. No "treats", "heals", "cures", "relieves", "therapeutic".
+4. Each language written FRESHLY — not translated. Different opening per language.
+5. Mention {cream_of_day} naturally as cosmetic massage product, quality 2026 ingredients.
+6. Include: where to buy original + spot fakes (1 paragraph), double application tip, handwashing reminder.
+7. 3 FAQ per language — questions real readers ask.
+8. Keep each text section to 3-4 sentences maximum to stay within token limits.
 
-CONTENT STRATEGY:
-- Build genuine trust by being honest about the market: unauthorized sellers made false medical claims about Artrovex and Hondrocream — the brands never made these claims themselves
-- {cream_of_day} is a quality cosmetic massage cream with improved 2026 ingredients — mention naturally, not salesy
-- Include where to buy original and how to spot fakes — one paragraph, practical
-- Amazon verified reviews reflect real customer experiences — mention once naturally
-- Double application tip: apply, massage 2-3 min, wait 10 min, apply again — effect lasts longer
-- Handwashing reminder — practical, one sentence
-- 3 FAQ that real readers would actually ask
-
-STRICT RULES:
-- NO medical claims. No "treats", "heals", "cures", "relieves", "therapeutic", "medicinal"
-- Write ENTIRELY in each language — zero mixing
-- Each section must be substantive (3-5 sentences minimum)
-
-RESPOND WITH VALID JSON ONLY. No markdown, no backticks:
+RESPOND WITH VALID JSON ONLY:
 {{
   "en": {{
-    "title": "title that sounds like a real blogger wrote it — curious, specific, not clickbait",
-    "meta_description": "155 char natural description",
-    "intro": "personal 3-4 sentence opening that feels lived-in",
+    "title": "specific human-sounding title",
+    "meta_description": "under 155 chars",
+    "intro": "3 sentences personal opening",
     "sections": [
-      {{"heading": "natural heading someone would actually search", "text": "3-5 sentences, concrete and specific"}},
-      {{"heading": "natural heading someone would actually search", "text": "3-5 sentences, concrete and specific"}},
-      {{"heading": "natural heading someone would actually search", "text": "3-5 sentences, concrete and specific"}}
+      {{"heading": "heading", "text": "3-4 sentences"}},
+      {{"heading": "heading", "text": "3-4 sentences"}},
+      {{"heading": "heading", "text": "3-4 sentences"}}
     ],
-    "product_mention": "natural 2-sentence mention of cream as part of wellness routine",
-    "double_tip": "double application tip in natural voice",
-    "wash_reminder": "one friendly sentence",
-    "faq": [{{"q": "real question a reader would ask", "a": "direct honest answer"}},{{"q": "real question", "a": "direct answer"}},{{"q": "real question", "a": "direct answer"}}],
-    "cta": "closing line that sounds human — not corporate"
+    "product_mention": "2 sentences natural mention",
+    "double_tip": "1-2 sentences",
+    "wash_reminder": "1 sentence",
+    "faq": [{{"q": "question", "a": "answer"}},{{"q": "question", "a": "answer"}},{{"q": "question", "a": "answer"}}],
+    "cta": "1 human closing line"
   }},
-  "de": {{ same structure — written freshly in German, not translated }},
-  "it": {{ same structure — written freshly in Italian, not translated }},
-  "es": {{ same structure — written freshly in Spanish, not translated }},
-  "fr": {{ same structure — written freshly in French, not translated }}
+  "de": {{}},
+  "it": {{}},
+  "es": {{}},
+  "fr": {{}}
 }}"""
 
     raw = call_claude(prompt)
@@ -564,125 +548,6 @@ def generate_sitemap(articles_meta):
         f.write(sitemap)
     print(f"✅ sitemap.xml generated — {len(articles_meta) + len(seo_pages) + 4} URLs")
 
-def main():
-    if not API_KEY:
-        print("❌ ANTHROPIC_API_KEY not set")
-        sys.exit(1)
-
-    date_str = datetime.date.today().strftime("%B %d, %Y")
-    meta_path = "docs/articles_meta.json"
-    os.makedirs("docs/articles", exist_ok=True)
-
-    if os.path.exists(meta_path):
-        with open(meta_path, "r") as f:
-            articles_meta = json.load(f)
-    else:
-        articles_meta = []
-
-    used_topics = list(set(m["topic"] for m in articles_meta))
-
-    # Generate 2 articles per day = 10 pages/day = ~300 pages/month
-    # Article 1: today's cream and platform
-    # Article 2: opposite cream and next platform — always different topic
-
-    day = (datetime.date.today() - datetime.date(2024, 1, 1)).days
-
-    # First names only — natural for bloggers, no fake identity risk
-    # Alternates between named author and editorial team
-    authors_by_lang = {
-        "en": ["Body Advice Team", "Emma", "Body Advice Team", "James", "Laura"],
-        "de": ["Body Advice Team", "Stefan", "Body Advice Team", "Monika", "Andreas"],
-        "it": ["Body Advice Team", "Giulia", "Body Advice Team", "Marco", "Valentina"],
-        "es": ["Body Advice Team", "Carmen", "Body Advice Team", "Miguel", "Isabel"],
-        "fr": ["Body Advice Team", "Sophie", "Body Advice Team", "Pierre", "Marie"],
-    }
-    cream_1 = get_cream_for_today()
-    platform_1 = PLATFORMS[day % len(PLATFORMS)]
-
-    print("🧠 Generating topic 1...")
-    topic_1 = get_unique_topic(used_topics)
-    slug_1 = slugify(topic_1)
-    print(f"📝 Topic 1: {topic_1}")
-    print(f"🧴 Cream 1: {cream_1[:40]}...")
-    print(f"🛍 Platform 1: {platform_1}")
-
-    print("  🌐 Generating article 1 — all 5 languages...")
-    try:
-        all_data_1 = generate_all_languages(topic_1, platform_1, cream_1)
-        for lang in LANGS:
-            try:
-                data = all_data_1[lang]
-                author_name = authors_by_lang.get(lang, authors_by_lang['en'])[day % 5]
-                html = build_article_html(data, lang, topic_1, date_str, slug_1, cream_1, author_name)
-                path = f"docs/articles/{slug_1}-{lang}.html"
-                with open(path, "w", encoding="utf-8") as f:
-                    f.write(html)
-                articles_meta.append({
-                    "date": datetime.date.today().isoformat(),
-                    "lang": lang,
-                    "slug": slug_1,
-                    "title": data["title"],
-                    "topic": topic_1,
-                    "file": f"articles/{slug_1}-{lang}.html"
-                })
-                print(f"  ✅ Article 1 {lang.upper()} saved")
-            except Exception as e:
-                print(f"  ❌ Article 1 {lang.upper()} failed: {e}")
-    except Exception as e:
-        print(f"  ❌ Article 1 generation failed: {e}")
-
-    # Article 2 — opposite cream, next platform, completely different topic
-    cream_2_raw = "Hondrocream (warming massage cream: delivers immediate, direct warmth from the very first application — no cooling phase)" if "Artrovex" in cream_1 else "Artrovex cream (dual-effect massage cream: starts with a cooling sensation, then transitions into a gentle warming effect — two distinct phases)"
-    platform_2 = PLATFORMS[(day + 1) % len(PLATFORMS)]
-
-    used_topics_updated = list(set(m["topic"] for m in articles_meta))
-    print("\n🧠 Generating topic 2...")
-    topic_2 = get_unique_topic(used_topics_updated, exclude_today=topic_1)
-    slug_2 = slugify(topic_2)
-    print(f"📝 Topic 2: {topic_2}")
-    print(f"🧴 Cream 2: {cream_2_raw[:40]}...")
-    print(f"🛍 Platform 2: {platform_2}")
-
-    print("  🌐 Generating article 2 — all 5 languages...")
-    try:
-        all_data_2 = generate_all_languages(topic_2, platform_2, cream_2_raw)
-        for lang in LANGS:
-            try:
-                data = all_data_2[lang]
-                author_name = authors_by_lang.get(lang, authors_by_lang['en'])[(day + 2) % 5]
-                html = build_article_html(data, lang, topic_2, date_str, slug_2, cream_2_raw, author_name)
-                path = f"docs/articles/{slug_2}-{lang}.html"
-                with open(path, "w", encoding="utf-8") as f:
-                    f.write(html)
-                articles_meta.append({
-                    "date": datetime.date.today().isoformat(),
-                    "lang": lang,
-                    "slug": slug_2,
-                    "title": data["title"],
-                    "topic": topic_2,
-                    "file": f"articles/{slug_2}-{lang}.html"
-                })
-                print(f"  ✅ Article 2 {lang.upper()} saved")
-            except Exception as e:
-                print(f"  ❌ Article 2 {lang.upper()} failed: {e}")
-    except Exception as e:
-        print(f"  ❌ Article 2 generation failed: {e}")
-
-    with open(meta_path, "w") as f:
-        json.dump(articles_meta, f, indent=2)
-
-    update_index(articles_meta)
-    generate_sitemap(articles_meta)
-    generate_news_sitemap(articles_meta)
-    generate_seo_landing_pages()
-    generate_brand_pages()
-    generate_about_page()
-    generate_faq_page()
-    generate_claim_review_page()
-    generate_llms_txt()
-    generate_enhanced_robots()
-    print(f"\n🎉 Done! 2 topics × 5 languages = 10 new pages today!")
-
 
 def generate_seo_landing_pages():
     """Generate permanent SEO landing pages targeting specific search queries
@@ -882,6 +747,9 @@ def generate_seo_landing_pages():
     os.makedirs("docs/info", exist_ok=True)
 
     for page in pages:
+        _ps = {"@context":"https://schema.org","@type":"Article","headline":page["h1"],"description":page["meta"],"author":{"@type":"Organization","name":"Body Advice"},"inLanguage":page["lang"]}
+        page_schema_json = json.dumps(_ps, ensure_ascii=False)
+
         html = f"""<!DOCTYPE html>
 <html lang="{page['lang']}">
 <head>
@@ -891,15 +759,7 @@ def generate_seo_landing_pages():
 <meta name="description" content="{page['meta']}">
 <meta name="keywords" content="{page['keywords']}">
 <link rel="canonical" href="{DOMAIN}/info/{page['filename']}">
-<script type="application/ld+json">{json.dumps({
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": page['h1'],
-    "description": page['meta'],
-    "author": {{"@type": "Organization", "name": "Body Advice"}},
-    "publisher": {{"@type": "Organization", "name": "Body Advice", "url": DOMAIN}},
-    "inLanguage": page['lang']
-}, ensure_ascii=False)}</script>
+<script type="application/ld+json">{page_schema_json}</script>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *{{box-sizing:border-box;margin:0;padding:0}}
@@ -1689,6 +1549,125 @@ footer a{{color:#52c48a;text-decoration:none}}
     with open("docs/claim-review.html", "w", encoding="utf-8") as f:
         f.write(html)
     print("✅ claim-review.html generated")
+
+def main():
+    if not API_KEY:
+        print("❌ ANTHROPIC_API_KEY not set")
+        sys.exit(1)
+
+    date_str = datetime.date.today().strftime("%B %d, %Y")
+    meta_path = "docs/articles_meta.json"
+    os.makedirs("docs/articles", exist_ok=True)
+
+    if os.path.exists(meta_path):
+        with open(meta_path, "r") as f:
+            articles_meta = json.load(f)
+    else:
+        articles_meta = []
+
+    used_topics = list(set(m["topic"] for m in articles_meta))
+
+    # Generate 2 articles per day = 10 pages/day = ~300 pages/month
+    # Article 1: today's cream and platform
+    # Article 2: opposite cream and next platform — always different topic
+
+    day = (datetime.date.today() - datetime.date(2024, 1, 1)).days
+
+    # First names only — natural for bloggers, no fake identity risk
+    # Alternates between named author and editorial team
+    authors_by_lang = {
+        "en": ["Body Advice Team", "Emma", "Body Advice Team", "James", "Laura"],
+        "de": ["Body Advice Team", "Stefan", "Body Advice Team", "Monika", "Andreas"],
+        "it": ["Body Advice Team", "Giulia", "Body Advice Team", "Marco", "Valentina"],
+        "es": ["Body Advice Team", "Carmen", "Body Advice Team", "Miguel", "Isabel"],
+        "fr": ["Body Advice Team", "Sophie", "Body Advice Team", "Pierre", "Marie"],
+    }
+    cream_1 = get_cream_for_today()
+    platform_1 = PLATFORMS[day % len(PLATFORMS)]
+
+    print("🧠 Generating topic 1...")
+    topic_1 = get_unique_topic(used_topics)
+    slug_1 = slugify(topic_1)
+    print(f"📝 Topic 1: {topic_1}")
+    print(f"🧴 Cream 1: {cream_1[:40]}...")
+    print(f"🛍 Platform 1: {platform_1}")
+
+    print("  🌐 Generating article 1 — all 5 languages...")
+    try:
+        all_data_1 = generate_all_languages(topic_1, platform_1, cream_1)
+        for lang in LANGS:
+            try:
+                data = all_data_1[lang]
+                author_name = authors_by_lang.get(lang, authors_by_lang['en'])[day % 5]
+                html = build_article_html(data, lang, topic_1, date_str, slug_1, cream_1, author_name)
+                path = f"docs/articles/{slug_1}-{lang}.html"
+                with open(path, "w", encoding="utf-8") as f:
+                    f.write(html)
+                articles_meta.append({
+                    "date": datetime.date.today().isoformat(),
+                    "lang": lang,
+                    "slug": slug_1,
+                    "title": data["title"],
+                    "topic": topic_1,
+                    "file": f"articles/{slug_1}-{lang}.html"
+                })
+                print(f"  ✅ Article 1 {lang.upper()} saved")
+            except Exception as e:
+                print(f"  ❌ Article 1 {lang.upper()} failed: {e}")
+    except Exception as e:
+        print(f"  ❌ Article 1 generation failed: {e}")
+
+    # Article 2 — opposite cream, next platform, completely different topic
+    cream_2_raw = "Hondrocream (warming massage cream: delivers immediate, direct warmth from the very first application — no cooling phase)" if "Artrovex" in cream_1 else "Artrovex cream (dual-effect massage cream: starts with a cooling sensation, then transitions into a gentle warming effect — two distinct phases)"
+    platform_2 = PLATFORMS[(day + 1) % len(PLATFORMS)]
+
+    used_topics_updated = list(set(m["topic"] for m in articles_meta))
+    print("\n🧠 Generating topic 2...")
+    topic_2 = get_unique_topic(used_topics_updated, exclude_today=topic_1)
+    slug_2 = slugify(topic_2)
+    print(f"📝 Topic 2: {topic_2}")
+    print(f"🧴 Cream 2: {cream_2_raw[:40]}...")
+    print(f"🛍 Platform 2: {platform_2}")
+
+    print("  🌐 Generating article 2 — all 5 languages...")
+    try:
+        all_data_2 = generate_all_languages(topic_2, platform_2, cream_2_raw)
+        for lang in LANGS:
+            try:
+                data = all_data_2[lang]
+                author_name = authors_by_lang.get(lang, authors_by_lang['en'])[(day + 2) % 5]
+                html = build_article_html(data, lang, topic_2, date_str, slug_2, cream_2_raw, author_name)
+                path = f"docs/articles/{slug_2}-{lang}.html"
+                with open(path, "w", encoding="utf-8") as f:
+                    f.write(html)
+                articles_meta.append({
+                    "date": datetime.date.today().isoformat(),
+                    "lang": lang,
+                    "slug": slug_2,
+                    "title": data["title"],
+                    "topic": topic_2,
+                    "file": f"articles/{slug_2}-{lang}.html"
+                })
+                print(f"  ✅ Article 2 {lang.upper()} saved")
+            except Exception as e:
+                print(f"  ❌ Article 2 {lang.upper()} failed: {e}")
+    except Exception as e:
+        print(f"  ❌ Article 2 generation failed: {e}")
+
+    with open(meta_path, "w") as f:
+        json.dump(articles_meta, f, indent=2)
+
+    update_index(articles_meta)
+    generate_sitemap(articles_meta)
+    generate_news_sitemap(articles_meta)
+    generate_seo_landing_pages()
+    generate_brand_pages()
+    generate_about_page()
+    generate_faq_page()
+    generate_claim_review_page()
+    generate_llms_txt()
+    generate_enhanced_robots()
+    print(f"\n🎉 Done! 2 topics × 5 languages = 10 new pages today!")
 
 if __name__ == "__main__":
     main()
