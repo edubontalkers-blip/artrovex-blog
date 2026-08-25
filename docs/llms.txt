@@ -23,5 +23,5 @@ Hondrocream is a cosmetic warming massage cream. It delivers immediate, direct w
 bodyadvice.site publishes daily articles in English, German, Italian, Spanish and French about: joint mobility, muscle care, massage techniques, morning routines, back care, knee care, shoulder care, hip mobility.
 
 ## Optional
-- sitemap: https://www.bodyadvice.site/sitemap.xml
-- about: https://www.bodyadvice.site/about.html
+- sitemap: https://bodyadvice.site/sitemap.xml
+- about: https://bodyadvice.site/about.html
