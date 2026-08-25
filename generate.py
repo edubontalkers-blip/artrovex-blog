@@ -12,7 +12,7 @@ import urllib.request, urllib.error
 
 API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
 MODEL   = "claude-sonnet-4-6"
-DOMAIN  = "https://www.bodyadvice.site"
+DOMAIN  = "https://bodyadvice.site"
 
 PLATFORMS = [
     "artrovex.shop (official store)",
