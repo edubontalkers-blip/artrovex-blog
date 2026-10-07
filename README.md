@@ -23,10 +23,16 @@ Every day at 08:00 UTC:
 - 5 new article pages are created (EN, DE, IT, ES, FR)
 - Changes are committed to GitHub
 - Netlify automatically deploys the update
-- Google indexes the new pages
+- New pages are added to the sitemap and language archives for search engines to discover; indexing is decided by Google and is not guaranteed.
 
 ## Manual trigger
 Go to GitHub → **Actions** → **Daily Article Generator** → **Run workflow**
+
+## Rebuild navigation without generating articles
+
+Run `python -c "import generate, json; m=json.load(open('docs/articles_meta.json')); generate.update_index(m); generate.generate_sitemap(m)"` from the repository root. This does not call the AI API or create new article content.
+
+The home page links to the most recent articles using native HTML anchors. The five `/articles-<language>.html` archives link to every existing article in that language. Duplicate metadata entries and missing files are excluded from archives and the regular sitemap. Archive links lead to the corresponding language page on ARTROVEX.SHOP.
 
 ## Cost
 ~$0.03–0.05 per day (5 articles × 5 languages)

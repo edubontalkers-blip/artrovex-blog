@@ -8,6 +8,8 @@ Includes: fake warning, cream combination tip, FAQ, Schema.org
 """
 
 import os, json, datetime, re, sys
+from html import escape
+from pathlib import Path
 import urllib.request, urllib.error
 
 API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
@@ -372,18 +374,58 @@ footer a{{color:#52c48a;text-decoration:none}}
 </body>
 </html>"""
 
+ARCHIVE_LABELS = {"en": "English", "de": "Deutsch", "it": "Italiano", "es": "Español", "fr": "Français"}
+ARCHIVE_TITLES = {"en": "Wellness articles", "de": "Artikel zu Wohlbefinden und Massage", "it": "Articoli su benessere e massaggio", "es": "Artículos sobre bienestar y masaje", "fr": "Articles sur le bien-être et le massage"}
+SHOP_URLS = {"en": "https://www.artrovex.shop/", "de": "https://www.artrovex.shop/artrovex-original-deutschland", "it": "https://www.artrovex.shop/artrovex-italia", "es": "https://www.artrovex.shop/clientes-espana", "fr": "https://www.artrovex.shop/fr-france"}
+
+def available_articles(articles_meta):
+    """Do not advertise missing pages or duplicate URLs in navigation/sitemaps."""
+    available = {}
+    for m in articles_meta:
+        if m.get("lang") not in LANGS or not re.fullmatch(r"[a-z0-9-]+", m.get("slug", "")):
+            continue
+        filename = f"articles/{m['slug']}-{m['lang']}.html"
+        if Path("docs", filename).is_file():
+            available[filename] = m
+    return sorted(available.values(), key=lambda m: (m["date"], m["slug"], m["lang"]), reverse=True)
+
+def archive_navigation():
+    return " · ".join(f'<a href="/articles-{lang}.html" lang="{lang}">{label}</a>' for lang, label in ARCHIVE_LABELS.items())
+
+def generate_article_archives(articles_meta):
+    articles_meta = available_articles(articles_meta)
+    for lang in LANGS:
+        title = ARCHIVE_TITLES[lang]
+        entries = "\n".join(
+            f'<li><a href="/{escape(m["file"], quote=True)}">{escape(m["title"])}</a> <time datetime="{escape(m["date"], quote=True)}">{escape(m["date"])}</time></li>'
+            for m in articles_meta if m["lang"] == lang
+        )
+        alternates = "\n".join(f'<link rel="alternate" hreflang="{l}" href="{DOMAIN}/articles-{l}.html">' for l in LANGS)
+        html = f'''<!DOCTYPE html>
+<html lang="{lang}"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{title} | Body Advice</title><meta name="description" content="{title} — Body Advice.">
+<link rel="canonical" href="{DOMAIN}/articles-{lang}.html">{alternates}
+<link rel="alternate" hreflang="x-default" href="{DOMAIN}/articles-en.html">
+<style>body{{font:17px/1.6 system-ui,sans-serif;background:#faf8f3;color:#183d2f;margin:0}}header,main,footer{{max-width:900px;margin:auto;padding:24px}}a{{color:#205b43;text-underline-offset:3px}}nav{{display:flex;flex-wrap:wrap;gap:12px;margin-top:16px}}ul{{padding-left:22px}}li{{padding:14px 0;border-bottom:1px solid #d7e2d9}}time{{display:block;font-size:13px;color:#52695e}}a:focus-visible{{outline:3px solid #2d7d5a;outline-offset:4px}}</style></head>
+<body><header><a href="/">Body Advice</a><nav aria-label="Languages">{archive_navigation()}</nav></header>
+<main><h1>{title}</h1><ul>{entries}</ul></main>
+<footer><a href="{SHOP_URLS[lang]}">ARTROVEX &amp; HONDROCREAM</a></footer></body></html>'''
+        Path(f"docs/articles-{lang}.html").write_text(html, encoding="utf-8")
+
 def update_index(articles_meta):
+    articles_meta = available_articles(articles_meta)
+    generate_article_archives(articles_meta)
     cards_html = ""
     for m in sorted(articles_meta, key=lambda x: x["date"], reverse=True)[:120]:
         cards_html += f"""
-    <div class="card" onclick="location.href='articles/{m['slug']}-{m['lang']}.html'">
+    <a class="card" href="articles/{m['slug']}-{m['lang']}.html" lang="{m['lang']}">
       <div class="card-stripe"></div>
       <div class="card-body">
         <div class="card-tag">{m['date']} · {m['lang'].upper()}</div>
-        <div class="card-title">{m['title']}</div>
-        <div class="card-topic">{m['topic']}</div>
+        <div class="card-title">{escape(m['title'])}</div>
+        <div class="card-topic">{escape(m['topic'])}</div>
       </div>
-    </div>"""
+    </a>"""
 
     schema_org = json.dumps({
         "@context": "https://schema.org",
@@ -426,7 +468,10 @@ nav{{background:#183d2f;height:56px;display:flex;align-items:center;justify-cont
 .wrap{{max-width:960px;margin:0 auto;padding:0 16px 50px}}
 .sec-title{{font-family:'Lora',serif;font-size:20px;font-weight:400;color:#183d2f;margin:32px 0 16px;border-bottom:1px solid #e0e8e3;padding-bottom:10px}}
 .grid{{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}}
-.card{{background:#fff;border-radius:10px;overflow:hidden;cursor:pointer;transition:transform .15s;border:1.5px solid #e0e8e3;box-shadow:0 1px 6px rgba(0,0,0,.06)}}
+.card{{display:block;color:inherit;text-decoration:none;background:#fff;border-radius:10px;overflow:hidden;cursor:pointer;transition:transform .15s;border:1.5px solid #e0e8e3;box-shadow:0 1px 6px rgba(0,0,0,.06)}}
+.card:focus-visible{{outline:3px solid #2d7d5a;outline-offset:3px}}
+.language-nav{{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0;font-weight:600}}
+.language-nav a{{color:#205b43;text-underline-offset:3px}}
 .card:hover{{transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,.1)}}
 .card-stripe{{height:4px;background:linear-gradient(90deg,#183d2f,#52c48a)}}
 .card-body{{padding:14px}}
@@ -452,6 +497,7 @@ footer a{{color:#52c48a;text-decoration:none}}
   ⚠️ <strong>Buy only originals:</strong> Artrovex & Hondrocream are available on <strong>artrovex.shop</strong>, <strong>Amazon</strong>, <strong>Etsy</strong>, <strong>TikTok Shop</strong>, <strong>eBay</strong> and <strong>Allegro</strong>. Counterfeits exist — always verify the source.
 </div>
 <div class="wrap">
+  <nav class="language-nav" aria-label="Article languages" style="position:static;background:none;height:auto;padding:0;justify-content:flex-start">{archive_navigation()}</nav>
   <div class="sec-title">Latest Articles</div>
   <div class="grid">{cards_html}</div>
 </div>
@@ -474,6 +520,7 @@ footer a{{color:#52c48a;text-decoration:none}}
     print(f"✅ Index updated with {len(articles_meta)} articles")
 
 def generate_sitemap(articles_meta):
+    articles_meta = available_articles(articles_meta)
     today = datetime.date.today().isoformat()
 
     # Main pages
@@ -530,6 +577,10 @@ def generate_sitemap(articles_meta):
     <priority>0.9</priority>
   </url>"""
 
+    # Language archives make all existing articles reachable from the home page.
+    for lang in LANGS:
+        urls += f"\n  <url><loc>{DOMAIN}/articles-{lang}.html</loc><lastmod>{today}</lastmod></url>"
+
     # Daily articles
     for m in articles_meta:
         urls += f"""
@@ -546,7 +597,7 @@ def generate_sitemap(articles_meta):
 </urlset>"""
     with open("docs/sitemap.xml", "w", encoding="utf-8") as f:
         f.write(sitemap)
-    print(f"✅ sitemap.xml generated — {len(articles_meta) + len(seo_pages) + 4} URLs")
+    print(f"✅ sitemap.xml generated — {len(articles_meta) + len(seo_pages) + 4 + len(LANGS)} URLs")
 
 
 def generate_seo_landing_pages():
