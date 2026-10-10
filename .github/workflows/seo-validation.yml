@@ -39,3 +39,5 @@ jobs:
                       assert not any(n.get("@type") == "Product" and n.get("offers") for n in nodes), "Invalid editorial offer"
           print(f"Validated {len(urls)} sitemap URLs and 10 editorial pages")
           PY
+      - name: Audit internal links, metadata, schema and live sitemap responses
+        run: python scripts/seo_audit.py
