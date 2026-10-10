@@ -2,68 +2,8 @@
   "date": "2026-10-11",
   "scope": "Catalog title triage only; full body medical review not performed",
   "total": 629,
-  "flagged": 226,
+  "flagged": 216,
   "flagged_articles": [
-    {
-      "file": "articles/gluteus-medius-activation-for-hip-drop-correction-de.html",
-      "lang": "de",
-      "title": "Mein linkes Hüftgelenk ist bei jedem Schritt abgesackt – hier ist, was ich geändert habe",
-      "reason": "First-person or claimed personal experience in title requires substantiation"
-    },
-    {
-      "file": "articles/gluteus-medius-activation-for-hip-drop-correction-fr.html",
-      "lang": "fr",
-      "title": "Mon bassin s'affaissait à chaque foulée depuis des années — voilà ce que j'ai compris",
-      "reason": "First-person or claimed personal experience in title requires substantiation"
-    },
-    {
-      "file": "articles/posterior-tibialis-massage-for-inner-arch-walking-fatigue-en.html",
-      "lang": "en",
-      "title": "Why My Inner Arch Aches After Long Classes — And What I Do About It",
-      "reason": "First-person or claimed personal experience in title requires substantiation"
-    },
-    {
-      "file": "articles/posterior-tibialis-massage-for-inner-arch-walking-fatigue-de.html",
-      "lang": "de",
-      "title": "Dieses stumpfe Ziehen am Innenrist nach dem Yoga — mein ehrlicher Umgang damit",
-      "reason": "First-person or claimed personal experience in title requires substantiation"
-    },
-    {
-      "file": "articles/posterior-tibialis-massage-for-inner-arch-walking-fatigue-fr.html",
-      "lang": "fr",
-      "title": "Cette fatigue persistante à l'arche interne du pied après mes cours — ce que je fais vraiment",
-      "reason": "First-person or claimed personal experience in title requires substantiation"
-    },
-    {
-      "file": "articles/trapezius-lower-fibers-activation-for-chronically-hitched-sh-en.html",
-      "lang": "en",
-      "title": "My Shoulders Were Basically Living Up By My Ears — Here's What Actually Helped",
-      "reason": "First-person or claimed personal experience in title requires substantiation"
-    },
-    {
-      "file": "articles/trapezius-lower-fibers-activation-for-chronically-hitched-sh-de.html",
-      "lang": "de",
-      "title": "Meine Schultern saßen jahrelang an meinen Ohren — bis ich angefangen habe, das hier zu tun",
-      "reason": "First-person or claimed personal experience in title requires substantiation"
-    },
-    {
-      "file": "articles/trapezius-lower-fibers-activation-for-chronically-hitched-sh-it.html",
-      "lang": "it",
-      "title": "Tre mesi con le spalle vicino alle orecchie: quello che ho imparato dopo l'operazione al ginocchio",
-      "reason": "First-person or claimed personal experience in title requires substantiation"
-    },
-    {
-      "file": "articles/opponens-pollicis-massage-for-thumb-fatigue-in-gamers-en.html",
-      "lang": "en",
-      "title": "My Thumbs Were Wrecked After Gaming — Here's the Massage I Wish I'd Known About",
-      "reason": "First-person or claimed personal experience in title requires substantiation"
-    },
-    {
-      "file": "articles/opponens-pollicis-massage-for-thumb-fatigue-in-gamers-de.html",
-      "lang": "de",
-      "title": "Mein Daumen hat nach langen Gaming-Sessions gestreikt — diese Massage hat mir geholfen",
-      "reason": "First-person or claimed personal experience in title requires substantiation"
-    },
     {
       "file": "articles/opponens-pollicis-massage-for-thumb-fatigue-in-gamers-es.html",
       "lang": "es",
@@ -1363,7 +1303,8 @@
   ],
   "reviewed_and_rewritten": [
     "toe-flexor-massage-for-tight-curled-toe-tension-relief: five language versions rewritten; medical sourcing still pending",
-    "wrist-flexor-stretches-for-repetitive-typing-strain-recovery: four language versions rewritten; medical sourcing pending"
+    "wrist-flexor-stretches-for-repetitive-typing-strain-recovery: four language versions rewritten; medical sourcing pending",
+    "Batch 1: 10 pages in four topics (hip, foot arch, shoulder, thumb); conservative rewrites, clinical source review pending"
   ],
   "sample_body_review": {
     "sample_size": 12,
