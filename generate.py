@@ -358,12 +358,22 @@ ARCHIVE_LABELS = {"en": "English", "de": "Deutsch", "it": "Italiano", "es": "Esp
 ARCHIVE_TITLES = {"en": "Wellness articles", "de": "Artikel zu Wohlbefinden und Massage", "it": "Articoli su benessere e massaggio", "es": "Artículos sobre bienestar y masaje", "fr": "Articles sur le bien-être et le massage"}
 SHOP_URLS = {"en": "https://www.artrovex.shop/", "de": "https://www.artrovex.shop/artrovex-original-deutschland", "it": "https://www.artrovex.shop/artrovex-italia", "es": "https://www.artrovex.shop/clientes-espana", "fr": "https://www.artrovex.shop/fr-france"}
 
+EDITORIAL_REVIEW_HOLD = set()
+_review_path = Path("audits/title-triage-2026-10-11.json")
+if _review_path.is_file():
+    try:
+        EDITORIAL_REVIEW_HOLD = {entry["file"] for entry in json.loads(_review_path.read_text(encoding="utf-8")).get("flagged_articles", [])}
+    except (ValueError, KeyError, TypeError):
+        raise RuntimeError("Editorial review hold list is malformed; refusing to regenerate indexes")
+
 def available_articles(articles_meta):
     """Do not advertise missing pages or duplicate URLs in navigation/sitemaps."""
     available = {}
     for m in articles_meta:
         if any(x in m.get("slug", "") for x in ("cricoid-cartilage-area-massage", "sternohyoid-release-for-throat")):
             continue  # Withhold unsafe throat self-massage guides from discovery.
+        if m.get("file") in EDITORIAL_REVIEW_HOLD:
+            continue
         if m.get("lang") not in LANGS or not re.fullmatch(r"[a-z0-9-]+", m.get("slug", "")):
             continue
         filename = f"articles/{m['slug']}-{m['lang']}.html"
