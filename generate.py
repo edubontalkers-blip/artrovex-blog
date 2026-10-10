@@ -468,7 +468,7 @@ nav{{background:#183d2f;height:56px;display:flex;align-items:center;justify-cont
 .card-tag{{font-size:10px;color:#2d7d5a;letter-spacing:1.5px;text-transform:uppercase;font-weight:600;margin-bottom:5px}}
 .card-title{{font-family:'Lora',serif;font-size:14px;line-height:1.4;color:#1c1c1c}}
 .card-topic{{font-size:11px;color:#888;margin-top:6px}}
-.trust-bar{{background:#fff8e1;border-top:2px solid #ffc107;border-bottom:2px solid #ffc107;padding:14px 20px;text-align:center;font-size:13px;color:#5a3e00}}
+.guide-feature{{display:grid;grid-template-columns:1.25fr .75fr;min-height:260px;margin:34px 0 14px;border-radius:22px;overflow:hidden;background:#e7eee4}}.guide-copy{{padding:clamp(22px,5vw,44px)}}.guide-kicker{{font-size:11px;letter-spacing:2px;color:#347452;font-weight:700}}.guide-copy h2{{font-family:Lora,serif;font-size:clamp(25px,4vw,39px);line-height:1.2;margin:12px 0;color:#173d2e}}.guide-copy p{{color:#435c50;line-height:1.7;margin:0 0 20px}}.guide-links{{display:flex;gap:12px;flex-wrap:wrap}}.guide-links a{{font-size:13px;font-weight:700;color:#176040;text-underline-offset:4px}}.guide-visual{{display:grid;place-items:center;background:radial-gradient(circle at 70% 30%,#f7dfad 0 12%,transparent 13%),linear-gradient(140deg,#d1e6d8,#b8d1c1)}}.guide-visual span{{font-size:110px;color:#f8f7e7}}@media(max-width:640px){{.guide-feature{{grid-template-columns:1fr}}.guide-visual{{height:120px}}}}\n.trust-bar{{background:#fff8e1;border-top:2px solid #ffc107;border-bottom:2px solid #ffc107;padding:14px 20px;text-align:center;font-size:13px;color:#5a3e00}}
 footer{{background:#183d2f;color:rgba(255,255,255,.4);text-align:center;padding:20px;font-size:12px}}
 footer a{{color:#52c48a;text-decoration:none}}
 </style>
@@ -488,6 +488,9 @@ footer a{{color:#52c48a;text-decoration:none}}
 </div>
 <div class="wrap">
   <nav class="language-nav" aria-label="Article languages" style="position:static;background:none;height:auto;padding:0;justify-content:flex-start">{archive_navigation()}</nav>
+  <section class="guide-feature" aria-label="Food and hydration guides">
+    <div class="guide-copy"><span class="guide-kicker">THE EVERYDAY EDIT</span><h2>Small habits, beautifully lived.</h2><p>Explore practical, source-backed guides to drinking enough fluids and eating a varied diet.</p><div class="guide-links"><a href="/guides/hydration-nutrition-de.html" lang="de">Deutsch →</a><a href="/guides/hydration-nutrition-it.html" lang="it">Italiano →</a><a href="/guides/hydration-nutrition-fr.html" lang="fr">Français →</a><a href="/guides/hydration-nutrition-en.html" lang="en">English →</a><a href="/guides/hydration-nutrition-es.html" lang="es">Español →</a></div></div><div class="guide-visual" aria-hidden="true"><span>✳</span></div>
+  </section>
   <div class="sec-title">Latest Articles</div>
   <div class="grid">{cards_html}</div>
 </div>
