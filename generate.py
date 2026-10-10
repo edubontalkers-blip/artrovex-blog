@@ -574,6 +574,12 @@ def generate_sitemap(articles_meta):
     for lang in LANGS:
         urls += f"\n  <url><loc>{DOMAIN}/articles-{lang}.html</loc></url>"
 
+    # Evergreen editorial guides in all published languages.
+    for lang in LANGS:
+        guide_path = f"docs/guides/hydration-nutrition-{lang}.html"
+        if os.path.isfile(guide_path):
+            urls += f"\n  <url><loc>{DOMAIN}/guides/hydration-nutrition-{lang}.html</loc></url>"
+
     # Daily articles
     for m in articles_meta:
         urls += f"""
