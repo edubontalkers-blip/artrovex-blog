@@ -405,15 +405,16 @@ def generate_article_archives(articles_meta):
 def update_index(articles_meta):
     articles_meta = available_articles(articles_meta)
     generate_article_archives(articles_meta)
+    emotion_captions = {"de":["Manchmal beginnt das Gute ganz leise.","Zeit füreinander ist das schönste Geschenk.","Ein kleiner Moment, der bleibt.","Heute zählt das Hier und Jetzt.","Gemeinsam wird der Alltag besonders.","Die Freude steckt im Detail.","Ein Atemzug voller Ruhe.","Ein neuer Blick auf Vertrautes."],"it":["La bellezza vive nei piccoli gesti.","Il tempo insieme è un regalo.","Un momento semplice da ricordare.","Oggi conta ciò che siamo.","La quotidianità diventa speciale insieme.","La gioia è nei dettagli.","Un respiro di tranquillità.","Riscoprire ciò che ci circonda."],"fr":["La beauté tient aux petits gestes.","Le temps partagé est précieux.","Un instant simple qui reste.","Aujourd’hui, savourer le présent.","Ensemble, l’ordinaire devient unique.","La joie se cache dans les détails.","Une parenthèse de calme.","Redécouvrir les choses familières."],"en":["The little moments stay with us.","Time together is a gift.","A simple moment worth keeping.","Here is where life happens.","Together makes ordinary extraordinary.","Joy lives in the details.","A quiet moment to breathe.","Finding wonder in the familiar."],"es":["La belleza está en los pequeños gestos.","Compartir tiempo es un regalo.","Un instante sencillo que permanece.","Hoy importa estar aquí.","Juntos, lo cotidiano es especial.","La alegría vive en los detalles.","Un momento para respirar.","Redescubrir lo que nos rodea."]}
     cards_html = ""
-    for m in sorted(articles_meta, key=lambda x: x["date"], reverse=True)[:120]:
+    for card_index, m in enumerate(sorted(articles_meta, key=lambda x: x["date"], reverse=True)[:120]):\n        emotion = emotion_captions.get(m["lang"], emotion_captions["en"])[card_index % 8]
         cards_html += f"""
     <a class="card" href="articles/{m['slug']}-{m['lang']}.html" lang="{m['lang']}">
       <div class="card-art" aria-hidden="true">✦</div>
       <div class="card-body">
         <div class="card-tag">{m['date']} · {m['lang'].upper()}</div>
         <div class="card-title">{escape(m['title'])}</div>
-        <div class="card-topic">{escape(m['topic'])}</div>
+        <div class="card-topic">{escape(m['topic'])}</div>\n        <div class="card-emotion">{escape(emotion)}</div>
       </div>
     </a>"""
 
@@ -467,7 +468,7 @@ nav{{background:#183d2f;height:56px;display:flex;align-items:center;justify-cont
 .card-body{{padding:14px}}
 .card-tag{{font-size:10px;color:#2d7d5a;letter-spacing:1.5px;text-transform:uppercase;font-weight:600;margin-bottom:5px}}
 .card-title{{font-family:'Lora',serif;font-size:14px;line-height:1.4;color:#1c1c1c}}
-.card-topic{{font-size:11px;color:#888;margin-top:6px}}
+.card-topic{{font-size:11px;color:#888;margin-top:6px}}\n.card-emotion{{font-family:Lora,serif;font-size:13px;font-style:italic;color:#446b57;margin-top:12px;padding-top:10px;border-top:1px solid #e8eee8;line-height:1.5}}
 .guide-feature{{display:grid;grid-template-columns:1.25fr .75fr;min-height:260px;margin:34px 0 14px;border-radius:22px;overflow:hidden;background:#e7eee4}}.guide-copy{{padding:clamp(22px,5vw,44px)}}.guide-kicker{{font-size:11px;letter-spacing:2px;color:#347452;font-weight:700}}.guide-copy h2{{font-family:Lora,serif;font-size:clamp(25px,4vw,39px);line-height:1.2;margin:12px 0;color:#173d2e}}.guide-copy p{{color:#435c50;line-height:1.7;margin:0 0 20px}}.guide-links{{display:flex;gap:12px;flex-wrap:wrap}}.guide-links a{{font-size:13px;font-weight:700;color:#176040;text-underline-offset:4px}}.guide-visual{{display:grid;place-items:center;background:radial-gradient(circle at 70% 30%,#f7dfad 0 12%,transparent 13%),linear-gradient(140deg,#d1e6d8,#b8d1c1)}}.guide-visual span{{font-size:110px;color:#f8f7e7}}@media(max-width:640px){{.guide-feature{{grid-template-columns:1fr}}.guide-visual{{height:120px}}}}\n.trust-bar{{background:#fff8e1;border-top:2px solid #ffc107;border-bottom:2px solid #ffc107;padding:14px 20px;text-align:center;font-size:13px;color:#5a3e00}}
 footer{{background:#183d2f;color:rgba(255,255,255,.4);text-align:center;padding:20px;font-size:12px}}
 footer a{{color:#52c48a;text-decoration:none}}
