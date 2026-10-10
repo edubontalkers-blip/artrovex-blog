@@ -33,6 +33,9 @@ jobs:
       - name: Normalize editorial author attribution
         run: python scripts/normalize_editorial_authors.py
 
+      - name: Validate editorial integrity
+        run: python scripts/audit_editorial_integrity.py
+
       - name: Commit and push new articles
         run: |
           git config user.name "Artrovex Bot"
