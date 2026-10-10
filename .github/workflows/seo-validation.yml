@@ -5,12 +5,16 @@ on:
     branches: [main]
     paths:
       - 'scripts/seo_audit.py'
+      - 'scripts/audit_editorial_integrity.py'
+      - 'scripts/normalize_editorial_authors.py'
       - 'scripts/normalize_seo.py'
       - 'generate.py'
       - 'docs/**'
   pull_request:
     paths:
       - 'generate.py'
+      - 'scripts/audit_editorial_integrity.py'
+      - 'scripts/normalize_editorial_authors.py'
       - 'docs/**'
       - '.github/workflows/seo-validation.yml'
   workflow_dispatch:
@@ -46,6 +50,10 @@ jobs:
                       assert not any(n.get("@type") == "Product" and n.get("offers") for n in nodes), "Invalid editorial offer"
           print(f"Validated {len(urls)} sitemap URLs and 10 editorial pages")
           PY
+      - name: Normalize article author metadata in temporary CI checkout
+        run: python scripts/normalize_editorial_authors.py
+      - name: Check editorial guide presence and generator integrity
+        run: python scripts/audit_editorial_integrity.py
       - name: Normalize SEO metadata in temporary CI checkout
         run: python scripts/normalize_seo.py
       - name: Audit internal links, metadata, schema and live sitemap responses
