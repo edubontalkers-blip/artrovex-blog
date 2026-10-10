@@ -2,32 +2,8 @@
   "date": "2026-10-11",
   "scope": "Catalog title triage only; full body medical review not performed",
   "total": 629,
-  "flagged": 233,
+  "flagged": 229,
   "flagged_articles": [
-    {
-      "file": "articles/wrist-flexor-stretches-for-repetitive-typing-strain-recovery-en.html",
-      "lang": "en",
-      "title": "My Wrists Were Screaming After 6 Hours of Typing — Here's What Actually Helped",
-      "reason": "First-person or claimed personal experience in title requires substantiation"
-    },
-    {
-      "file": "articles/wrist-flexor-stretches-for-repetitive-typing-strain-recovery-de.html",
-      "lang": "de",
-      "title": "Handgelenke nach stundenlangem Tippen wieder beweglich machen — mein ehrlicher Erfahrungsbericht",
-      "reason": "First-person or claimed personal experience in title requires substantiation"
-    },
-    {
-      "file": "articles/wrist-flexor-stretches-for-repetitive-typing-strain-recovery-it.html",
-      "lang": "it",
-      "title": "Polsi a pezzi dopo ore di tastiera: quello che ho imparato a 48 anni su me stesso",
-      "reason": "First-person or claimed personal experience in title requires substantiation"
-    },
-    {
-      "file": "articles/wrist-flexor-stretches-for-repetitive-typing-strain-recovery-fr.html",
-      "lang": "fr",
-      "title": "Après des heures à taper sur un clavier, mes poignets ont fini par craquer — voilà ce que j'ai fait",
-      "reason": "First-person or claimed personal experience in title requires substantiation"
-    },
     {
       "file": "articles/multifidus-activation-exercises-for-lumbar-spine-stability-i-en.html",
       "lang": "en",
@@ -1404,7 +1380,8 @@
     }
   ],
   "reviewed_and_rewritten": [
-    "toe-flexor-massage-for-tight-curled-toe-tension-relief: five language versions rewritten; medical sourcing still pending"
+    "toe-flexor-massage-for-tight-curled-toe-tension-relief: five language versions rewritten; medical sourcing still pending",
+    "wrist-flexor-stretches-for-repetitive-typing-strain-recovery: four language versions rewritten; medical sourcing pending"
   ],
   "sample_body_review": {
     "sample_size": 12,
