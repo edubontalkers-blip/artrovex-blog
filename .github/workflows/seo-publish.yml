@@ -1,0 +1,40 @@
+name: Publish normalized SEO metadata
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/normalize_seo.py'
+      - 'generate.py'
+      - 'docs/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: seo-normalization-main
+  cancel-in-progress: false
+
+jobs:
+  normalize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Normalize all HTML canonical and hreflang
+        run: python scripts/normalize_seo.py
+      - name: Audit normalized pages
+        run: python scripts/seo_audit.py
+      - name: Commit and push normalized HTML
+        run: |
+          git config user.name "Body Advice SEO Bot"
+          git config user.email "bot@bodyadvice.site"
+          git add docs
+          if ! git diff --cached --quiet; then
+            git commit -m "Normalize canonical and hreflang in published pages"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
