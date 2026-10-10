@@ -7,9 +7,9 @@ import sys
 root = Path(__file__).resolve().parents[1]
 generator = (root / "generate.py").read_text(encoding="utf-8")
 issues = []
-if 'author_name = authors.get(lang, authors["en"])' in generator:
+if 'author_name = authors.get(lang, authors["en"])' in generator or "authors_by_lang = {" in generator:
     issues.append("Generator still assigns unverified personal bylines.")
-if '"@type": "Person"' in generator and '"jobTitle": "Wellness Blogger"' in generator:
+if '"jobTitle": "Wellness Blogger"' in generator:
     issues.append("Generator presents unverified authors as Person in Article schema.")
 if 'meta name="keywords"' in generator[generator.find("def update_index("):generator.find("def generate_sitemap(")]:
     issues.append("Homepage generator still includes meta keyword stuffing.")
