@@ -1,0 +1,759 @@
+{
+  "batch": 1,
+  "size": 50,
+  "remaining_after_batch": 166,
+  "scope": "Editorial processing, not approval for indexing",
+  "note": "First 20 pages have preliminary rewrites; remaining 30 have noindex editorial notices and require substantive content. No page should be released based on this manifest alone.",
+  "items": [
+    {
+      "file": "articles/opponens-pollicis-massage-for-thumb-fatigue-in-gamers-es.html",
+      "lang": "es",
+      "original_title": "Me dolía el pulgar después de ver horas de vídeo táctico — así descubrí este masaje",
+      "stage": "rewritten_draft_requires_sources_and_editorial_qa",
+      "indexing": "noindex_until_review",
+      "checks": [
+        "medical source verification",
+        "native language editing",
+        "topic specificity",
+        "internal links and metadata",
+        "mobile layout",
+        "final SEO validation"
+      ]
+    },
+    {
+      "file": "articles/deltoid-massage-for-sore-overhead-lifting-recovery-en.html",
+      "lang": "en",
+      "original_title": "Deltoid Recovery After Overhead Lifting: What Actually Works in My Massage Room",
+      "stage": "rewritten_draft_requires_sources_and_editorial_qa",
+      "indexing": "noindex_until_review",
+      "checks": [
+        "medical source verification",
+        "native language editing",
+        "topic specificity",
+        "internal links and metadata",
+        "mobile layout",
+        "final SEO validation"
+      ]
+    },
+    {
+      "file": "articles/deltoid-massage-for-sore-overhead-lifting-recovery-de.html",
+      "lang": "de",
+      "original_title": "Deltoidmassage nach Überkopftraining: Was ich in meiner Praxis wirklich verwende",
+      "stage": "rewritten_draft_requires_sources_and_editorial_qa",
+      "indexing": "noindex_until_review",
+      "checks": [
+        "medical source verification",
+        "native language editing",
+        "topic specificity",
+        "internal links and metadata",
+        "mobile layout",
+        "final SEO validation"
+      ]
+    },
+    {
+      "file": "articles/deltoid-massage-for-sore-overhead-lifting-recovery-it.html",
+      "lang": "it",
+      "original_title": "Massaggio al Deltoide Dopo Sollevamenti Overhead: La Mia Routine Onesta da Terapista",
+      "stage": "rewritten_draft_requires_sources_and_editorial_qa",
+      "indexing": "noindex_until_review",
+      "checks": [
+        "medical source verification",
+        "native language editing",
+        "topic specificity",
+        "internal links and metadata",
+        "mobile layout",
+        "final SEO validation"
+      ]
+    },
+    {
+      "file": "articles/deltoid-massage-for-sore-overhead-lifting-recovery-es.html",
+      "lang": "es",
+      "original_title": "Masaje en el Deltoides Después de Press por Encima: Lo Que Uso Realmente con Mis Clientes",
+      "stage": "rewritten_draft_requires_sources_and_editorial_qa",
+      "indexing": "noindex_until_review",
+      "checks": [
+        "medical source verification",
+        "native language editing",
+        "topic specificity",
+        "internal links and metadata",
+        "mobile layout",
+        "final SEO validation"
+      ]
+    },
+    {
+      "file": "articles/rhomboid-stretches-for-persistent-mid-back-shoulder-blade-ac-en.html",
+      "lang": "en",
+      "original_title": "My Rhomboid Finally Stopped Screaming — Here's What Actually Helped",
+      "stage": "rewritten_draft_requires_sources_and_editorial_qa",
+      "indexing": "noindex_until_review",
+      "checks": [
+        "medical source verification",
+        "native language editing",
+        "topic specificity",
+        "internal links and metadata",
+        "mobile layout",
+        "final SEO validation"
+      ]
+    },
+    {
+      "file": "articles/rhomboid-stretches-for-persistent-mid-back-shoulder-blade-ac-de.html",
+      "lang": "de",
+      "original_title": "Drei Jahre Verspannung zwischen den Schulterblättern — bis ich das hier ausprobiert habe",
+      "stage": "rewritten_draft_requires_sources_and_editorial_qa",
+      "indexing": "noindex_until_review",
+      "checks": [
+        "medical source verification",
+        "native language editing",
+        "topic specificity",
+        "internal links and metadata",
+        "mobile layout",
+        "final SEO validation"
+      ]
+    },
+    {
+      "file": "articles/rhomboid-stretches-for-persistent-mid-back-shoulder-blade-ac-fr.html",
+      "lang": "fr",
+      "original_title": "Cette douleur sourde entre les omoplates que j'ai mis des mois à prendre au sérieux",
+      "stage": "rewritten_draft_requires_sources_and_editorial_qa",
+      "indexing": "noindex_until_review",
+      "checks": [
+        "medical source verification",
+        "native language editing",
+        "topic specificity",
+        "internal links and metadata",
+        "mobile layout",
+        "final SEO validation"
+      ]
+    },
+    {
+      "file": "articles/flexor-digitorum-release-for-forearm-typing-fatigue-en.html",
+      "lang": "en",
+      "original_title": "My Forearms Were Screaming After 6 Hours of Typing — Here's What Actually Helped",
+      "stage": "rewritten_draft_requires_sources_and_editorial_qa",
+      "indexing": "noindex_until_review",
+      "checks": [
+        "medical source verification",
+        "native language editing",
+        "topic specificity",
+        "internal links and metadata",
+        "mobile layout",
+        "final SEO validation"
+      ]
+    },
+    {
+      "file": "articles/flexor-digitorum-release-for-forearm-typing-fatigue-de.html",
+      "lang": "de",
+      "original_title": "Meine Unterarme nach 8 Stunden Tippen — was mir wirklich geholfen hat",
+      "stage": "rewritten_draft_requires_sources_and_editorial_qa",
+      "indexing": "noindex_until_review",
+      "checks": [
+        "medical source verification",
+        "native language editing",
+        "topic specificity",
+        "internal links and metadata",
+        "mobile layout",
+        "final SEO validation"
+      ]
+    },
+    {
+      "file": "articles/flexor-digitorum-release-for-forearm-typing-fatigue-fr.html",
+      "lang": "fr",
+      "original_title": "J'ai tapé pendant sept heures sans pause — ce que mes avant-bras m'ont appris",
+      "stage": "rewritten_draft_requires_sources_and_editorial_qa",
+      "indexing": "noindex_until_review",
+      "checks": [
+        "medical source verification",
+        "native language editing",
+        "topic specificity",
+        "internal links and metadata",
+        "mobile layout",
+        "final SEO validation"
+      ]
+    },
+    {
+      "file": "articles/supinator-muscle-release-for-stubborn-outer-forearm-twisting-en.html",
+      "lang": "en",
+      "original_title": "Why Your Outer Forearm Won't Stop Twisting Tight — And What I Do About It",
+      "stage": "rewritten_draft_requires_sources_and_editorial_qa",
+      "indexing": "noindex_until_review",
+      "checks": [
+        "medical source verification",
+        "native language editing",
+        "topic specificity",
+        "internal links and metadata",
+        "mobile layout",
+        "final SEO validation"
+      ]
+    },
+    {
+      "file": "articles/supinator-muscle-release-for-stubborn-outer-forearm-twisting-de.html",
+      "lang": "de",
+      "original_title": "Dieses hartnäckige Kribbeln im Unterarm beim Drehen — hier ist, was ich dagegen tue",
+      "stage": "rewritten_draft_requires_sources_and_editorial_qa",
+      "indexing": "noindex_until_review",
+      "checks": [
+        "medical source verification",
+        "native language editing",
+        "topic specificity",
+        "internal links and metadata",
+        "mobile layout",
+        "final SEO validation"
+      ]
+    },
+    {
+      "file": "articles/supinator-muscle-release-for-stubborn-outer-forearm-twisting-it.html",
+      "lang": "it",
+      "original_title": "Quella tensione ostinata all'avambraccio esterno durante la rotazione — ecco la mia routine",
+      "stage": "rewritten_draft_requires_sources_and_editorial_qa",
+      "indexing": "noindex_until_review",
+      "checks": [
+        "medical source verification",
+        "native language editing",
+        "topic specificity",
+        "internal links and metadata",
+        "mobile layout",
+        "final SEO validation"
+      ]
+    },
+    {
+      "file": "articles/supinator-muscle-release-for-stubborn-outer-forearm-twisting-fr.html",
+      "lang": "fr",
+      "original_title": "Cette raideur tenace à l'avant-bras externe en rotation — ma routine pour enfin la déloger",
+      "stage": "rewritten_draft_requires_sources_and_editorial_qa",
+      "indexing": "noindex_until_review",
+      "checks": [
+        "medical source verification",
+        "native language editing",
+        "topic specificity",
+        "internal links and metadata",
+        "mobile layout",
+        "final SEO validation"
+      ]
+    },
+    {
+      "file": "articles/flexor-hallucis-longus-massage-for-big-toe-stiffness-en.html",
+      "lang": "en",
+      "original_title": "My Big Toe Was Locking Up After Every Morning Run — Here's What Actually Helped",
+      "stage": "rewritten_draft_requires_sources_and_editorial_qa",
+      "indexing": "noindex_until_review",
+      "checks": [
+        "medical source verification",
+        "native language editing",
+        "topic specificity",
+        "internal links and metadata",
+        "mobile layout",
+        "final SEO validation"
+      ]
+    },
+    {
+      "file": "articles/flexor-hallucis-longus-massage-for-big-toe-stiffness-de.html",
+      "lang": "de",
+      "original_title": "Warum Mein Großer Zeh Jeden Morgen Steif War — Und Was Ich Dagegen Tue",
+      "stage": "rewritten_draft_requires_sources_and_editorial_qa",
+      "indexing": "noindex_until_review",
+      "checks": [
+        "medical source verification",
+        "native language editing",
+        "topic specificity",
+        "internal links and metadata",
+        "mobile layout",
+        "final SEO validation"
+      ]
+    },
+    {
+      "file": "articles/flexor-hallucis-longus-massage-for-big-toe-stiffness-it.html",
+      "lang": "it",
+      "original_title": "L'Alluce Bloccato al Mattino: Come Ho Imparato a Lavorare sul Flessore Lungo",
+      "stage": "rewritten_draft_requires_sources_and_editorial_qa",
+      "indexing": "noindex_until_review",
+      "checks": [
+        "medical source verification",
+        "native language editing",
+        "topic specificity",
+        "internal links and metadata",
+        "mobile layout",
+        "final SEO validation"
+      ]
+    },
+    {
+      "file": "articles/flexor-hallucis-longus-massage-for-big-toe-stiffness-fr.html",
+      "lang": "fr",
+      "original_title": "Mon Gros Orteil Refusait de Plier le Matin — Ce Que J'Ai Appris sur le Fléchisseur Long",
+      "stage": "rewritten_draft_requires_sources_and_editorial_qa",
+      "indexing": "noindex_until_review",
+      "checks": [
+        "medical source verification",
+        "native language editing",
+        "topic specificity",
+        "internal links and metadata",
+        "mobile layout",
+        "final SEO validation"
+      ]
+    },
+    {
+      "file": "articles/splenius-capitis-release-for-persistent-upper-neck-rotation--en.html",
+      "lang": "en",
+      "original_title": "My Splenius Capitis Nightmare — And What Finally Made a Difference",
+      "stage": "rewritten_draft_requires_sources_and_editorial_qa",
+      "indexing": "noindex_until_review",
+      "checks": [
+        "medical source verification",
+        "native language editing",
+        "topic specificity",
+        "internal links and metadata",
+        "mobile layout",
+        "final SEO validation"
+      ]
+    },
+    {
+      "file": "articles/splenius-capitis-release-for-persistent-upper-neck-rotation--de.html",
+      "lang": "de",
+      "original_title": "Steifer Nacken beim Kopfdrehen — was ich nach Jahren endlich in meine Abendroutine aufgenommen habe",
+      "stage": "quarantined_requires_full_rewrite",
+      "indexing": "noindex_until_review",
+      "checks": [
+        "medical source verification",
+        "native language editing",
+        "topic specificity",
+        "internal links and metadata",
+        "mobile layout",
+        "final SEO validation"
+      ]
+    },
+    {
+      "file": "articles/splenius-capitis-release-for-persistent-upper-neck-rotation--es.html",
+      "lang": "es",
+      "original_title": "Ese viaje en tren donde no podía girar el cuello — mi rutina actual para el splenius capitis",
+      "stage": "quarantined_requires_full_rewrite",
+      "indexing": "noindex_until_review",
+      "checks": [
+        "medical source verification",
+        "native language editing",
+        "topic specificity",
+        "internal links and metadata",
+        "mobile layout",
+        "final SEO validation"
+      ]
+    },
+    {
+      "file": "articles/splenius-capitis-release-for-persistent-upper-neck-rotation--fr.html",
+      "lang": "fr",
+      "original_title": "Le matin où j'ai réalisé que je ne pouvais plus tourner la tête à gauche — ce que j'ai mis en place depuis",
+      "stage": "quarantined_requires_full_rewrite",
+      "indexing": "noindex_until_review",
+      "checks": [
+        "medical source verification",
+        "native language editing",
+        "topic specificity",
+        "internal links and metadata",
+        "mobile layout",
+        "final SEO validation"
+      ]
+    },
+    {
+      "file": "articles/psoas-release-stretches-for-tight-morning-hip-extension-en.html",
+      "lang": "en",
+      "original_title": "Why My Hips Feel Like Concrete Every Morning — And What I Actually Do About It",
+      "stage": "quarantined_requires_full_rewrite",
+      "indexing": "noindex_until_review",
+      "checks": [
+        "medical source verification",
+        "native language editing",
+        "topic specificity",
+        "internal links and metadata",
+        "mobile layout",
+        "final SEO validation"
+      ]
+    },
+    {
+      "file": "articles/psoas-release-stretches-for-tight-morning-hip-extension-de.html",
+      "lang": "de",
+      "original_title": "Meine Hüfte morgens – warum der erste Schritt aus dem Bett manchmal wehtut",
+      "stage": "quarantined_requires_full_rewrite",
+      "indexing": "noindex_until_review",
+      "checks": [
+        "medical source verification",
+        "native language editing",
+        "topic specificity",
+        "internal links and metadata",
+        "mobile layout",
+        "final SEO validation"
+      ]
+    },
+    {
+      "file": "articles/psoas-release-stretches-for-tight-morning-hip-extension-fr.html",
+      "lang": "fr",
+      "original_title": "Ma hanche gauche qui refuse de se réveiller — et ma routine de cinq minutes pour y remédier",
+      "stage": "quarantined_requires_full_rewrite",
+      "indexing": "noindex_until_review",
+      "checks": [
+        "medical source verification",
+        "native language editing",
+        "topic specificity",
+        "internal links and metadata",
+        "mobile layout",
+        "final SEO validation"
+      ]
+    },
+    {
+      "file": "articles/lumbrical-hand-exercises-for-better-finger-spreading-control-en.html",
+      "lang": "en",
+      "original_title": "Lumbrical Hand Exercises: How I Finally Got My Fingers to Listen",
+      "stage": "quarantined_requires_full_rewrite",
+      "indexing": "noindex_until_review",
+      "checks": [
+        "medical source verification",
+        "native language editing",
+        "topic specificity",
+        "internal links and metadata",
+        "mobile layout",
+        "final SEO validation"
+      ]
+    },
+    {
+      "file": "articles/lumbrical-hand-exercises-for-better-finger-spreading-control-de.html",
+      "lang": "de",
+      "original_title": "Lumbrikal-Übungen: Warum meine Finger endlich das tun, was ich will",
+      "stage": "quarantined_requires_full_rewrite",
+      "indexing": "noindex_until_review",
+      "checks": [
+        "medical source verification",
+        "native language editing",
+        "topic specificity",
+        "internal links and metadata",
+        "mobile layout",
+        "final SEO validation"
+      ]
+    },
+    {
+      "file": "articles/lumbrical-hand-exercises-for-better-finger-spreading-control-fr.html",
+      "lang": "fr",
+      "original_title": "Exercices lombricaux : ce que mes doigts m'ont appris le jour où j'ai renversé mon café",
+      "stage": "quarantined_requires_full_rewrite",
+      "indexing": "noindex_until_review",
+      "checks": [
+        "medical source verification",
+        "native language editing",
+        "topic specificity",
+        "internal links and metadata",
+        "mobile layout",
+        "final SEO validation"
+      ]
+    },
+    {
+      "file": "articles/adductor-magnus-release-for-inner-thigh-sitting-discomfort-en.html",
+      "lang": "en",
+      "original_title": "Why My Inner Thighs Ache After Sitting All Day — And What I Do About It",
+      "stage": "quarantined_requires_full_rewrite",
+      "indexing": "noindex_until_review",
+      "checks": [
+        "medical source verification",
+        "native language editing",
+        "topic specificity",
+        "internal links and metadata",
+        "mobile layout",
+        "final SEO validation"
+      ]
+    },
+    {
+      "file": "articles/adductor-magnus-release-for-inner-thigh-sitting-discomfort-de.html",
+      "lang": "de",
+      "original_title": "Dieses dumpfe Gefühl an der Innenseite des Oberschenkels nach dem Sitzen — endlich verstehe ich, was dahintersteckt",
+      "stage": "quarantined_requires_full_rewrite",
+      "indexing": "noindex_until_review",
+      "checks": [
+        "medical source verification",
+        "native language editing",
+        "topic specificity",
+        "internal links and metadata",
+        "mobile layout",
+        "final SEO validation"
+      ]
+    },
+    {
+      "file": "articles/adductor-magnus-release-for-inner-thigh-sitting-discomfort-fr.html",
+      "lang": "fr",
+      "original_title": "Cette gêne persistante à l'intérieur de la cuisse après une journée au bureau — voilà ce que j'ai compris",
+      "stage": "quarantined_requires_full_rewrite",
+      "indexing": "noindex_until_review",
+      "checks": [
+        "medical source verification",
+        "native language editing",
+        "topic specificity",
+        "internal links and metadata",
+        "mobile layout",
+        "final SEO validation"
+      ]
+    },
+    {
+      "file": "articles/gracilis-muscle-stretches-for-inner-knee-walking-comfort-en.html",
+      "lang": "en",
+      "original_title": "Why My Inner Knee Ached on Every Morning Walk (And What Finally Helped)",
+      "stage": "quarantined_requires_full_rewrite",
+      "indexing": "noindex_until_review",
+      "checks": [
+        "medical source verification",
+        "native language editing",
+        "topic specificity",
+        "internal links and metadata",
+        "mobile layout",
+        "final SEO validation"
+      ]
+    },
+    {
+      "file": "articles/gracilis-muscle-stretches-for-inner-knee-walking-comfort-de.html",
+      "lang": "de",
+      "original_title": "Mein inneres Knie beim Spazieren — wie ich nach Jahren endlich verstanden habe, was dahintersteckt",
+      "stage": "quarantined_requires_full_rewrite",
+      "indexing": "noindex_until_review",
+      "checks": [
+        "medical source verification",
+        "native language editing",
+        "topic specificity",
+        "internal links and metadata",
+        "mobile layout",
+        "final SEO validation"
+      ]
+    },
+    {
+      "file": "articles/gracilis-muscle-stretches-for-inner-knee-walking-comfort-it.html",
+      "lang": "it",
+      "original_title": "Quel dolore al ginocchio interno durante le passeggiate: come ho imparato ad ascoltare il muscolo gracile",
+      "stage": "quarantined_requires_full_rewrite",
+      "indexing": "noindex_until_review",
+      "checks": [
+        "medical source verification",
+        "native language editing",
+        "topic specificity",
+        "internal links and metadata",
+        "mobile layout",
+        "final SEO validation"
+      ]
+    },
+    {
+      "file": "articles/gracilis-muscle-stretches-for-inner-knee-walking-comfort-es.html",
+      "lang": "es",
+      "original_title": "Por qué me dolía la parte interna de la rodilla al caminar y lo que cambié en mi rutina de yoga",
+      "stage": "quarantined_requires_full_rewrite",
+      "indexing": "noindex_until_review",
+      "checks": [
+        "medical source verification",
+        "native language editing",
+        "topic specificity",
+        "internal links and metadata",
+        "mobile layout",
+        "final SEO validation"
+      ]
+    },
+    {
+      "file": "articles/gracilis-muscle-stretches-for-inner-knee-walking-comfort-fr.html",
+      "lang": "fr",
+      "original_title": "Cette gêne à l'intérieur du genou en marchant — ce que j'ai compris après des années de yoga",
+      "stage": "quarantined_requires_full_rewrite",
+      "indexing": "noindex_until_review",
+      "checks": [
+        "medical source verification",
+        "native language editing",
+        "topic specificity",
+        "internal links and metadata",
+        "mobile layout",
+        "final SEO validation"
+      ]
+    },
+    {
+      "file": "articles/extensor-carpi-ulnaris-massage-for-outer-wrist-typing-fatigu-en.html",
+      "lang": "en",
+      "original_title": "My Outer Wrist Was Screaming After Hours of Typing — Here's What Actually Helped",
+      "stage": "quarantined_requires_full_rewrite",
+      "indexing": "noindex_until_review",
+      "checks": [
+        "medical source verification",
+        "native language editing",
+        "topic specificity",
+        "internal links and metadata",
+        "mobile layout",
+        "final SEO validation"
+      ]
+    },
+    {
+      "file": "articles/extensor-carpi-ulnaris-massage-for-outer-wrist-typing-fatigu-de.html",
+      "lang": "de",
+      "original_title": "Mein Handgelenk hat nach dem Tippen gestreikt — was ich jetzt täglich mache",
+      "stage": "quarantined_requires_full_rewrite",
+      "indexing": "noindex_until_review",
+      "checks": [
+        "medical source verification",
+        "native language editing",
+        "topic specificity",
+        "internal links and metadata",
+        "mobile layout",
+        "final SEO validation"
+      ]
+    },
+    {
+      "file": "articles/extensor-carpi-ulnaris-massage-for-outer-wrist-typing-fatigu-fr.html",
+      "lang": "fr",
+      "original_title": "Je suis professeure de yoga et j'ai mis des mois à réaliser que mon poignet me suppliait d'arrêter",
+      "stage": "quarantined_requires_full_rewrite",
+      "indexing": "noindex_until_review",
+      "checks": [
+        "medical source verification",
+        "native language editing",
+        "topic specificity",
+        "internal links and metadata",
+        "mobile layout",
+        "final SEO validation"
+      ]
+    },
+    {
+      "file": "articles/pronator-teres-release-for-forearm-rotation-desk-fatigue-en.html",
+      "lang": "en",
+      "original_title": "My Forearms Were Screaming After 6 Hours at My Desk — Here's What Actually Helped",
+      "stage": "quarantined_requires_full_rewrite",
+      "indexing": "noindex_until_review",
+      "checks": [
+        "medical source verification",
+        "native language editing",
+        "topic specificity",
+        "internal links and metadata",
+        "mobile layout",
+        "final SEO validation"
+      ]
+    },
+    {
+      "file": "articles/pronator-teres-release-for-forearm-rotation-desk-fatigue-de.html",
+      "lang": "de",
+      "original_title": "Meine Unterarme Nach Stunden am Schreibtisch — Was Mir Wirklich Geholfen Hat",
+      "stage": "quarantined_requires_full_rewrite",
+      "indexing": "noindex_until_review",
+      "checks": [
+        "medical source verification",
+        "native language editing",
+        "topic specificity",
+        "internal links and metadata",
+        "mobile layout",
+        "final SEO validation"
+      ]
+    },
+    {
+      "file": "articles/pronator-teres-release-for-forearm-rotation-desk-fatigue-fr.html",
+      "lang": "fr",
+      "original_title": "Mon Avant-Bras Refusait de Tourner Correctement — Voilà Ce que J'ai Fait",
+      "stage": "quarantined_requires_full_rewrite",
+      "indexing": "noindex_until_review",
+      "checks": [
+        "medical source verification",
+        "native language editing",
+        "topic specificity",
+        "internal links and metadata",
+        "mobile layout",
+        "final SEO validation"
+      ]
+    },
+    {
+      "file": "articles/vastus-medialis-massage-for-inner-knee-cap-discomfort-en.html",
+      "lang": "en",
+      "original_title": "My Vastus Medialis Massage Routine After Years of Inner Knee Discomfort",
+      "stage": "quarantined_requires_full_rewrite",
+      "indexing": "noindex_until_review",
+      "checks": [
+        "medical source verification",
+        "native language editing",
+        "topic specificity",
+        "internal links and metadata",
+        "mobile layout",
+        "final SEO validation"
+      ]
+    },
+    {
+      "file": "articles/vastus-medialis-massage-for-inner-knee-cap-discomfort-de.html",
+      "lang": "de",
+      "original_title": "Warum ich nach meiner Knieverletzung angefangen habe, den Vastus medialis täglich zu massieren",
+      "stage": "quarantined_requires_full_rewrite",
+      "indexing": "noindex_until_review",
+      "checks": [
+        "medical source verification",
+        "native language editing",
+        "topic specificity",
+        "internal links and metadata",
+        "mobile layout",
+        "final SEO validation"
+      ]
+    },
+    {
+      "file": "articles/vastus-medialis-massage-for-inner-knee-cap-discomfort-it.html",
+      "lang": "it",
+      "original_title": "Cinque minuti al giorno sul vasto mediale: quello che ho imparato dopo l'operazione al ginocchio",
+      "stage": "quarantined_requires_full_rewrite",
+      "indexing": "noindex_until_review",
+      "checks": [
+        "medical source verification",
+        "native language editing",
+        "topic specificity",
+        "internal links and metadata",
+        "mobile layout",
+        "final SEO validation"
+      ]
+    },
+    {
+      "file": "articles/vastus-medialis-massage-for-inner-knee-cap-discomfort-fr.html",
+      "lang": "fr",
+      "original_title": "Ce genou qui m'a tout appris : ma routine de massage du vaste médial après ma blessure à Madrid",
+      "stage": "quarantined_requires_full_rewrite",
+      "indexing": "noindex_until_review",
+      "checks": [
+        "medical source verification",
+        "native language editing",
+        "topic specificity",
+        "internal links and metadata",
+        "mobile layout",
+        "final SEO validation"
+      ]
+    },
+    {
+      "file": "articles/anconeus-massage-for-elbow-fatigue-after-painting-en.html",
+      "lang": "en",
+      "original_title": "My Elbow Was Done After a Weekend of Painting — Here's What I Did About It",
+      "stage": "quarantined_requires_full_rewrite",
+      "indexing": "noindex_until_review",
+      "checks": [
+        "medical source verification",
+        "native language editing",
+        "topic specificity",
+        "internal links and metadata",
+        "mobile layout",
+        "final SEO validation"
+      ]
+    },
+    {
+      "file": "articles/anconeus-massage-for-elbow-fatigue-after-painting-de.html",
+      "lang": "de",
+      "original_title": "Mein Ellbogen nach dem Streichen: Was mir wirklich geholfen hat",
+      "stage": "quarantined_requires_full_rewrite",
+      "indexing": "noindex_until_review",
+      "checks": [
+        "medical source verification",
+        "native language editing",
+        "topic specificity",
+        "internal links and metadata",
+        "mobile layout",
+        "final SEO validation"
+      ]
+    },
+    {
+      "file": "articles/anconeus-massage-for-elbow-fatigue-after-painting-fr.html",
+      "lang": "fr",
+      "original_title": "J'ai peint mon couloir ce weekend et mon coude a passé une mauvaise nuit",
+      "stage": "quarantined_requires_full_rewrite",
+      "indexing": "noindex_until_review",
+      "checks": [
+        "medical source verification",
+        "native language editing",
+        "topic specificity",
+        "internal links and metadata",
+        "mobile layout",
+        "final SEO validation"
+      ]
+    }
+  ]
+}
