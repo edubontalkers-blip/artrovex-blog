@@ -29,12 +29,8 @@ pattern = re.compile(r'(<script[^>]*type=["\']application/ld\+json["\'][^>]*>)(.
 for path in root.glob("*.html"):
     before = path.read_text(encoding="utf-8")
     after = pattern.sub(rewrite_schema, before)
-    # Match the exact legacy generator byline markup, not unrelated people in article prose.
-    after = re.sub(
-        r'(Written by\\s*<strong>)(?:Emma|James|Laura|Stefan|Monika|Andreas|Giulia|Marco|Valentina|Carmen|Miguel|Isabel|Sophie|Pierre|Marie)(</strong>)',
-        r'\\1Body Advice Editorial Team\\2',
-        after, flags=re.I
-    )
+    for legacy_name in ("Emma", "James", "Laura", "Stefan", "Monika", "Andreas", "Giulia", "Marco", "Valentina", "Carmen", "Miguel", "Isabel", "Sophie", "Pierre", "Marie"):
+        after = after.replace("Written by <strong>" + legacy_name + "</strong>", "Written by <strong>Body Advice Editorial Team</strong>")
     if after != before:
         path.write_text(after, encoding="utf-8")
         count += 1
