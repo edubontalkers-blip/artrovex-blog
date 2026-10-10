@@ -26,11 +26,11 @@ flags = []
 missing = []
 sensitive = ("cricoid", "carotid", "jugular", "throat", "swallowing", "lymph node")
 first_person = re.compile(
-    r"\\b(?:my|i've|i learned|what i do|my clients|my patients|"
+    r"\b(?:my|i've|i learned|what i do|my clients|my patients|"
     r"mein(?:e|em|en)?|ich|meine kunden|"
     r"ma routine|mon expérience|mes clients|j'ai|je fais|"
     r"mi rutina|mis clientes|aprendí|me dolía|"
-    r"la mia|ho imparato|quello che faccio|i miei clienti)\\b",
+    r"la mia|ho imparato|quello che faccio|i miei clienti)\b",
     re.IGNORECASE
 )
 for item in catalog:
