@@ -1696,6 +1696,8 @@ def main():
     generate_claim_review_page()
     generate_llms_txt()
     generate_enhanced_robots()
+    from scripts.normalize_seo import fix as normalize_seo
+    normalize_seo()
     print(f"\n🎉 Done! 2 topics × 5 languages = 10 new pages today!")
 
 if __name__ == "__main__":
