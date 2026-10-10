@@ -78,7 +78,7 @@ for source in pages:
         if path is not None and not exists_link(path, source):
             report("missing_local_image", source, src)
     for src in p.alts: report("missing_image_alt", source, src)
-    expected = DOMAIN + "/" + str(source.relative_to(ROOT)).replace("index.html", "")
+    expected = DOMAIN + "/" + (str(source.relative_to(ROOT)) if source.name != "index.html" else str(source.parent.relative_to(ROOT)).replace(".", ""))
     if not p.canonicals: report("missing_canonical", source, expected)
     elif len(p.canonicals) != 1: report("duplicate_canonical", source, p.canonicals)
     elif p.canonicals[0] != expected: report("canonical_mismatch", source, f"{p.canonicals[0]} expected {expected}")
