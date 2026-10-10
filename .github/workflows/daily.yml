@@ -25,6 +25,9 @@ jobs:
         with:
           python-version: '3.11'
 
+      - name: Repair existing author metadata
+        run: python scripts/normalize_editorial_authors.py
+
       - name: Generate today's articles
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
