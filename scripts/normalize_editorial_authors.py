@@ -29,10 +29,11 @@ pattern = re.compile(r'(<script[^>]*type=["\']application/ld\+json["\'][^>]*>)(.
 for path in root.glob("*.html"):
     before = path.read_text(encoding="utf-8")
     after = pattern.sub(rewrite_schema, before)
-    # Replace generated rotating pseudonyms only in visible byline contexts.
+    # Match the exact legacy generator byline markup, not unrelated people in article prose.
     after = re.sub(
-        r'((?:By|Von|Di|Por|Par|Author|Autor|Autore|Auteur|Escrito por)\s+)(Emma|James|Laura|Stefan|Monika|Andreas|Giulia|Marco|Valentina|Carmen|Miguel|Isabel|Sophie|Pierre|Marie)(?=\b)',
-        r'\1Body Advice Editorial Team', after, flags=re.I
+        r'(Written by\\s*<strong>)(?:Emma|James|Laura|Stefan|Monika|Andreas|Giulia|Marco|Valentina|Carmen|Miguel|Isabel|Sophie|Pierre|Marie)(</strong>)',
+        r'\\1Body Advice Editorial Team\\2',
+        after, flags=re.I
     )
     if after != before:
         path.write_text(after, encoding="utf-8")
