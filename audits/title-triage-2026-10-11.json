@@ -1405,5 +1405,10 @@
   ],
   "reviewed_and_rewritten": [
     "toe-flexor-massage-for-tight-curled-toe-tension-relief: five language versions rewritten; medical sourcing still pending"
-  ]
+  ],
+  "sample_body_review": {
+    "sample_size": 12,
+    "findings": "Sampled multilingual HTML pages contain unverified clinician/coach/customer anecdotes and dense product mentions (roughly 47-56 per article in sampled pages). Full medical fact-check and source verification not completed.",
+    "status": "HOLD: do not republish pending substantive rewrite and independent medical sourcing"
+  }
 }
