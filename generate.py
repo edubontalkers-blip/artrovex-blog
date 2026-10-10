@@ -362,6 +362,8 @@ def available_articles(articles_meta):
     """Do not advertise missing pages or duplicate URLs in navigation/sitemaps."""
     available = {}
     for m in articles_meta:
+        if "cricoid-cartilage-area-massage" in m.get("slug", ""):
+            continue  # Withhold unsafe throat self-massage guides from discovery.
         if m.get("lang") not in LANGS or not re.fullmatch(r"[a-z0-9-]+", m.get("slug", "")):
             continue
         filename = f"articles/{m['slug']}-{m['lang']}.html"
