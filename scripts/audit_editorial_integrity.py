@@ -54,6 +54,9 @@ for item in catalog:
         flags.append({"file": rel, "reason": "missing h1"})
     if 'name="robots" content="noindex' in html:
         flags.append({"file": rel, "reason": "noindex page still in catalog"})
+# Do not treat flagged material as reviewed or approved.
+if flags:
+    issues.append(str(len(flags)) + " editorial flags require review before publishing.")
 if missing:
     issues.append(str(len(missing)) + " catalogued HTML files missing")
 report = {"catalogued": len(catalog), "languages": dict(Counter(m.get("lang") for m in catalog)),
