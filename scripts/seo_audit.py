@@ -84,7 +84,7 @@ for source in pages:
     elif p.canonicals[0] != expected: report("canonical_mismatch", source, f"{p.canonicals[0]} expected {expected}")
     if p.langlinks and p.html_lang and not any(lang == p.html_lang and url == expected for lang, url in p.langlinks):
         report("hreflang_missing_self", source, expected)
-    for blob in re.findall(r'<script[^>]*type=["\']application/ld\\+json["\'][^>]*>(.*?)</script>', content, re.S | re.I):
+    for blob in re.findall(r'<script[^>]*type=["\']application/ld\+json["\'][^>]*>(.*?)</script>', content, re.S | re.I):
         try: json.loads(blob)
         except Exception as e: report("invalid_jsonld", source, str(e))
 
