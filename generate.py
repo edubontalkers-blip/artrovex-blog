@@ -331,7 +331,7 @@ footer a{{color:#52c48a;text-decoration:none}}
 <body>
 <nav>
   <a class="nb" href="../index.html">🌿 Body Advice</a>
-  <a class="ns" href="https://www.artrovex.shop" target="_blank">🛍 Shop</a>
+  <a class="ns" href="/guides/hydration-nutrition-it.html" lang="it">Leggi in italiano →</a>
 </nav>
 <div class="wrap">
   <a class="back" href="../index.html">← All articles</a>
@@ -415,7 +415,7 @@ def update_index(articles_meta):
       <div class="card-art" aria-hidden="true">✦</div>
       <div class="card-body">
         <div class="card-tag">{m['date']} · {m['lang'].upper()}</div>
-        <div class="card-title">{escape(m['title'])}</div>
+        <h3 class="card-title">{escape(m['title'])}</h3>
         <div class="card-topic">{escape(m['topic'])}</div>
         <div class="card-emotion">{escape(emotion)}</div>
       </div>
@@ -426,7 +426,7 @@ def update_index(articles_meta):
         "@type": "Blog",
         "name": "Body Advice — Wellness Blog",
         "url": DOMAIN,
-        "description": "Daily expert tips on joint mobility, muscle care and massage. Updated every day in 5 languages.",
+        "description": "Editorial lifestyle articles about everyday movement, food, hydration and daily routines in five languages.",
         "inLanguage": ["en", "de", "it", "es", "fr"]
     }, ensure_ascii=False)
 
@@ -435,16 +435,9 @@ def update_index(articles_meta):
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Body Advice | Joint & Muscle Wellness Blog — Daily Tips in 5 Languages</title>
-<meta name="description" content="Expert daily tips on joint care, muscle recovery, massage techniques and wellness routines. Artrovex and Hondrocream massage cream guides. Updated every day in EN, DE, IT, ES, FR.">
-<meta name="keywords" content="
-Artrovex original, Hondrocream original, buy Artrovex original, where to buy Artrovex, Artrovex fake vs original, Artrovex official store,
-Artrovex kaufen, Artrovex original kaufen, Hondrocream kaufen, beste Gelenkcreme 2026, Massagecreme original kaufen, Gelenkcreme original,
-Artrovex originale, Hondrocream originale, dove comprare Artrovex originale, crema massaggio articolazioni originale, crema riscaldante 2026,
-Artrovex comprar original, Hondrocream comprar, donde comprar Artrovex original, crema masaje articulaciones 2026, crema calentadora original,
-Artrovex acheter original, Hondrocream acheter, où acheter Artrovex original, crème massage articulaire 2026, crème chauffante originale,
-Artrovex Amazon, Artrovex Etsy, Artrovex TikTok Shop, Artrovex eBay, Artrovex Allegro, artrovex.shop official,
-best joint massage cream 2026, warming cooling massage cream, certified massage cream Europe, original joint cream verified">
+<title>Body Advice | Everyday Living, Food, Hydration & Movement</title>
+<meta name="description" content="Explore thoughtful, practical guides to everyday movement, food, hydration and balanced routines. Independent lifestyle reading in German, Italian, French, English and Spanish.">
+
 <link rel="canonical" href="{DOMAIN}">
 <script type="application/ld+json">{schema_org}</script>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -484,19 +477,17 @@ footer a{{color:#52c48a;text-decoration:none}}
   <a class="ns" href="https://www.artrovex.shop" target="_blank">🛍 Shop</a>
 </nav>
 <div class="hero">
-  <h1>Move better.<br><em>Feel better.</em> Live fully.</h1>
-  <p>Practical ideas for comfortable movement, everyday routines and mindful massage. Guides in German, Italian, French, English and Spanish.</p>
-  <a href="https://www.artrovex.shop" target="_blank">Discover original Artrovex & Hondrocream →</a>
+  <h1>Everyday moments.<br><em>Meaningful living.</em></h1>
+  <p>Thoughtful stories and practical, source-backed guides to food, hydration, movement and the everyday moments that matter.</p>
+  <a href="/guides/hydration-nutrition-de.html" lang="de">Explore the everyday edit →</a>
 </div>
-<div class="trust-bar">
-  ⚠️ <strong>Buy only originals:</strong> Artrovex & Hondrocream are available on <strong>artrovex.shop</strong>, <strong>Amazon</strong>, <strong>Etsy</strong>, <strong>TikTok Shop</strong>, <strong>eBay</strong> and <strong>Allegro</strong>. Counterfeits exist — always verify the source.
-</div>
+
 <div class="wrap">
   <nav class="language-nav" aria-label="Article languages" style="position:static;background:none;height:auto;padding:0;justify-content:flex-start">{archive_navigation()}</nav>
   <section class="guide-feature" aria-label="Food and hydration guides">
     <div class="guide-copy"><span class="guide-kicker">THE EVERYDAY EDIT</span><h2>Small habits, beautifully lived.</h2><p>Explore practical, source-backed guides to drinking enough fluids and eating a varied diet.</p><div class="guide-links"><a href="/guides/hydration-nutrition-de.html" lang="de">Deutsch →</a><a href="/guides/hydration-nutrition-it.html" lang="it">Italiano →</a><a href="/guides/hydration-nutrition-fr.html" lang="fr">Français →</a><a href="/guides/hydration-nutrition-en.html" lang="en">English →</a><a href="/guides/hydration-nutrition-es.html" lang="es">Español →</a></div></div><div class="guide-visual" aria-hidden="true"><span>✳</span></div>
   </section>
-  <div class="sec-title">Latest Articles</div>
+  <h2 class="sec-title">Latest Articles</h2>
   <div class="grid">{cards_html}</div>
 </div>
 <footer><a href="{DOMAIN}">bodyadvice.site</a> · Wellness & Movement Blog · Updated daily · EN DE IT ES FR
