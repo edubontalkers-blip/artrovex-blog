@@ -59,7 +59,14 @@ def exists_link(path, source):
         return False
     return target.is_file()
 
+def canonical_url_for_file(path):
+    rel = path.relative_to(ROOT).as_posix()
+    return DOMAIN + ("/" if rel == "index.html" else "/" + rel)
+
 pages = list(ROOT.rglob("*.html"))
+page_alternates = {}
+page_languages = {}
+page_canonicals = {}
 print(f"HTML pages: {len(pages)}")
 for source in pages:
     try: content = source.read_text(encoding="utf-8")
@@ -69,6 +76,9 @@ for source in pages:
     try: p.feed(content)
     except Exception as e: report("html_parse", source, str(e))
     if not p.html_lang: report("missing_html_lang", source, "missing lang")
+    page_alternates[canonical_url_for_file(source)] = dict(p.langlinks)
+    page_languages[canonical_url_for_file(source)] = p.html_lang
+    page_canonicals[canonical_url_for_file(source)] = p.canonicals
     for href in p.links:
         path = local_path(href)
         if path is not None and not exists_link(path, source):
@@ -87,6 +97,21 @@ for source in pages:
     for blob in re.findall(r'<script[^>]*type=["\']application/ld\+json["\'][^>]*>(.*?)</script>', content, re.S | re.I):
         try: json.loads(blob)
         except Exception as e: report("invalid_jsonld", source, str(e))
+
+# Verify reciprocal hreflang clusters and real local targets, not just self references.
+for source_url, alternates in page_alternates.items():
+    for lang, target in alternates.items():
+        if lang == "x-default":
+            continue
+        if target not in page_alternates:
+            report("hreflang_missing_target", source_url, f"{lang}: {target}")
+            continue
+        if page_languages[target] != lang:
+            report("hreflang_wrong_language", source_url, f"{lang}: {target} is {page_languages[target]}")
+        if page_alternates[target].get(page_languages[source_url]) != source_url:
+            report("hreflang_not_reciprocal", source_url, f"{lang}: {target}")
+        if page_canonicals[target] != [target]:
+            report("hreflang_target_not_canonical", source_url, target)
 
 tree = ET.parse(ROOT / "sitemap.xml")
 ns = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9"}
@@ -112,5 +137,5 @@ print("AUDIT COUNTS:", json.dumps(issues, sort_keys=True))
 for kind, items in examples.items():
     print(f"\\n[{kind}]")
     for item in items: print("  " + item)
-if any(issues[k] for k in ("missing_sitemap_target", "duplicate_sitemap_urls", "invalid_jsonld")):
+if any(issues[k] for k in ("missing_sitemap_target", "duplicate_sitemap_urls", "invalid_jsonld", "hreflang_missing_target", "hreflang_wrong_language", "hreflang_not_reciprocal", "hreflang_target_not_canonical")):
     raise SystemExit("Critical audit errors")
