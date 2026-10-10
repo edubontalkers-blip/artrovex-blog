@@ -8,7 +8,7 @@ root = Path(__file__).resolve().parents[1]
 generator = (root / "generate.py").read_text(encoding="utf-8")
 issues = []
 if 'author_name = authors.get(lang, authors["en"])' in generator:
-    issues.append("Generator rotates fictional personal bylines.")
+    issues.append("Generator still assigns unverified personal bylines.")
 if '"@type": "Person"' in generator and '"jobTitle": "Wellness Blogger"' in generator:
     issues.append("Generator presents unverified authors as Person in Article schema.")
 if 'meta name="keywords"' in generator[generator.find("def update_index("):generator.find("def generate_sitemap(")]:
