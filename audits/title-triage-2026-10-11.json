@@ -2,32 +2,8 @@
   "date": "2026-10-11",
   "scope": "Catalog title triage only; full body medical review not performed",
   "total": 629,
-  "flagged": 237,
+  "flagged": 233,
   "flagged_articles": [
-    {
-      "file": "articles/toe-flexor-massage-for-tight-curled-toe-tension-relief-en.html",
-      "lang": "en",
-      "title": "My Toes Were Curled Like Claws — Here's the Massage Routine That Changed My Mornings",
-      "reason": "First-person or claimed personal experience in title requires substantiation"
-    },
-    {
-      "file": "articles/toe-flexor-massage-for-tight-curled-toe-tension-relief-de.html",
-      "lang": "de",
-      "title": "Steife Zehen morgens — wie ich als Ex-Sprinter aus Rom meine Fußmassage-Routine gefunden habe",
-      "reason": "First-person or claimed personal experience in title requires substantiation"
-    },
-    {
-      "file": "articles/toe-flexor-massage-for-tight-curled-toe-tension-relief-it.html",
-      "lang": "it",
-      "title": "Le dita dei piedi che si arricciano al mattino: la mia routine da ex atleta romano",
-      "reason": "First-person or claimed personal experience in title requires substantiation"
-    },
-    {
-      "file": "articles/toe-flexor-massage-for-tight-curled-toe-tension-relief-fr.html",
-      "lang": "fr",
-      "title": "Orteils crispés dès le réveil : ce que j'ai appris en quarante ans de sport à Rome",
-      "reason": "First-person or claimed personal experience in title requires substantiation"
-    },
     {
       "file": "articles/wrist-flexor-stretches-for-repetitive-typing-strain-recovery-en.html",
       "lang": "en",
@@ -1426,5 +1402,8 @@
       "title": "Cette fatigue au fond du dos qui persiste même après une bonne nuit — et ce que je fais vraiment",
       "reason": "First-person or claimed personal experience in title requires substantiation"
     }
+  ],
+  "reviewed_and_rewritten": [
+    "toe-flexor-massage-for-tight-curled-toe-tension-relief: five language versions rewritten; medical sourcing still pending"
   ]
 }
