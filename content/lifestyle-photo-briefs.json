@@ -1,0 +1,286 @@
+{
+  "version": 1,
+  "notes": "Creative briefs, NOT generated or published photos. Produce a distinct, licensed image for each. No cream packaging, no medical treatment cues, no fake labels. Save 1600px-wide AVIF/WebP, mobile crop, descriptive translated alt text.",
+  "images": [
+    {
+      "id": "life-01",
+      "scene": "Morning glass of water by kitchen window",
+      "category": "hydration",
+      "status": "brief-only",
+      "photo": null
+    },
+    {
+      "id": "life-02",
+      "scene": "Reusable water bottle on a city walk",
+      "category": "hydration",
+      "status": "brief-only",
+      "photo": null
+    },
+    {
+      "id": "life-03",
+      "scene": "Water break during gardening",
+      "category": "hydration",
+      "status": "brief-only",
+      "photo": null
+    },
+    {
+      "id": "life-04",
+      "scene": "Hydration after a bicycle ride",
+      "category": "hydration",
+      "status": "brief-only",
+      "photo": null
+    },
+    {
+      "id": "life-05",
+      "scene": "Water jug on family lunch table",
+      "category": "hydration",
+      "status": "brief-only",
+      "photo": null
+    },
+    {
+      "id": "life-06",
+      "scene": "Desk water break at home office",
+      "category": "hydration",
+      "status": "brief-only",
+      "photo": null
+    },
+    {
+      "id": "life-07",
+      "scene": "Water during a summer picnic",
+      "category": "hydration",
+      "status": "brief-only",
+      "photo": null
+    },
+    {
+      "id": "life-08",
+      "scene": "Warm tea and water on a rainy afternoon",
+      "category": "hydration",
+      "status": "brief-only",
+      "photo": null
+    },
+    {
+      "id": "life-09",
+      "scene": "Fresh vegetables at a neighbourhood market",
+      "category": "nutrition",
+      "status": "brief-only",
+      "photo": null
+    },
+    {
+      "id": "life-10",
+      "scene": "Cooking lentils in a sunlit kitchen",
+      "category": "nutrition",
+      "status": "brief-only",
+      "photo": null
+    },
+    {
+      "id": "life-11",
+      "scene": "Mediterranean vegetable lunch outdoors",
+      "category": "nutrition",
+      "status": "brief-only",
+      "photo": null
+    },
+    {
+      "id": "life-12",
+      "scene": "Preparing a bowl of oats and berries",
+      "category": "nutrition",
+      "status": "brief-only",
+      "photo": null
+    },
+    {
+      "id": "life-13",
+      "scene": "Washing seasonal fruit at the sink",
+      "category": "nutrition",
+      "status": "brief-only",
+      "photo": null
+    },
+    {
+      "id": "life-14",
+      "scene": "Family preparing a balanced dinner",
+      "category": "nutrition",
+      "status": "brief-only",
+      "photo": null
+    },
+    {
+      "id": "life-15",
+      "scene": "Wholegrain bread and simple breakfast",
+      "category": "nutrition",
+      "status": "brief-only",
+      "photo": null
+    },
+    {
+      "id": "life-16",
+      "scene": "Chickpea salad packed for work",
+      "category": "nutrition",
+      "status": "brief-only",
+      "photo": null
+    },
+    {
+      "id": "life-17",
+      "scene": "Older couple walking in a leafy park",
+      "category": "movement",
+      "status": "brief-only",
+      "photo": null
+    },
+    {
+      "id": "life-18",
+      "scene": "Woman stretching in a living room",
+      "category": "movement",
+      "status": "brief-only",
+      "photo": null
+    },
+    {
+      "id": "life-19",
+      "scene": "Friends riding bicycles in the city",
+      "category": "movement",
+      "status": "brief-only",
+      "photo": null
+    },
+    {
+      "id": "life-20",
+      "scene": "Office worker taking a movement break",
+      "category": "movement",
+      "status": "brief-only",
+      "photo": null
+    },
+    {
+      "id": "life-21",
+      "scene": "Parent and child walking to school",
+      "category": "movement",
+      "status": "brief-only",
+      "photo": null
+    },
+    {
+      "id": "life-22",
+      "scene": "Man taking stairs instead of lift",
+      "category": "movement",
+      "status": "brief-only",
+      "photo": null
+    },
+    {
+      "id": "life-23",
+      "scene": "Gentle mobility practice in a garden",
+      "category": "movement",
+      "status": "brief-only",
+      "photo": null
+    },
+    {
+      "id": "life-24",
+      "scene": "Weekend hike on an easy forest trail",
+      "category": "movement",
+      "status": "brief-only",
+      "photo": null
+    },
+    {
+      "id": "life-25",
+      "scene": "Person reading by a window",
+      "category": "rest",
+      "status": "brief-only",
+      "photo": null
+    },
+    {
+      "id": "life-26",
+      "scene": "Quiet evening routine without screens",
+      "category": "rest",
+      "status": "brief-only",
+      "photo": null
+    },
+    {
+      "id": "life-27",
+      "scene": "Gardening on a balcony",
+      "category": "rest",
+      "status": "brief-only",
+      "photo": null
+    },
+    {
+      "id": "life-28",
+      "scene": "Relaxed family walk at sunset",
+      "category": "rest",
+      "status": "brief-only",
+      "photo": null
+    },
+    {
+      "id": "life-29",
+      "scene": "Breathing pause beside an open window",
+      "category": "rest",
+      "status": "brief-only",
+      "photo": null
+    },
+    {
+      "id": "life-30",
+      "scene": "Resting on a bench after a walk",
+      "category": "rest",
+      "status": "brief-only",
+      "photo": null
+    },
+    {
+      "id": "life-31",
+      "scene": "Cozy book and herbal tea at home",
+      "category": "rest",
+      "status": "brief-only",
+      "photo": null
+    },
+    {
+      "id": "life-32",
+      "scene": "Morning sunlight in a calm bedroom",
+      "category": "rest",
+      "status": "brief-only",
+      "photo": null
+    },
+    {
+      "id": "life-33",
+      "scene": "Cooking with friends at home",
+      "category": "daily-life",
+      "status": "brief-only",
+      "photo": null
+    },
+    {
+      "id": "life-34",
+      "scene": "Shopping for seasonal produce",
+      "category": "daily-life",
+      "status": "brief-only",
+      "photo": null
+    },
+    {
+      "id": "life-35",
+      "scene": "Preparing lunchbox before work",
+      "category": "daily-life",
+      "status": "brief-only",
+      "photo": null
+    },
+    {
+      "id": "life-36",
+      "scene": "Walking a dog before breakfast",
+      "category": "daily-life",
+      "status": "brief-only",
+      "photo": null
+    },
+    {
+      "id": "life-37",
+      "scene": "Stretching shoulders after computer work",
+      "category": "daily-life",
+      "status": "brief-only",
+      "photo": null
+    },
+    {
+      "id": "life-38",
+      "scene": "Picnic with fruit and vegetables",
+      "category": "daily-life",
+      "status": "brief-only",
+      "photo": null
+    },
+    {
+      "id": "life-39",
+      "scene": "Drinking water after a train journey",
+      "category": "daily-life",
+      "status": "brief-only",
+      "photo": null
+    },
+    {
+      "id": "life-40",
+      "scene": "Evening walk in a coastal town",
+      "category": "daily-life",
+      "status": "brief-only",
+      "photo": null
+    }
+  ]
+}
