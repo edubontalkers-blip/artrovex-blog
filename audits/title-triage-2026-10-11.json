@@ -1,0 +1,1430 @@
+{
+  "date": "2026-10-11",
+  "scope": "Catalog title triage only; full body medical review not performed",
+  "total": 629,
+  "flagged": 237,
+  "flagged_articles": [
+    {
+      "file": "articles/toe-flexor-massage-for-tight-curled-toe-tension-relief-en.html",
+      "lang": "en",
+      "title": "My Toes Were Curled Like Claws — Here's the Massage Routine That Changed My Mornings",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/toe-flexor-massage-for-tight-curled-toe-tension-relief-de.html",
+      "lang": "de",
+      "title": "Steife Zehen morgens — wie ich als Ex-Sprinter aus Rom meine Fußmassage-Routine gefunden habe",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/toe-flexor-massage-for-tight-curled-toe-tension-relief-it.html",
+      "lang": "it",
+      "title": "Le dita dei piedi che si arricciano al mattino: la mia routine da ex atleta romano",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/toe-flexor-massage-for-tight-curled-toe-tension-relief-fr.html",
+      "lang": "fr",
+      "title": "Orteils crispés dès le réveil : ce que j'ai appris en quarante ans de sport à Rome",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/wrist-flexor-stretches-for-repetitive-typing-strain-recovery-en.html",
+      "lang": "en",
+      "title": "My Wrists Were Screaming After 6 Hours of Typing — Here's What Actually Helped",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/wrist-flexor-stretches-for-repetitive-typing-strain-recovery-de.html",
+      "lang": "de",
+      "title": "Handgelenke nach stundenlangem Tippen wieder beweglich machen — mein ehrlicher Erfahrungsbericht",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/wrist-flexor-stretches-for-repetitive-typing-strain-recovery-it.html",
+      "lang": "it",
+      "title": "Polsi a pezzi dopo ore di tastiera: quello che ho imparato a 48 anni su me stesso",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/wrist-flexor-stretches-for-repetitive-typing-strain-recovery-fr.html",
+      "lang": "fr",
+      "title": "Après des heures à taper sur un clavier, mes poignets ont fini par craquer — voilà ce que j'ai fait",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/multifidus-activation-exercises-for-lumbar-spine-stability-i-en.html",
+      "lang": "en",
+      "title": "I Spent 3 Months Fixing My Lower Back — Here's What Actually Worked",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/multifidus-activation-exercises-for-lumbar-spine-stability-i-de.html",
+      "lang": "de",
+      "title": "Mein unterer Rücken hat mich jahrelang genervt — bis ich diese Übungen entdeckt habe",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/multifidus-activation-exercises-for-lumbar-spine-stability-i-fr.html",
+      "lang": "fr",
+      "title": "J'ai compris tardivement pourquoi mon bas du dos n'était jamais vraiment stable",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/gluteus-medius-activation-for-hip-drop-correction-de.html",
+      "lang": "de",
+      "title": "Mein linkes Hüftgelenk ist bei jedem Schritt abgesackt – hier ist, was ich geändert habe",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/gluteus-medius-activation-for-hip-drop-correction-fr.html",
+      "lang": "fr",
+      "title": "Mon bassin s'affaissait à chaque foulée depuis des années — voilà ce que j'ai compris",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/posterior-tibialis-massage-for-inner-arch-walking-fatigue-en.html",
+      "lang": "en",
+      "title": "Why My Inner Arch Aches After Long Classes — And What I Do About It",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/posterior-tibialis-massage-for-inner-arch-walking-fatigue-de.html",
+      "lang": "de",
+      "title": "Dieses stumpfe Ziehen am Innenrist nach dem Yoga — mein ehrlicher Umgang damit",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/posterior-tibialis-massage-for-inner-arch-walking-fatigue-fr.html",
+      "lang": "fr",
+      "title": "Cette fatigue persistante à l'arche interne du pied après mes cours — ce que je fais vraiment",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/trapezius-lower-fibers-activation-for-chronically-hitched-sh-en.html",
+      "lang": "en",
+      "title": "My Shoulders Were Basically Living Up By My Ears — Here's What Actually Helped",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/trapezius-lower-fibers-activation-for-chronically-hitched-sh-de.html",
+      "lang": "de",
+      "title": "Meine Schultern saßen jahrelang an meinen Ohren — bis ich angefangen habe, das hier zu tun",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/trapezius-lower-fibers-activation-for-chronically-hitched-sh-it.html",
+      "lang": "it",
+      "title": "Tre mesi con le spalle vicino alle orecchie: quello che ho imparato dopo l'operazione al ginocchio",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/opponens-pollicis-massage-for-thumb-fatigue-in-gamers-en.html",
+      "lang": "en",
+      "title": "My Thumbs Were Wrecked After Gaming — Here's the Massage I Wish I'd Known About",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/opponens-pollicis-massage-for-thumb-fatigue-in-gamers-de.html",
+      "lang": "de",
+      "title": "Mein Daumen hat nach langen Gaming-Sessions gestreikt — diese Massage hat mir geholfen",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/opponens-pollicis-massage-for-thumb-fatigue-in-gamers-es.html",
+      "lang": "es",
+      "title": "Me dolía el pulgar después de ver horas de vídeo táctico — así descubrí este masaje",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/deltoid-massage-for-sore-overhead-lifting-recovery-en.html",
+      "lang": "en",
+      "title": "Deltoid Recovery After Overhead Lifting: What Actually Works in My Massage Room",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/deltoid-massage-for-sore-overhead-lifting-recovery-de.html",
+      "lang": "de",
+      "title": "Deltoidmassage nach Überkopftraining: Was ich in meiner Praxis wirklich verwende",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/deltoid-massage-for-sore-overhead-lifting-recovery-it.html",
+      "lang": "it",
+      "title": "Massaggio al Deltoide Dopo Sollevamenti Overhead: La Mia Routine Onesta da Terapista",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/deltoid-massage-for-sore-overhead-lifting-recovery-es.html",
+      "lang": "es",
+      "title": "Masaje en el Deltoides Después de Press por Encima: Lo Que Uso Realmente con Mis Clientes",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/rhomboid-stretches-for-persistent-mid-back-shoulder-blade-ac-en.html",
+      "lang": "en",
+      "title": "My Rhomboid Finally Stopped Screaming — Here's What Actually Helped",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/rhomboid-stretches-for-persistent-mid-back-shoulder-blade-ac-de.html",
+      "lang": "de",
+      "title": "Drei Jahre Verspannung zwischen den Schulterblättern — bis ich das hier ausprobiert habe",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/rhomboid-stretches-for-persistent-mid-back-shoulder-blade-ac-fr.html",
+      "lang": "fr",
+      "title": "Cette douleur sourde entre les omoplates que j'ai mis des mois à prendre au sérieux",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/flexor-digitorum-release-for-forearm-typing-fatigue-en.html",
+      "lang": "en",
+      "title": "My Forearms Were Screaming After 6 Hours of Typing — Here's What Actually Helped",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/flexor-digitorum-release-for-forearm-typing-fatigue-de.html",
+      "lang": "de",
+      "title": "Meine Unterarme nach 8 Stunden Tippen — was mir wirklich geholfen hat",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/flexor-digitorum-release-for-forearm-typing-fatigue-fr.html",
+      "lang": "fr",
+      "title": "J'ai tapé pendant sept heures sans pause — ce que mes avant-bras m'ont appris",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/supinator-muscle-release-for-stubborn-outer-forearm-twisting-en.html",
+      "lang": "en",
+      "title": "Why Your Outer Forearm Won't Stop Twisting Tight — And What I Do About It",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/supinator-muscle-release-for-stubborn-outer-forearm-twisting-de.html",
+      "lang": "de",
+      "title": "Dieses hartnäckige Kribbeln im Unterarm beim Drehen — hier ist, was ich dagegen tue",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/supinator-muscle-release-for-stubborn-outer-forearm-twisting-it.html",
+      "lang": "it",
+      "title": "Quella tensione ostinata all'avambraccio esterno durante la rotazione — ecco la mia routine",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/supinator-muscle-release-for-stubborn-outer-forearm-twisting-fr.html",
+      "lang": "fr",
+      "title": "Cette raideur tenace à l'avant-bras externe en rotation — ma routine pour enfin la déloger",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/flexor-hallucis-longus-massage-for-big-toe-stiffness-en.html",
+      "lang": "en",
+      "title": "My Big Toe Was Locking Up After Every Morning Run — Here's What Actually Helped",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/flexor-hallucis-longus-massage-for-big-toe-stiffness-de.html",
+      "lang": "de",
+      "title": "Warum Mein Großer Zeh Jeden Morgen Steif War — Und Was Ich Dagegen Tue",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/flexor-hallucis-longus-massage-for-big-toe-stiffness-it.html",
+      "lang": "it",
+      "title": "L'Alluce Bloccato al Mattino: Come Ho Imparato a Lavorare sul Flessore Lungo",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/flexor-hallucis-longus-massage-for-big-toe-stiffness-fr.html",
+      "lang": "fr",
+      "title": "Mon Gros Orteil Refusait de Plier le Matin — Ce Que J'Ai Appris sur le Fléchisseur Long",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/splenius-capitis-release-for-persistent-upper-neck-rotation--en.html",
+      "lang": "en",
+      "title": "My Splenius Capitis Nightmare — And What Finally Made a Difference",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/splenius-capitis-release-for-persistent-upper-neck-rotation--de.html",
+      "lang": "de",
+      "title": "Steifer Nacken beim Kopfdrehen — was ich nach Jahren endlich in meine Abendroutine aufgenommen habe",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/splenius-capitis-release-for-persistent-upper-neck-rotation--es.html",
+      "lang": "es",
+      "title": "Ese viaje en tren donde no podía girar el cuello — mi rutina actual para el splenius capitis",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/splenius-capitis-release-for-persistent-upper-neck-rotation--fr.html",
+      "lang": "fr",
+      "title": "Le matin où j'ai réalisé que je ne pouvais plus tourner la tête à gauche — ce que j'ai mis en place depuis",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/psoas-release-stretches-for-tight-morning-hip-extension-en.html",
+      "lang": "en",
+      "title": "Why My Hips Feel Like Concrete Every Morning — And What I Actually Do About It",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/psoas-release-stretches-for-tight-morning-hip-extension-de.html",
+      "lang": "de",
+      "title": "Meine Hüfte morgens – warum der erste Schritt aus dem Bett manchmal wehtut",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/psoas-release-stretches-for-tight-morning-hip-extension-fr.html",
+      "lang": "fr",
+      "title": "Ma hanche gauche qui refuse de se réveiller — et ma routine de cinq minutes pour y remédier",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/lumbrical-hand-exercises-for-better-finger-spreading-control-en.html",
+      "lang": "en",
+      "title": "Lumbrical Hand Exercises: How I Finally Got My Fingers to Listen",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/lumbrical-hand-exercises-for-better-finger-spreading-control-de.html",
+      "lang": "de",
+      "title": "Lumbrikal-Übungen: Warum meine Finger endlich das tun, was ich will",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/lumbrical-hand-exercises-for-better-finger-spreading-control-fr.html",
+      "lang": "fr",
+      "title": "Exercices lombricaux : ce que mes doigts m'ont appris le jour où j'ai renversé mon café",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/adductor-magnus-release-for-inner-thigh-sitting-discomfort-en.html",
+      "lang": "en",
+      "title": "Why My Inner Thighs Ache After Sitting All Day — And What I Do About It",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/adductor-magnus-release-for-inner-thigh-sitting-discomfort-de.html",
+      "lang": "de",
+      "title": "Dieses dumpfe Gefühl an der Innenseite des Oberschenkels nach dem Sitzen — endlich verstehe ich, was dahintersteckt",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/adductor-magnus-release-for-inner-thigh-sitting-discomfort-fr.html",
+      "lang": "fr",
+      "title": "Cette gêne persistante à l'intérieur de la cuisse après une journée au bureau — voilà ce que j'ai compris",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/gracilis-muscle-stretches-for-inner-knee-walking-comfort-en.html",
+      "lang": "en",
+      "title": "Why My Inner Knee Ached on Every Morning Walk (And What Finally Helped)",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/gracilis-muscle-stretches-for-inner-knee-walking-comfort-de.html",
+      "lang": "de",
+      "title": "Mein inneres Knie beim Spazieren — wie ich nach Jahren endlich verstanden habe, was dahintersteckt",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/gracilis-muscle-stretches-for-inner-knee-walking-comfort-it.html",
+      "lang": "it",
+      "title": "Quel dolore al ginocchio interno durante le passeggiate: come ho imparato ad ascoltare il muscolo gracile",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/gracilis-muscle-stretches-for-inner-knee-walking-comfort-es.html",
+      "lang": "es",
+      "title": "Por qué me dolía la parte interna de la rodilla al caminar y lo que cambié en mi rutina de yoga",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/gracilis-muscle-stretches-for-inner-knee-walking-comfort-fr.html",
+      "lang": "fr",
+      "title": "Cette gêne à l'intérieur du genou en marchant — ce que j'ai compris après des années de yoga",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/extensor-carpi-ulnaris-massage-for-outer-wrist-typing-fatigu-en.html",
+      "lang": "en",
+      "title": "My Outer Wrist Was Screaming After Hours of Typing — Here's What Actually Helped",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/extensor-carpi-ulnaris-massage-for-outer-wrist-typing-fatigu-de.html",
+      "lang": "de",
+      "title": "Mein Handgelenk hat nach dem Tippen gestreikt — was ich jetzt täglich mache",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/extensor-carpi-ulnaris-massage-for-outer-wrist-typing-fatigu-fr.html",
+      "lang": "fr",
+      "title": "Je suis professeure de yoga et j'ai mis des mois à réaliser que mon poignet me suppliait d'arrêter",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/pronator-teres-release-for-forearm-rotation-desk-fatigue-en.html",
+      "lang": "en",
+      "title": "My Forearms Were Screaming After 6 Hours at My Desk — Here's What Actually Helped",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/pronator-teres-release-for-forearm-rotation-desk-fatigue-de.html",
+      "lang": "de",
+      "title": "Meine Unterarme Nach Stunden am Schreibtisch — Was Mir Wirklich Geholfen Hat",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/pronator-teres-release-for-forearm-rotation-desk-fatigue-fr.html",
+      "lang": "fr",
+      "title": "Mon Avant-Bras Refusait de Tourner Correctement — Voilà Ce que J'ai Fait",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/vastus-medialis-massage-for-inner-knee-cap-discomfort-en.html",
+      "lang": "en",
+      "title": "My Vastus Medialis Massage Routine After Years of Inner Knee Discomfort",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/vastus-medialis-massage-for-inner-knee-cap-discomfort-de.html",
+      "lang": "de",
+      "title": "Warum ich nach meiner Knieverletzung angefangen habe, den Vastus medialis täglich zu massieren",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/vastus-medialis-massage-for-inner-knee-cap-discomfort-it.html",
+      "lang": "it",
+      "title": "Cinque minuti al giorno sul vasto mediale: quello che ho imparato dopo l'operazione al ginocchio",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/vastus-medialis-massage-for-inner-knee-cap-discomfort-fr.html",
+      "lang": "fr",
+      "title": "Ce genou qui m'a tout appris : ma routine de massage du vaste médial après ma blessure à Madrid",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/anconeus-massage-for-elbow-fatigue-after-painting-en.html",
+      "lang": "en",
+      "title": "My Elbow Was Done After a Weekend of Painting — Here's What I Did About It",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/anconeus-massage-for-elbow-fatigue-after-painting-de.html",
+      "lang": "de",
+      "title": "Mein Ellbogen nach dem Streichen: Was mir wirklich geholfen hat",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/anconeus-massage-for-elbow-fatigue-after-painting-fr.html",
+      "lang": "fr",
+      "title": "J'ai peint mon couloir ce weekend et mon coude a passé une mauvaise nuit",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/neck-side-bending-stretches-for-earphone-wearing-tension-rel-de.html",
+      "lang": "de",
+      "title": "Seitliches Nackenrecken gegen Kopfhörer-Verspannungen – mein ehrlicher Alltagsbericht",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/neck-side-bending-stretches-for-earphone-wearing-tension-rel-it.html",
+      "lang": "it",
+      "title": "Stretching laterale del collo per chi porta gli auricolari tutto il giorno: quello che faccio davvero",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/neck-side-bending-stretches-for-earphone-wearing-tension-rel-es.html",
+      "lang": "es",
+      "title": "Estiramiento lateral del cuello para el dolor por auriculares: lo que hago yo y lo que le digo a mis clientes",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/neck-side-bending-stretches-for-earphone-wearing-tension-rel-fr.html",
+      "lang": "fr",
+      "title": "Inclinaisons latérales du cou contre les tensions des écouteurs : ce que je fais vraiment entre deux clients",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/gluteus-minimus-release-for-deep-outer-hip-aching-en.html",
+      "lang": "en",
+      "title": "Why Your Deep Outer Hip Won't Quit Aching — And What I Do About It in My Lyon Studio",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/gluteus-minimus-release-for-deep-outer-hip-aching-de.html",
+      "lang": "de",
+      "title": "Dieses tiefe Ziehen außen an der Hüfte — ich kenne es aus meiner Praxis in Lyon nur zu gut",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/interossei-hand-muscle-release-for-finger-spreading-stiffnes-en.html",
+      "lang": "en",
+      "title": "Why My Fingers Felt Like Rusted Hinges (And What I Did About It)",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/interossei-hand-muscle-release-for-finger-spreading-stiffnes-de.html",
+      "lang": "de",
+      "title": "Meine Finger spreizten sich kaum noch — bis ich diese Technik ausprobierte",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/interossei-hand-muscle-release-for-finger-spreading-stiffnes-fr.html",
+      "lang": "fr",
+      "title": "Je ne pouvais plus écarter les doigts correctement — voilà ce que j'ai appris",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/palmaris-longus-stretch-for-wrist-flexion-tightness-relief-en.html",
+      "lang": "en",
+      "title": "The Palmaris Longus Stretch That Finally Sorted My Wrist Tightness After Years of Training",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/palmaris-longus-stretch-for-wrist-flexion-tightness-relief-de.html",
+      "lang": "de",
+      "title": "Warum ich nach dem Training immer diese Spannung im Handgelenk hatte — und was wirklich geholfen hat",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/palmaris-longus-stretch-for-wrist-flexion-tightness-relief-it.html",
+      "lang": "it",
+      "title": "Il tendine che mi dava fastidio al polso da anni: come ho imparato a gestirlo con un semplice allungamento",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/palmaris-longus-stretch-for-wrist-flexion-tightness-relief-fr.html",
+      "lang": "fr",
+      "title": "Ce petit tendon du poignet qui m'empoisonnait les matins d'entraînement — et comment j'ai appris à le gérer",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/flexor-pollicis-longus-release-for-pinching-grip-fatigue-en.html",
+      "lang": "en",
+      "title": "Why My Pinching Grip Kept Giving Out — And What I Now Do After Every Work Session",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/flexor-pollicis-longus-release-for-pinching-grip-fatigue-de.html",
+      "lang": "de",
+      "title": "Mein Daumen hat mich im Stich gelassen — Was ich seitdem jeden Abend mache",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/flexor-pollicis-longus-release-for-pinching-grip-fatigue-it.html",
+      "lang": "it",
+      "title": "Quando la presa del pollice smette di rispondere: la mia routine serale che non salto mai",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/flexor-pollicis-longus-release-for-pinching-grip-fatigue-fr.html",
+      "lang": "fr",
+      "title": "Mon pouce a lâché pendant un atelier — voici ce que je fais maintenant sans exception",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/extensor-digitorum-massage-for-knuckle-stiffness-relief-en.html",
+      "lang": "en",
+      "title": "My Stiff Knuckles Every Morning — How I Finally Started Working on the Extensor Digitorum",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/extensor-digitorum-massage-for-knuckle-stiffness-relief-de.html",
+      "lang": "de",
+      "title": "Steife Fingerknöchel am Morgen — Warum ich endlich mit der Extensor-Digitorum-Massage angefangen habe",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/extensor-digitorum-massage-for-knuckle-stiffness-relief-fr.html",
+      "lang": "fr",
+      "title": "Ce matin où mes articulations ont refusé de bouger — et ce que j'ai appris sur l'extenseur des doigts",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/semimembranosus-massage-for-inner-hamstring-knee-bend-tightn-en.html",
+      "lang": "en",
+      "title": "My Semimembranosus Massage Routine That Got Me Back on the Training Field",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/semimembranosus-massage-for-inner-hamstring-knee-bend-tightn-de.html",
+      "lang": "de",
+      "title": "Warum mein innerer Kniebeugeschmerz vom Semimembranosus kam – und was ich jetzt täglich dagegen tue",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/tensor-fasciae-latae-release-for-outer-hip-walking-tightness-en.html",
+      "lang": "en",
+      "title": "Why Your Outer Hip Feels Like a Steel Cable After Walking (And What I Do About It)",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/tensor-fasciae-latae-release-for-outer-hip-walking-tightness-de.html",
+      "lang": "de",
+      "title": "Dieser Zug außen an der Hüfte beim Gehen? Das ist dein TFL – und so gehe ich damit um",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/tensor-fasciae-latae-release-for-outer-hip-walking-tightness-fr.html",
+      "lang": "fr",
+      "title": "Cette tension sur le côté de la hanche en marchant : voilà ce que je fais concrètement depuis ma rééducation",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/brachioradialis-massage-for-outer-forearm-lifting-fatigue-re-en.html",
+      "lang": "en",
+      "title": "Why I Started Using Artrovex on My Clients' Outer Forearms After Long Lifting Days",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/brachioradialis-massage-for-outer-forearm-lifting-fatigue-re-de.html",
+      "lang": "de",
+      "title": "Brachioradialis-Massage nach schwerem Heben: Was ich in meiner Praxis wirklich benutze",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/brachioradialis-massage-for-outer-forearm-lifting-fatigue-re-es.html",
+      "lang": "es",
+      "title": "Lo que de verdad uso en el antebrazo externo de mis clientes después de un día de carga",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/brachioradialis-massage-for-outer-forearm-lifting-fatigue-re-fr.html",
+      "lang": "fr",
+      "title": "Ce que j'utilise vraiment sur le brachioradial de mes clients après une journée de port de charges",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/extensor-hallucis-longus-massage-for-top-of-foot-walking-tig-en.html",
+      "lang": "en",
+      "title": "Why the Top of Your Foot Gets Tight When You Walk — And What I Do About It",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/extensor-hallucis-longus-massage-for-top-of-foot-walking-tig-de.html",
+      "lang": "de",
+      "title": "Dieses kleine Fußproblem beim Gehen wird ständig übersehen — meine ehrliche Erfahrung als Masseurin",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/extensor-hallucis-longus-massage-for-top-of-foot-walking-tig-it.html",
+      "lang": "it",
+      "title": "Quella tensione sul dorso del piede che si ignora sempre — quello che faccio io nel mio studio",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/extensor-hallucis-longus-massage-for-top-of-foot-walking-tig-es.html",
+      "lang": "es",
+      "title": "El músculo del dorso del pie que nadie masajea — y por qué yo sí lo hago con mis clientes",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/extensor-hallucis-longus-massage-for-top-of-foot-walking-tig-fr.html",
+      "lang": "fr",
+      "title": "Cette tension sur le dessus du pied que mes clients ignorent — ce que je fais vraiment en séance",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/zygomaticus-stretch-for-tension-from-excessive-smiling-en.html",
+      "lang": "en",
+      "title": "My Cheeks Were Killing Me After a Wedding Weekend — Here's What Actually Helped",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/zygomaticus-stretch-for-tension-from-excessive-smiling-de.html",
+      "lang": "de",
+      "title": "Meine Wangen haben nach einem langen Seminartag gebrannt — das hat mir wirklich geholfen",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/zygomaticus-stretch-for-tension-from-excessive-smiling-fr.html",
+      "lang": "fr",
+      "title": "J'ai animé un atelier de six heures et mes joues étaient en feu — voilà ce que j'ai appris",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/fibularis-brevis-massage-for-outer-ankle-hiking-fatigue-en.html",
+      "lang": "en",
+      "title": "My Outer Ankle Was Screaming After 12km — Here's What I Do Now",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/fibularis-brevis-massage-for-outer-ankle-hiking-fatigue-de.html",
+      "lang": "de",
+      "title": "Außenknöchel nach der Wanderung — was ich nach Jahren des Testens wirklich mache",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/fibularis-brevis-massage-for-outer-ankle-hiking-fatigue-es.html",
+      "lang": "es",
+      "title": "Me dolía el tobillo externo después de bajar el Montseny — lo que aprendí",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/fibularis-brevis-massage-for-outer-ankle-hiking-fatigue-fr.html",
+      "lang": "fr",
+      "title": "Ma cheville externe après 15 km de descente — ce que je fais vraiment le soir",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/sartorius-stretch-for-outer-hip-crossing-leg-comfort-en.html",
+      "lang": "en",
+      "title": "Sartorius Stretch and the Crossed-Leg Habit That Was Quietly Wrecking My Outer Hip",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/sartorius-stretch-for-outer-hip-crossing-leg-comfort-de.html",
+      "lang": "de",
+      "title": "Warum meine Außenhüfte nach stundenlangem Beinüberkreuzen immer blockiert war — und was ich jetzt anders mache",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/gastrocnemius-stretches-for-tight-heel-cord-morning-stiffnes-en.html",
+      "lang": "en",
+      "title": "Why My Heels Feel Like Concrete Every Morning — And What I Do About It",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/gastrocnemius-stretches-for-tight-heel-cord-morning-stiffnes-de.html",
+      "lang": "de",
+      "title": "Steife Fersen am Morgen: Meine Gastrocnemius-Dehnroutine als Physiotherapeutin",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/gastrocnemius-stretches-for-tight-heel-cord-morning-stiffnes-it.html",
+      "lang": "it",
+      "title": "Talloni Rigidi al Mattino: La Mia Routine di Stretching per il Gastrocnemio",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/gastrocnemius-stretches-for-tight-heel-cord-morning-stiffnes-fr.html",
+      "lang": "fr",
+      "title": "Raideur des Talons Au Réveil : Ma Routine d'Étirement du Gastrocnémien",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/navicular-bone-mobilization-for-inner-foot-arch-stiffness-en.html",
+      "lang": "en",
+      "title": "My Stiff Inner Arch Finally Made Sense — Navicular Bone Mobilization Changed My Morning Routine",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/navicular-bone-mobilization-for-inner-foot-arch-stiffness-de.html",
+      "lang": "de",
+      "title": "Dieses Knacken im Fußgewölbe morgens früh — und was mein Kahnbein damit zu tun hat",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/navicular-bone-mobilization-for-inner-foot-arch-stiffness-it.html",
+      "lang": "it",
+      "title": "Quella rigidità all'arco del piede che ignoravo da mesi — e cosa ho imparato sull'osso navicolare",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/navicular-bone-mobilization-for-inner-foot-arch-stiffness-es.html",
+      "lang": "es",
+      "title": "Me dolía el arco interno del pie cada mañana — hasta que empecé a trabajar el hueso escafoides",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/navicular-bone-mobilization-for-inner-foot-arch-stiffness-fr.html",
+      "lang": "fr",
+      "title": "Mon arche interne bloquée chaque matin — ce que j'ai compris sur l'os naviculaire après des années",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/rectus-femoris-release-for-stubborn-front-thigh-kicking-tigh-en.html",
+      "lang": "en",
+      "title": "My Rectus Femoris Was Wrecking My Practice — Here's What Actually Helped",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/rectus-femoris-release-for-stubborn-front-thigh-kicking-tigh-de.html",
+      "lang": "de",
+      "title": "Warum Mein Oberschenkel Vorne Immer Wieder Zog — Und Was Mir Endlich Geholfen Hat",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/rectus-femoris-release-for-stubborn-front-thigh-kicking-tigh-it.html",
+      "lang": "it",
+      "title": "Quella Tensione al Quadricipite Che Non Andava Mai Via — La Mia Storia",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/rectus-femoris-release-for-stubborn-front-thigh-kicking-tigh-fr.html",
+      "lang": "fr",
+      "title": "Cette Tension Tenace à L'avant de La Cuisse Qui Revenait Toujours — Mon Expérience",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/extensor-carpi-radialis-massage-for-wrist-extension-fatigue--en.html",
+      "lang": "en",
+      "title": "My Wrists Were Done After Teaching Three Classes — Here's What Actually Helped",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/extensor-carpi-radialis-massage-for-wrist-extension-fatigue--de.html",
+      "lang": "de",
+      "title": "Drei Yogastunden am Stück — und dann haben meine Handgelenke einfach streikt",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/extensor-carpi-radialis-massage-for-wrist-extension-fatigue--fr.html",
+      "lang": "fr",
+      "title": "J'ai enchaîné quatre cours sans pause et mes avant-bras ont lâché — voilà ce que j'ai changé",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/wrist-pronation-drills-for-better-forearm-comfort-typing-en.html",
+      "lang": "en",
+      "title": "My Wrists Were Screaming After Hours of Typing — Here's What Actually Helped",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/wrist-pronation-drills-for-better-forearm-comfort-typing-de.html",
+      "lang": "de",
+      "title": "Ich Habe Jahrelang Falsch Getippt — Diese Handgelenk-Übungen Haben Mein Morgenritual Verändert",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/biceps-femoris-massage-for-outer-hamstring-sitting-discomfor-en.html",
+      "lang": "en",
+      "title": "Outer Hamstring Discomfort When Sitting? Here's What I Do for My Biceps Femoris",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/biceps-femoris-massage-for-outer-hamstring-sitting-discomfor-de.html",
+      "lang": "de",
+      "title": "Ziehen am äußeren Oberschenkel beim Sitzen? Was ich nach meiner Knie-OP gelernt habe",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/biceps-femoris-massage-for-outer-hamstring-sitting-discomfor-it.html",
+      "lang": "it",
+      "title": "Fastidio all'esterno della coscia quando sei seduto? Quello che faccio per il bicipite femorale",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/biceps-femoris-massage-for-outer-hamstring-sitting-discomfor-fr.html",
+      "lang": "fr",
+      "title": "Cette gêne à l'extérieur de la cuisse quand on est assis — ce que je fais avec le biceps fémoral",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/popliteal-fossa-mobility-for-better-full-knee-extension-de.html",
+      "lang": "de",
+      "title": "Die Kniekehle vergessen? Warum ich dort jetzt jede Kniebehandlung beginne",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/popliteal-fossa-mobility-for-better-full-knee-extension-fr.html",
+      "lang": "fr",
+      "title": "Ce creux derrière le genou que j'ai longtemps négligé — et que je travaille maintenant en premier",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/cervical-rotation-drills-for-easier-shoulder-shoulder-checki-en.html",
+      "lang": "en",
+      "title": "Cubital Tunnel Stretches: What I Do When My Clients' Fingers Go Numb",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/cervical-rotation-drills-for-easier-shoulder-shoulder-checki-de.html",
+      "lang": "de",
+      "title": "Kribbeln im kleinen Finger? Was ich meinen Klienten bei Kubitaltunnel-Beschwerden zeige",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/cervical-rotation-drills-for-easier-shoulder-shoulder-checki-it.html",
+      "lang": "it",
+      "title": "Quel formicolio al mignolo che pensavo fosse normale: cosa faccio adesso con i miei clienti",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/cervical-rotation-drills-for-easier-shoulder-shoulder-checki-fr.html",
+      "lang": "fr",
+      "title": "Ce picotement dans le petit doigt que mes clients ignorent depuis des mois — voici ce que je fais",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/tibialis-posterior-massage-for-inner-shin-running-fatigue-en.html",
+      "lang": "en",
+      "title": "That Aching Inner Shin After a Long Run — Here's What I Do",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/tibialis-posterior-massage-for-inner-shin-running-fatigue-de.html",
+      "lang": "de",
+      "title": "Schmerzen am inneren Schienbein nach dem Laufen — was ich selbst dagegen mache",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/tibialis-posterior-massage-for-inner-shin-running-fatigue-fr.html",
+      "lang": "fr",
+      "title": "Cette douleur profonde le long du tibia interne après une longue sortie — voilà ce que je fais",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/cervical-lateral-flexion-drills-for-side-neck-stiffness-en.html",
+      "lang": "en",
+      "title": "Stiff Side Neck? These Cervical Lateral Flexion Drills Changed My Morning Routine",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/cervical-lateral-flexion-drills-for-side-neck-stiffness-de.html",
+      "lang": "de",
+      "title": "Steifer seitlicher Nacken: Übungen, die ich selbst jeden Morgen mache",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/cervical-lateral-flexion-drills-for-side-neck-stiffness-fr.html",
+      "lang": "fr",
+      "title": "Raideur du cou côté droit depuis des semaines — voici ce que j'ai fait",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/abductor-digiti-minimi-massage-for-outer-foot-edge-pressure-en.html",
+      "lang": "en",
+      "title": "Why the Outside of My Foot Was Killing Me After Every Run — And What I Do Now",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/abductor-digiti-minimi-massage-for-outer-foot-edge-pressure-fr.html",
+      "lang": "fr",
+      "title": "Ce muscle fin le long du bord du pied que j'ai ignoré pendant vingt ans de sport",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/interosseous-membrane-release-for-forearm-rotation-stiffness-en.html",
+      "lang": "en",
+      "title": "Why My Forearm Felt Like a Rusty Hinge — And What I Did About It",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/interosseous-membrane-release-for-forearm-rotation-stiffness-de.html",
+      "lang": "de",
+      "title": "Mein Unterarm drehte sich kaum noch — bis ich diese Methode entdeckte",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/interosseous-membrane-release-for-forearm-rotation-stiffness-fr.html",
+      "lang": "fr",
+      "title": "Mon avant-bras refusait de tourner — voilà ce que j'ai fait",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/longus-colli-stretches-for-deep-front-neck-tension-relief-en.html",
+      "lang": "en",
+      "title": "My Longus Colli Finally Stopped Screaming — Here's What I Do Now",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/longus-colli-stretches-for-deep-front-neck-tension-relief-de.html",
+      "lang": "de",
+      "title": "Wenn der Hals von innen zieht: Meine Longus-Colli-Routine nach einem langen Praxistag",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/longus-colli-stretches-for-deep-front-neck-tension-relief-fr.html",
+      "lang": "fr",
+      "title": "Cette Pression Bizarre Derrière le Larynx — J'ai Enfin Compris Ce Que C'était",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/sesamoid-bone-mobilization-for-big-toe-push-off-stiffness-en.html",
+      "lang": "en",
+      "title": "My Big Toe Was Killing My Morning Flow — Here's What I Started Doing",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/sesamoid-bone-mobilization-for-big-toe-push-off-stiffness-de.html",
+      "lang": "de",
+      "title": "Meine Zehe hat mein Training sabotiert — bis ich diese Routine entdeckt habe",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/talus-joint-mobilization-for-stiff-ankle-dorsiflexion-comfor-en.html",
+      "lang": "en",
+      "title": "My Stiff Ankles Finally Move Again: Talus Mobilization and What Actually Helped",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/talus-joint-mobilization-for-stiff-ankle-dorsiflexion-comfor-de.html",
+      "lang": "de",
+      "title": "Warum mein Sprunggelenk beim Yoga blockiert war – und was ich dagegen getan habe",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/talus-joint-mobilization-for-stiff-ankle-dorsiflexion-comfor-fr.html",
+      "lang": "fr",
+      "title": "Mon cheville droite bloquée en cours de yoga — ce que j'ai appris sur l'astragale",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/cuneiform-joint-mobilization-for-midfoot-flexibility-improve-en.html",
+      "lang": "en",
+      "title": "Cuneiform Joint Mobilization: How I Got My Midfoot Moving Again After My Knee Mess",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/cuneiform-joint-mobilization-for-midfoot-flexibility-improve-de.html",
+      "lang": "de",
+      "title": "Keilbeingelenke mobilisieren: Was mir mein Physiotherapeut erst nach sechs Monaten verraten hat",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/cuneiform-joint-mobilization-for-midfoot-flexibility-improve-fr.html",
+      "lang": "fr",
+      "title": "Mobilisation des articulations cunéiformes : ce que j'ai appris sur mes pieds après six mois de rééducation à Madrid",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/sternocleidomastoid-massage-for-persistent-side-neck-tightne-de.html",
+      "lang": "de",
+      "title": "Dieser Muskel am Hals macht vielen das Leben schwer — meine ehrliche Erfahrung als Massagetherapeutin",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/sternocleidomastoid-massage-for-persistent-side-neck-tightne-it.html",
+      "lang": "it",
+      "title": "Quel muscolo laterale del collo che non smette di tirare: quello che faccio nella mia pratica quotidiana",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/deltoid-posterior-fibers-massage-for-throwing-arm-recovery-en.html",
+      "lang": "en",
+      "title": "My Throwing Arm Was Wrecked Every Sunday — Until I Found This Posterior Deltoid Trick",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/deltoid-posterior-fibers-massage-for-throwing-arm-recovery-de.html",
+      "lang": "de",
+      "title": "Hinter der Schulter steckt mehr Erschöpfung als du denkst — mein Protokoll nach dem Werfen",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/deltoid-posterior-fibers-massage-for-throwing-arm-recovery-es.html",
+      "lang": "es",
+      "title": "Me dolía el hombro trasero cada lunes y nadie me decía por qué",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/extensor-hallucis-longus-massage-for-top-of-foot-walking-fat-en.html",
+      "lang": "en",
+      "title": "Why the Top of My Foot Aches After Long Walks — And What I Do About It",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/extensor-hallucis-longus-massage-for-top-of-foot-walking-fat-de.html",
+      "lang": "de",
+      "title": "Dieser Muskel oben am Fuß macht mir nach langen Wanderungen das Leben schwer — und so gehe ich damit um",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/extensor-hallucis-longus-massage-for-top-of-foot-walking-fat-es.html",
+      "lang": "es",
+      "title": "Me dolía el empeine después de caminar horas y nadie me había hablado de este músculo",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/extensor-hallucis-longus-massage-for-top-of-foot-walking-fat-fr.html",
+      "lang": "fr",
+      "title": "Cette douleur bizarre sur le dessus du pied après une longue marche — j'ai enfin compris d'où elle venait",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/thoracic-spine-extension-drills-for-slouched-sitting-recover-en.html",
+      "lang": "en",
+      "title": "My Upper Back Was a Mess After Years of Desk Work — Here's What Actually Helped",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/thoracic-spine-extension-drills-for-slouched-sitting-recover-de.html",
+      "lang": "de",
+      "title": "Wie ich meinen steifen Brustwirbel nach Jahren am Schreibtisch wieder beweglich gemacht habe",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/thoracic-spine-extension-drills-for-slouched-sitting-recover-it.html",
+      "lang": "it",
+      "title": "Da ex atleta romano, ecco cosa ho fatto quando la mia schiena ha smesso di stare dritta",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/thoracic-spine-extension-drills-for-slouched-sitting-recover-fr.html",
+      "lang": "fr",
+      "title": "J'avais cinquante ans et le dos d'un bureaucrate — voilà comment j'ai récupéré ma mobilité dorsale",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/serratus-anterior-activation-for-winging-shoulder-blade-reli-en.html",
+      "lang": "en",
+      "title": "Why Your Shoulder Blade Sticks Out — And What I Do About It Every Morning",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/serratus-anterior-activation-for-winging-shoulder-blade-reli-de.html",
+      "lang": "de",
+      "title": "Mein Schulterblatt stand jahrelang ab — bis ich diesen Muskel endlich trainierte",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/serratus-anterior-activation-for-winging-shoulder-blade-reli-it.html",
+      "lang": "it",
+      "title": "La mia scapola sporgeva come un'ala — ecco cosa ho cambiato dopo vent'anni di sport",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/serratus-anterior-activation-for-winging-shoulder-blade-reli-fr.html",
+      "lang": "fr",
+      "title": "Mon omoplate décollait depuis des années — voilà ce que j'ai finalement compris",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/peroneus-tertius-massage-for-front-ankle-eversion-stiffness-en.html",
+      "lang": "en",
+      "title": "My Peroneus Tertius Fix: How I Finally Tackled That Stubborn Front Ankle Stiffness",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/peroneus-tertius-massage-for-front-ankle-eversion-stiffness-de.html",
+      "lang": "de",
+      "title": "Steifes Sprunggelenk vorne? So massiere ich meinen Peroneus Tertius – meine ehrliche Routine",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/peroneus-tertius-massage-for-front-ankle-eversion-stiffness-it.html",
+      "lang": "it",
+      "title": "Peronео Terzo e Caviglia Rigida: la Mia Routine di Massaggio che Non Cambio da Mesi",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/peroneus-tertius-massage-for-front-ankle-eversion-stiffness-es.html",
+      "lang": "es",
+      "title": "Cómo Masajeo mi Peroneo Tercer para la Rigidez de la Parte Anterior del Tobillo: Mi Rutina Real",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/peroneus-tertius-massage-for-front-ankle-eversion-stiffness-fr.html",
+      "lang": "fr",
+      "title": "Mon Rituel de Massage du Péronier Antérieur pour la Raideur du Cou-de-Pied : ce que j'ai Appris en 20 Ans",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/lumbricals-foot-massage-for-toe-spreading-walking-comfort-en.html",
+      "lang": "en",
+      "title": "Why I Started Massaging My Lumbrical Muscles — And How It Changed My Daily Walks",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/lumbricals-foot-massage-for-toe-spreading-walking-comfort-de.html",
+      "lang": "de",
+      "title": "Meine Fußmassage-Routine für die Lumbrikalmuskeln — Was ich nach 20 Jahren endlich richtig mache",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/lumbricals-foot-massage-for-toe-spreading-walking-comfort-fr.html",
+      "lang": "fr",
+      "title": "J'ai Ignoré Mes Muscles Lombricaux Pendant Des Années — Voilà Ce Que J'ai Appris en Les Massant",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/brachialis-massage-for-deep-elbow-bend-hiking-fatigue-en.html",
+      "lang": "en",
+      "title": "Why My Elbow Ached After Every Long Hike — And What I Do About It Now",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/brachialis-massage-for-deep-elbow-bend-hiking-fatigue-fr.html",
+      "lang": "fr",
+      "title": "Cette douleur sourde dans le coude après une longue randonnée — j'ai mis du temps à comprendre d'où elle venait",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/opponens-pollicis-release-for-thumb-pinching-craft-fatigue-en.html",
+      "lang": "en",
+      "title": "My Thumb Was Screaming After a Knitting Weekend — Here's What Actually Helped",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/opponens-pollicis-release-for-thumb-pinching-craft-fatigue-de.html",
+      "lang": "de",
+      "title": "Daumen-Schmerzen nach dem Stricken: Was ich als Yogalehrerin wirklich tue",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/opponens-pollicis-release-for-thumb-pinching-craft-fatigue-es.html",
+      "lang": "es",
+      "title": "Me Dolía el Pulgar Después de Tejer Todo el Fin de Semana — Esto Es Lo Que Hago",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/opponens-pollicis-release-for-thumb-pinching-craft-fatigue-fr.html",
+      "lang": "fr",
+      "title": "Mon Pouce Bloqué Après un Atelier de Broderie — Ce Que J'ai Appris à Faire",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/flexor-carpi-ulnaris-release-for-inner-wrist-piano-fatigue-en.html",
+      "lang": "en",
+      "title": "My Inner Wrist Aches After Every Piano Session — Here's What I Started Doing",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/flexor-carpi-ulnaris-release-for-inner-wrist-piano-fatigue-de.html",
+      "lang": "de",
+      "title": "Warum mein Handgelenk nach dem Klavierüben immer auf der Innenseite schmerzt",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/flexor-carpi-ulnaris-release-for-inner-wrist-piano-fatigue-it.html",
+      "lang": "it",
+      "title": "Quel dolore al polso interno dopo ore di pianoforte: cosa ho imparato a fare",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/flexor-carpi-ulnaris-release-for-inner-wrist-piano-fatigue-es.html",
+      "lang": "es",
+      "title": "Me dolía la muñeca por dentro después de tocar el piano — esto es lo que cambié",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/flexor-carpi-ulnaris-release-for-inner-wrist-piano-fatigue-fr.html",
+      "lang": "fr",
+      "title": "Ce que j'ai appris sur la fatigue du poignet interne après des heures de piano",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/infraspinatus-massage-for-persistent-external-shoulder-rotat-en.html",
+      "lang": "en",
+      "title": "My Infraspinatus Was a Rock — Here's the Massage Routine That Got My Shoulder Moving Again",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/infraspinatus-massage-for-persistent-external-shoulder-rotat-de.html",
+      "lang": "de",
+      "title": "Steife Schulter beim Außenrotieren — Wie ich mein Infraspinatus-Massage-Ritual gefunden habe",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/infraspinatus-massage-for-persistent-external-shoulder-rotat-it.html",
+      "lang": "it",
+      "title": "Spalla Bloccata in Rotazione Esterna — La Mia Routine di Massaggio all'Infraspinato che Ha Fatto la Differenza",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/opponens-digiti-minimi-release-for-pinky-side-grip-fatigue-en.html",
+      "lang": "en",
+      "title": "Why My Pinky Side Always Gave Out First (And What I Started Doing About It)",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/opponens-digiti-minimi-release-for-pinky-side-grip-fatigue-de.html",
+      "lang": "de",
+      "title": "Die kleine Muskel am Kleinfingerballen — warum ich sie jahrelang ignoriert habe",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/opponens-digiti-minimi-release-for-pinky-side-grip-fatigue-fr.html",
+      "lang": "fr",
+      "title": "Ce muscle que j'ai ignoré pendant dix ans et qui me le faisait payer chaque soir",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/infraspinatus-massage-for-persistent-outer-shoulder-blade-ac-de.html",
+      "lang": "de",
+      "title": "Dieser stumpfe Schmerz außen am Schulterblatt — wie ich meinen Infraspinatus endlich ernst genommen habe",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/infraspinatus-massage-for-persistent-outer-shoulder-blade-ac-it.html",
+      "lang": "it",
+      "title": "Quel dolore sordo dietro la scapola che non passa mai — la mia esperienza con l'infraspinato",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/quadratus-plantae-massage-for-deep-heel-tension-relief-fr.html",
+      "lang": "fr",
+      "title": "Cette douleur sourde sous le talon qui résiste à tout: j'ai mis des mois à comprendre que c'était le muscle carré plantaire",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/deltoid-posterior-fibers-massage-for-rounded-shoulder-aching-en.html",
+      "lang": "en",
+      "title": "My Rounded Shoulders Were Killing Me After Training — Here's What Actually Helped",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/deltoid-posterior-fibers-massage-for-rounded-shoulder-aching-de.html",
+      "lang": "de",
+      "title": "Warum Meine Schultern Nach Dem Training Immer Schlechter Wurden — Und Was Ich Jetzt Mache",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/deltoid-posterior-fibers-massage-for-rounded-shoulder-aching-fr.html",
+      "lang": "fr",
+      "title": "Cette Tension Derrière L'épaule Qui Ne Partait Jamais — Ce Que J'ai Changé Dans Ma Routine",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/gemellus-muscle-release-for-deep-hip-external-rotation-stiff-en.html",
+      "lang": "en",
+      "title": "My Hips Locked Up After Years of Sprinting — Here's What I Do Now for the Gemellus",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/gemellus-muscle-release-for-deep-hip-external-rotation-stiff-de.html",
+      "lang": "de",
+      "title": "Tiefe Hüftsteifheit nach dem Training — was ich mit 48 Jahren wirklich dagegen tue",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/gemellus-muscle-release-for-deep-hip-external-rotation-stiff-fr.html",
+      "lang": "fr",
+      "title": "Ce blocage profond dans la hanche que j'ai ignoré trop longtemps — ce que je fais maintenant à 48 ans",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/flexor-carpi-ulnaris-release-for-inner-wrist-writing-fatigue-en.html",
+      "lang": "en",
+      "title": "Inner Wrist Aching After Writing? Here's What I Do About It",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/flexor-carpi-ulnaris-release-for-inner-wrist-writing-fatigue-de.html",
+      "lang": "de",
+      "title": "Mein Handgelenk hat nach dem Schreiben gebrennt – das hat mir geholfen",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/flexor-carpi-ulnaris-release-for-inner-wrist-writing-fatigue-es.html",
+      "lang": "es",
+      "title": "Me dolía la muñeca después de cada sesión de escritura y esto fue lo que descubrí",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/flexor-carpi-ulnaris-release-for-inner-wrist-writing-fatigue-fr.html",
+      "lang": "fr",
+      "title": "Mon poignet interne criait grâce en pleine rédaction — voilà ce que j'ai appris",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/piriformis-release-for-deep-buttock-sitting-discomfort-en.html",
+      "lang": "en",
+      "title": "That Deep Ache When You Sit Too Long — What My Piriformis Was Trying to Tell Me",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/piriformis-release-for-deep-buttock-sitting-discomfort-de.html",
+      "lang": "de",
+      "title": "Dieses dumpfe Ziehen tief im Gesäß beim Sitzen — mein Piriformis hat endlich meine Aufmerksamkeit bekommen",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/piriformis-release-for-deep-buttock-sitting-discomfort-it.html",
+      "lang": "it",
+      "title": "Quel fastidio profondo sotto il sedere quando stai seduto troppo a lungo — la mia storia col piriforme",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/lumbar-multifidus-massage-for-deep-lower-back-rotation-stiff-de.html",
+      "lang": "de",
+      "title": "Wenn sich die Lendenwirbelsäule kaum noch dreht: Was ich als Massagetherapeutin wirklich tue",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/lumbar-multifidus-massage-for-deep-lower-back-rotation-stiff-it.html",
+      "lang": "it",
+      "title": "La rigidità rotatoria lombare e il muscolo multifido: quello che faccio davvero durante una seduta",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/lumbar-multifidus-massage-for-deep-lower-back-rotation-stiff-fr.html",
+      "lang": "fr",
+      "title": "Quand le bas du dos ne veut plus tourner : ce que je fais vraiment en séance sur le multifide lombaire",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/piriformis-release-for-deep-buttock-sciatica-like-discomfort-en.html",
+      "lang": "en",
+      "title": "My Piriformis Massage Routine for Deep Buttock Discomfort (What I Actually Use on Clients)",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/piriformis-release-for-deep-buttock-sciatica-like-discomfort-de.html",
+      "lang": "de",
+      "title": "Warum meine Kunden mit tiefem Gesäßschmerz jetzt endlich Entspannung finden",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/piriformis-release-for-deep-buttock-sciatica-like-discomfort-it.html",
+      "lang": "it",
+      "title": "Quel dolore profondo nel gluteo che nessuno sa spiegare: la mia routine con il piriforme",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/piriformis-release-for-deep-buttock-sciatica-like-discomfort-fr.html",
+      "lang": "fr",
+      "title": "Ce muscle oublié au fond du fessier qui rend mes clients fous de douleur",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/iliacus-release-for-deep-front-hip-flexion-tightness-en.html",
+      "lang": "en",
+      "title": "My Hip Was Locking Up Every Morning — Here's What Actually Helped",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/iliacus-release-for-deep-front-hip-flexion-tightness-de.html",
+      "lang": "de",
+      "title": "Meine Hüfte Hat Mich Jeden Morgen Gebremst — Bis Ich Das Hier Ausprobiert Habe",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/iliacus-release-for-deep-front-hip-flexion-tightness-it.html",
+      "lang": "it",
+      "title": "L'Anca Bloccata Alle 7 Di Mattina: La Mia Storia e Quello Che Ho Imparato",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/iliacus-release-for-deep-front-hip-flexion-tightness-es.html",
+      "lang": "es",
+      "title": "Por Qué Me Dolía La Cadera Al Despertar — Y Qué Cambió Todo",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/iliacus-release-for-deep-front-hip-flexion-tightness-fr.html",
+      "lang": "fr",
+      "title": "Ma Hanche Se Bloquait Dès Le Réveil — Voilà Ce Que J'ai Changé",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/lumbar-multifidus-massage-for-deep-low-back-fatigue-en.html",
+      "lang": "en",
+      "title": "Why Your Lower Back Still Aches After Rest — And What I Do About It",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/lumbar-multifidus-massage-for-deep-low-back-fatigue-de.html",
+      "lang": "de",
+      "title": "Das stille Brennen im Rücken: Was ich nach langen Trainingstagen mit dem Multifidus mache",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    },
+    {
+      "file": "articles/lumbar-multifidus-massage-for-deep-low-back-fatigue-fr.html",
+      "lang": "fr",
+      "title": "Cette fatigue au fond du dos qui persiste même après une bonne nuit — et ce que je fais vraiment",
+      "reason": "First-person or claimed personal experience in title requires substantiation"
+    }
+  ]
+}
