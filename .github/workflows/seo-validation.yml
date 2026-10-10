@@ -1,6 +1,13 @@
 name: SEO validation
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/seo_audit.py'
+      - 'scripts/normalize_seo.py'
+      - 'generate.py'
+      - 'docs/**'
   pull_request:
     paths:
       - 'generate.py'
