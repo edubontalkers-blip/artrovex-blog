@@ -3,7 +3,7 @@
   "size": 50,
   "remaining_after_batch": 166,
   "scope": "Editorial processing, not approval for indexing",
-  "note": "First 20 pages have preliminary rewrites; remaining 30 have noindex editorial notices and require substantive content. No page should be released based on this manifest alone.",
+  "note": "30 of 50 have preliminary drafts. Remaining 20 require full rewrite. All 50 remain noindex until sourced editorial QA.",
   "items": [
     {
       "file": "articles/opponens-pollicis-massage-for-thumb-fatigue-in-gamers-es.html",
@@ -309,7 +309,7 @@
       "file": "articles/splenius-capitis-release-for-persistent-upper-neck-rotation--de.html",
       "lang": "de",
       "original_title": "Steifer Nacken beim Kopfdrehen — was ich nach Jahren endlich in meine Abendroutine aufgenommen habe",
-      "stage": "quarantined_requires_full_rewrite",
+      "stage": "rewritten_draft_requires_sources_and_editorial_qa",
       "indexing": "noindex_until_review",
       "checks": [
         "medical source verification",
@@ -324,7 +324,7 @@
       "file": "articles/splenius-capitis-release-for-persistent-upper-neck-rotation--es.html",
       "lang": "es",
       "original_title": "Ese viaje en tren donde no podía girar el cuello — mi rutina actual para el splenius capitis",
-      "stage": "quarantined_requires_full_rewrite",
+      "stage": "rewritten_draft_requires_sources_and_editorial_qa",
       "indexing": "noindex_until_review",
       "checks": [
         "medical source verification",
@@ -339,7 +339,7 @@
       "file": "articles/splenius-capitis-release-for-persistent-upper-neck-rotation--fr.html",
       "lang": "fr",
       "original_title": "Le matin où j'ai réalisé que je ne pouvais plus tourner la tête à gauche — ce que j'ai mis en place depuis",
-      "stage": "quarantined_requires_full_rewrite",
+      "stage": "rewritten_draft_requires_sources_and_editorial_qa",
       "indexing": "noindex_until_review",
       "checks": [
         "medical source verification",
@@ -354,7 +354,7 @@
       "file": "articles/psoas-release-stretches-for-tight-morning-hip-extension-en.html",
       "lang": "en",
       "original_title": "Why My Hips Feel Like Concrete Every Morning — And What I Actually Do About It",
-      "stage": "quarantined_requires_full_rewrite",
+      "stage": "rewritten_draft_requires_sources_and_editorial_qa",
       "indexing": "noindex_until_review",
       "checks": [
         "medical source verification",
@@ -369,7 +369,7 @@
       "file": "articles/psoas-release-stretches-for-tight-morning-hip-extension-de.html",
       "lang": "de",
       "original_title": "Meine Hüfte morgens – warum der erste Schritt aus dem Bett manchmal wehtut",
-      "stage": "quarantined_requires_full_rewrite",
+      "stage": "rewritten_draft_requires_sources_and_editorial_qa",
       "indexing": "noindex_until_review",
       "checks": [
         "medical source verification",
@@ -384,7 +384,7 @@
       "file": "articles/psoas-release-stretches-for-tight-morning-hip-extension-fr.html",
       "lang": "fr",
       "original_title": "Ma hanche gauche qui refuse de se réveiller — et ma routine de cinq minutes pour y remédier",
-      "stage": "quarantined_requires_full_rewrite",
+      "stage": "rewritten_draft_requires_sources_and_editorial_qa",
       "indexing": "noindex_until_review",
       "checks": [
         "medical source verification",
@@ -399,7 +399,7 @@
       "file": "articles/lumbrical-hand-exercises-for-better-finger-spreading-control-en.html",
       "lang": "en",
       "original_title": "Lumbrical Hand Exercises: How I Finally Got My Fingers to Listen",
-      "stage": "quarantined_requires_full_rewrite",
+      "stage": "rewritten_draft_requires_sources_and_editorial_qa",
       "indexing": "noindex_until_review",
       "checks": [
         "medical source verification",
@@ -414,7 +414,7 @@
       "file": "articles/lumbrical-hand-exercises-for-better-finger-spreading-control-de.html",
       "lang": "de",
       "original_title": "Lumbrikal-Übungen: Warum meine Finger endlich das tun, was ich will",
-      "stage": "quarantined_requires_full_rewrite",
+      "stage": "rewritten_draft_requires_sources_and_editorial_qa",
       "indexing": "noindex_until_review",
       "checks": [
         "medical source verification",
@@ -429,7 +429,7 @@
       "file": "articles/lumbrical-hand-exercises-for-better-finger-spreading-control-fr.html",
       "lang": "fr",
       "original_title": "Exercices lombricaux : ce que mes doigts m'ont appris le jour où j'ai renversé mon café",
-      "stage": "quarantined_requires_full_rewrite",
+      "stage": "rewritten_draft_requires_sources_and_editorial_qa",
       "indexing": "noindex_until_review",
       "checks": [
         "medical source verification",
@@ -444,7 +444,7 @@
       "file": "articles/adductor-magnus-release-for-inner-thigh-sitting-discomfort-en.html",
       "lang": "en",
       "original_title": "Why My Inner Thighs Ache After Sitting All Day — And What I Do About It",
-      "stage": "quarantined_requires_full_rewrite",
+      "stage": "rewritten_draft_requires_sources_and_editorial_qa",
       "indexing": "noindex_until_review",
       "checks": [
         "medical source verification",
