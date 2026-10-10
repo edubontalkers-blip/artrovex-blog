@@ -150,18 +150,8 @@ Respond with ONLY the topic text, nothing else."""
 def generate_all_languages(topic, platform, cream_of_day):
     """Generate articles for ALL 5 languages in one single Claude call."""
 
-    # Vary the writing persona each day to avoid patterns
-    day = (datetime.date.today() - datetime.date(2024, 1, 1)).days
-    personas = [
-        "a 45-year-old physiotherapist from Munich who blogs about body care in their spare time",
-        "a 38-year-old yoga instructor from Milan who writes about wellness from personal experience",
-        "a 52-year-old sports coach from Madrid who started blogging after recovering from a knee injury",
-        "a 41-year-old massage therapist from Lyon who writes honestly about products she uses with clients",
-        "a 35-year-old personal trainer from Berlin who is passionate about injury prevention",
-        "a 48-year-old former athlete from Rome who now coaches and writes about body maintenance",
-        "a 44-year-old wellness educator from Barcelona who has tried dozens of massage creams over the years",
-    ]
-    persona = personas[day % len(personas)]
+    # Never impersonate clinicians, coaches, customers or invent lived experiences.
+    persona = "a careful editorial writer for a general wellness website"
 
     prompt = f"""You are {persona}. Write a wellness blog article on this topic for ALL 5 languages.
 
@@ -170,28 +160,28 @@ CREAM: {cream_of_day}
 PLATFORM: {platform}
 
 RULES:
-1. Each language: start with a personal real-life moment, mix short/long sentences, add one personal opinion.
+1. Start with a concrete, realistic reader problem; do not invent personal experiences, testimonials, patients, credentials or experiments.
 2. NO AI phrases: "furthermore", "moreover", "game-changer", "holistic", "leverage", "in today's world", "it is important to note".
-3. NO medical claims. No "treats", "heals", "cures", "relieves", "therapeutic".
-4. Each language written FRESHLY — not translated. Different opening per language.
-5. Mention {cream_of_day} naturally as cosmetic massage product, quality 2026 ingredients.
-6. Include: where to buy original + spot fakes (1 paragraph), double application tip, handwashing reminder.
-7. 3 FAQ per language — questions real readers ask.
-8. Keep each text section to 3-4 sentences maximum to stay within token limits.
+3. Cosmetic-only: no claims to treat, prevent, cure or relieve diseases, pain, inflammation or injuries. Never imply medical efficacy or guarantee results.
+4. Produce accurate, natural German, Italian, French, English and Spanish versions of the SAME useful factual guidance; do not invent localized facts.
+5. Mention {cream_of_day} only as an optional cosmetic massage cream. Never invent ingredient lists, certification, clinical tests, endorsements, product effects or availability.
+6. Give safe, actionable general advice (comfort, gentle movement, sensible breaks). For cosmetic use, follow the product label, patch-test when appropriate, avoid damaged skin and wash hands after use. Do not invent counterfeit accusations or recommend double application.
+7. 3 helpful FAQ per language. State uncertainty when evidence is limited; avoid numerical prescriptions without reliable support.
+8. Keep each section concise, concrete and genuinely useful. No invented studies, sources or first-person claims. Avoid dangerous self-treatment advice; persistent or severe symptoms warrant professional advice.
 
 RESPOND WITH VALID JSON ONLY:
 {{
   "en": {{
     "title": "specific human-sounding title",
     "meta_description": "under 155 chars",
-    "intro": "3 sentences personal opening",
+    "intro": "3 factual, engaging sentences without invented first-person experience",
     "sections": [
       {{"heading": "heading", "text": "3-4 sentences"}},
       {{"heading": "heading", "text": "3-4 sentences"}},
       {{"heading": "heading", "text": "3-4 sentences"}}
     ],
     "product_mention": "2 sentences natural mention",
-    "double_tip": "1-2 sentences",
+    "double_tip": "1-2 sentences of gentle general self-care advice; never advise double application",
     "wash_reminder": "1 sentence",
     "faq": [{{"q": "question", "a": "answer"}},{{"q": "question", "a": "answer"}},{{"q": "question", "a": "answer"}}],
     "cta": "1 human closing line"
