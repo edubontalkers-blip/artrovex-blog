@@ -474,12 +474,12 @@ footer a{{color:#52c48a;text-decoration:none}}
 <body>
 <nav>
   <a class="nb" href="#">🌿 Body Advice</a>
-  <a class="ns" href="https://www.artrovex.shop" target="_blank">🛍 Shop</a>
+  <a class="ns" href="/guides/hydration-nutrition-it.html" lang="it">Italiano →</a>
 </nav>
 <div class="hero">
   <h1>Everyday moments.<br><em>Meaningful living.</em></h1>
   <p>Thoughtful stories and practical, source-backed guides to food, hydration, movement and the everyday moments that matter.</p>
-  <a href="/guides/hydration-nutrition-de.html" lang="de">Explore the everyday edit →</a>
+  <a href="/guides/hydration-nutrition-en.html" lang="en">Explore the everyday edit →</a>
 </div>
 
 <div class="wrap">
