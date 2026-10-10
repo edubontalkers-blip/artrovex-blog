@@ -526,25 +526,21 @@ def generate_sitemap(articles_meta):
     # Main pages
     urls = f"""  <url>
     <loc>{DOMAIN}/</loc>
-    <lastmod>{today}</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>{DOMAIN}/faq.html</loc>
-    <lastmod>{today}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>{DOMAIN}/about.html</loc>
-    <lastmod>{today}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>{DOMAIN}/claim-review.html</loc>
-    <lastmod>{today}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>"""
@@ -572,14 +568,13 @@ def generate_sitemap(articles_meta):
         urls += f"""
   <url>
     <loc>{DOMAIN}/info/{page}</loc>
-    <lastmod>{today}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>"""
 
     # Language archives make all existing articles reachable from the home page.
     for lang in LANGS:
-        urls += f"\n  <url><loc>{DOMAIN}/articles-{lang}.html</loc><lastmod>{today}</lastmod></url>"
+        urls += f"\n  <url><loc>{DOMAIN}/articles-{lang}.html</loc></url>"
 
     # Daily articles
     for m in articles_meta:
@@ -1150,17 +1145,6 @@ def generate_brand_pages():
                 "@context": "https://schema.org",
                 "@graph": [
                     {
-                        "@type": "Product",
-                        "name": brand_data["brand"],
-                        "description": page["meta"],
-                        "brand": {"@type": "Brand", "name": brand_data["brand"]},
-                        "offers": {
-                            "@type": "Offer",
-                            "url": "https://www.artrovex.shop",
-                            "availability": "https://schema.org/InStock"
-                        }
-                    },
-                    {
                         "@type": "Article",
                         "headline": page["h1"],
                         "description": page["meta"],
@@ -1342,12 +1326,7 @@ def generate_enhanced_robots():
     robots = f"""User-agent: *
 Allow: /
 
-User-agent: Googlebot
-Allow: /
-Crawl-delay: 1
-
-Sitemap: {DOMAIN}/sitemap.xml
-Sitemap: {DOMAIN}/sitemap-news.xml"""
+Sitemap: {DOMAIN}/sitemap.xml"""
 
     with open("docs/robots.txt", "w", encoding="utf-8") as f:
         f.write(robots)
@@ -1710,7 +1689,6 @@ def main():
 
     update_index(articles_meta)
     generate_sitemap(articles_meta)
-    generate_news_sitemap(articles_meta)
     generate_seo_landing_pages()
     generate_brand_pages()
     generate_about_page()
@@ -1718,6 +1696,8 @@ def main():
     generate_claim_review_page()
     generate_llms_txt()
     generate_enhanced_robots()
+    from scripts.normalize_seo import fix as normalize_seo
+    normalize_seo()
     print(f"\n🎉 Done! 2 topics × 5 languages = 10 new pages today!")
 
 if __name__ == "__main__":

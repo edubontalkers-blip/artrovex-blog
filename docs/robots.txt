@@ -1,9 +1,4 @@
 User-agent: *
 Allow: /
 
-User-agent: Googlebot
-Allow: /
-Crawl-delay: 1
-
 Sitemap: https://bodyadvice.site/sitemap.xml
-Sitemap: https://bodyadvice.site/sitemap-news.xml

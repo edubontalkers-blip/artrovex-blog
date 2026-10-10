@@ -1,0 +1,45 @@
+name: SEO validation
+
+on:
+  pull_request:
+    paths:
+      - 'generate.py'
+      - 'docs/**'
+      - '.github/workflows/seo-validation.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate generator syntax and XML
+        run: |
+          python -m py_compile generate.py
+          python - <<'PY'
+          import pathlib, xml.etree.ElementTree as ET, json, re
+          root = pathlib.Path("docs")
+          sitemap = ET.parse(root / "sitemap.xml").getroot()
+          ns = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+          urls = [x.text for x in sitemap.findall("s:url/s:loc", ns)]
+          assert len(urls) == len(set(urls)), "Duplicate sitemap URLs"
+          assert all(u.startswith("https://bodyadvice.site/") for u in urls)
+          for u in urls:
+              rel = u.removeprefix("https://bodyadvice.site/") or "index.html"
+              assert (root / rel).is_file(), f"Missing sitemap target: {rel}"
+          for brand in ("artrovex-cream", "hondrocream"):
+              for lang in ("en", "de", "it", "es", "fr"):
+                  page = (root / "info" / f"{brand}-{lang}.html").read_text()
+                  for blob in re.findall(r'<script type="application/ld\+json">(.*?)</script>', page, re.S):
+                      data = json.loads(blob)
+                      nodes = data.get("@graph", [data])
+                      assert not any(n.get("@type") == "Product" and n.get("offers") for n in nodes), "Invalid editorial offer"
+          print(f"Validated {len(urls)} sitemap URLs and 10 editorial pages")
+          PY
+      - name: Normalize SEO metadata in temporary CI checkout
+        run: python scripts/normalize_seo.py
+      - name: Audit internal links, metadata, schema and live sitemap responses
+        run: python scripts/seo_audit.py
