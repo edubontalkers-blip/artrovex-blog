@@ -58,8 +58,8 @@ if missing:
     issues.append(str(len(missing)) + " catalogued HTML files missing")
 report = {"catalogued": len(catalog), "languages": dict(Counter(m.get("lang") for m in catalog)),
           "missing": missing, "editorial_review_count": len(flags), "editorial_review": flags}
-report_path = root / "docs" / "editorial-audit.json"
-report_path.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8")
+report_path = root / "editorial-audit.json"
+report_path.write_text(json.dumps(report, ensure_ascii=False, indent=2) + chr(10), encoding="utf-8")
 print("Editorial review flags:", len(flags), "| Missing HTML:", len(missing))
 print("Report:", report_path)
 print("Body Advice editorial audit")
