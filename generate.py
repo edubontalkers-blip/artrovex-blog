@@ -227,15 +227,6 @@ def build_article_html(data, lang, topic, date_str, slug, cream_of_day, author_n
 
     cream_name = "Artrovex" if "Artrovex" in cream_of_day else "Hondrocream"
 
-    # Rotating author names by language — sounds like real native bloggers
-    authors = {
-        "en": ["Body Advice Team", "Emma", "Body Advice Team", "James", "Laura"],
-        "de": ["Body Advice Team", "Stefan", "Body Advice Team", "Monika", "Andreas"],
-        "it": ["Body Advice Team", "Giulia", "Body Advice Team", "Marco", "Valentina"],
-        "es": ["Body Advice Team", "Carmen", "Body Advice Team", "Miguel", "Isabel"],
-        "fr": ["Body Advice Team", "Sophie", "Body Advice Team", "Pierre", "Marie"],
-    }
-    day_num = (datetime.date.today() - datetime.date(2024, 1, 1)).days
     author_name = "Body Advice Editorial Team"
 
     schema = {
@@ -1597,15 +1588,6 @@ def main():
 
     day = (datetime.date.today() - datetime.date(2024, 1, 1)).days
 
-    # First names only — natural for bloggers, no fake identity risk
-    # Alternates between named author and editorial team
-    authors_by_lang = {
-        "en": ["Body Advice Team", "Emma", "Body Advice Team", "James", "Laura"],
-        "de": ["Body Advice Team", "Stefan", "Body Advice Team", "Monika", "Andreas"],
-        "it": ["Body Advice Team", "Giulia", "Body Advice Team", "Marco", "Valentina"],
-        "es": ["Body Advice Team", "Carmen", "Body Advice Team", "Miguel", "Isabel"],
-        "fr": ["Body Advice Team", "Sophie", "Body Advice Team", "Pierre", "Marie"],
-    }
     cream_1 = get_cream_for_today()
     platform_1 = PLATFORMS[day % len(PLATFORMS)]
 
