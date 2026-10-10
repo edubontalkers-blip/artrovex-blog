@@ -19,19 +19,19 @@ def fix():
         expected = canonical(path)
         content = original
         # Normalize only internal URL hosts, never unrelated external domains.
-        content = re.sub(r'https://www\\.bodyadvice\\.site(?=[/"\'?#]|$)', DOMAIN, content)
-        content = re.sub(r'(<link\\s+rel=["\']canonical["\']\\s+href=["\'])[^"\']+(["\'])', lambda m: m[1] + expected + m[2], content, count=1)
+        content = re.sub(r'https://www\.bodyadvice\.site(?=[/"\'?#]|$)', DOMAIN, content)
+        content = re.sub(r'(<link\s+rel=["\']canonical["\']\s+href=["\'])[^"\']+(["\'])', lambda m: m[1] + expected + m[2], content, count=1)
         # Self-reference is mandatory if the document advertises a hreflang cluster.
-        match = re.search(r'<html\\b[^>]*\\blang=["\']([a-z]{2})["\']', content)
+        match = re.search(r'<html\b[^>]*\blang=["\']([a-z]{2})["\']', content)
         language = match.group(1) if match else None
         if language in LANGS and 'hreflang=' in content:
-            self_tag = re.compile(r'<link\\b(?=[^>]*\\brel=["\']alternate["\'])(?=[^>]*\\bhreflang=["\']' + language + r'["\'])[^>]*>', re.I)
+            self_tag = re.compile(r'<link\b(?=[^>]*\brel=["\']alternate["\'])(?=[^>]*\bhreflang=["\']' + language + r'["\'])[^>]*>', re.I)
             if self_tag.search(content):
                 content = self_tag.sub(lambda m: re.sub(r'href=["\'][^"\']+["\']', 'href="' + expected + '"', m.group(0)), content, count=1)
             else:
-                head = re.search(r'</head\\s*>', content, re.I)
+                head = re.search(r'</head\s*>', content, re.I)
                 if head:
-                    content = content[:head.start()] + f'<link rel="alternate" hreflang="{language}" href="{expected}">\\n' + content[head.start():]
+                    content = content[:head.start()] + f'<link rel="alternate" hreflang="{language}" href="{expected}">\n' + content[head.start():]
         if content != original:
             path.write_text(content, encoding="utf-8")
             modified += 1
