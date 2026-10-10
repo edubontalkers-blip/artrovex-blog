@@ -236,7 +236,7 @@ def build_article_html(data, lang, topic, date_str, slug, cream_of_day, author_n
         "fr": ["Body Advice Team", "Sophie", "Body Advice Team", "Pierre", "Marie"],
     }
     day_num = (datetime.date.today() - datetime.date(2024, 1, 1)).days
-    author_name = authors.get(lang, authors["en"])[day_num % 5]
+    author_name = "Body Advice Editorial Team"
 
     schema = {
         "@context": "https://schema.org",
@@ -248,9 +248,8 @@ def build_article_html(data, lang, topic, date_str, slug, cream_of_day, author_n
                 "datePublished": datetime.date.today().isoformat(),
                 "dateModified": datetime.date.today().isoformat(),
                 "author": {
-                    "@type": "Person",
+                    "@type": "Organization",
                     "name": author_name,
-                    "jobTitle": "Wellness Blogger",
                     "url": DOMAIN
                 },
                 "publisher": {"@type": "Organization", "name": "Body Advice", "url": DOMAIN},
@@ -1623,7 +1622,7 @@ def main():
         for lang in LANGS:
             try:
                 data = all_data_1[lang]
-                author_name = authors_by_lang.get(lang, authors_by_lang['en'])[day % 5]
+                author_name = "Body Advice Editorial Team"
                 html = build_article_html(data, lang, topic_1, date_str, slug_1, cream_1, author_name)
                 path = f"docs/articles/{slug_1}-{lang}.html"
                 with open(path, "w", encoding="utf-8") as f:
@@ -1660,7 +1659,7 @@ def main():
         for lang in LANGS:
             try:
                 data = all_data_2[lang]
-                author_name = authors_by_lang.get(lang, authors_by_lang['en'])[(day + 2) % 5]
+                author_name = "Body Advice Editorial Team"
                 html = build_article_html(data, lang, topic_2, date_str, slug_2, cream_2_raw, author_name)
                 path = f"docs/articles/{slug_2}-{lang}.html"
                 with open(path, "w", encoding="utf-8") as f:
