@@ -2,26 +2,8 @@
   "date": "2026-10-11",
   "scope": "Catalog title triage only; full body medical review not performed",
   "total": 629,
-  "flagged": 229,
+  "flagged": 226,
   "flagged_articles": [
-    {
-      "file": "articles/multifidus-activation-exercises-for-lumbar-spine-stability-i-en.html",
-      "lang": "en",
-      "title": "I Spent 3 Months Fixing My Lower Back — Here's What Actually Worked",
-      "reason": "First-person or claimed personal experience in title requires substantiation"
-    },
-    {
-      "file": "articles/multifidus-activation-exercises-for-lumbar-spine-stability-i-de.html",
-      "lang": "de",
-      "title": "Mein unterer Rücken hat mich jahrelang genervt — bis ich diese Übungen entdeckt habe",
-      "reason": "First-person or claimed personal experience in title requires substantiation"
-    },
-    {
-      "file": "articles/multifidus-activation-exercises-for-lumbar-spine-stability-i-fr.html",
-      "lang": "fr",
-      "title": "J'ai compris tardivement pourquoi mon bas du dos n'était jamais vraiment stable",
-      "reason": "First-person or claimed personal experience in title requires substantiation"
-    },
     {
       "file": "articles/gluteus-medius-activation-for-hip-drop-correction-de.html",
       "lang": "de",
