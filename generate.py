@@ -347,7 +347,7 @@ footer a{{color:#52c48a;text-decoration:none}}
     <h3>💡 Artrovex + Hondrocream together</h3>
     <p>{combo}</p>
   </div>
-  <div class="tip-box"><strong>💡 Pro tip — double application</strong>{data['double_tip']}</div>
+  <div class="tip-box"><strong>💡 Everyday comfort</strong>{data['double_tip']}</div>
   <div class="tip-box"><strong>🧼 Important</strong>{data['wash_reminder']}</div>
   <div class="fake-warning">
     <h3>{fake_warn['heading']}</h3>
@@ -409,7 +409,7 @@ def update_index(articles_meta):
     for m in sorted(articles_meta, key=lambda x: x["date"], reverse=True)[:120]:
         cards_html += f"""
     <a class="card" href="articles/{m['slug']}-{m['lang']}.html" lang="{m['lang']}">
-      <div class="card-stripe"></div>
+      <div class="card-art" aria-hidden="true">✦</div>
       <div class="card-body">
         <div class="card-tag">{m['date']} · {m['lang'].upper()}</div>
         <div class="card-title">{escape(m['title'])}</div>
@@ -450,20 +450,20 @@ body{{font-family:'Inter',sans-serif;background:#faf8f3;color:#1c1c1c}}
 nav{{background:#183d2f;height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;position:sticky;top:0;z-index:100}}
 .nb{{font-family:'Lora',serif;color:#52c48a;font-size:17px;text-decoration:none}}
 .ns{{background:#52c48a;color:#183d2f;padding:7px 13px;border-radius:6px;font-size:13px;font-weight:700;text-decoration:none}}
-.hero{{background:linear-gradient(150deg,#183d2f,#1e5c40);padding:48px 20px 40px;text-align:center;color:#fff}}
+.hero{{background:radial-gradient(circle at 15% 18%,rgba(117,195,145,.22),transparent 32%),linear-gradient(150deg,#183d2f,#1e5c40);padding:72px 20px 66px;text-align:center;color:#fff}}
 .hero h1{{font-family:'Lora',serif;font-size:clamp(22px,5vw,40px);font-weight:400;margin-bottom:12px}}
 .hero h1 em{{color:#52c48a;font-style:italic}}
 .hero p{{color:rgba(255,255,255,.65);font-size:15px;max-width:520px;margin:0 auto 22px}}
 .hero a{{background:#52c48a;color:#183d2f;padding:11px 24px;border-radius:7px;font-weight:700;font-size:14px;text-decoration:none}}
 .wrap{{max-width:960px;margin:0 auto;padding:0 16px 50px}}
 .sec-title{{font-family:'Lora',serif;font-size:20px;font-weight:400;color:#183d2f;margin:32px 0 16px;border-bottom:1px solid #e0e8e3;padding-bottom:10px}}
-.grid{{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}}
+.grid{{display:grid;grid-template-columns:repeat(auto-fill,minmax(235px,1fr));gap:16px}}
 .card{{display:block;color:inherit;text-decoration:none;background:#fff;border-radius:10px;overflow:hidden;cursor:pointer;transition:transform .15s;border:1.5px solid #e0e8e3;box-shadow:0 1px 6px rgba(0,0,0,.06)}}
 .card:focus-visible{{outline:3px solid #2d7d5a;outline-offset:3px}}
 .language-nav{{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0;font-weight:600}}
 .language-nav a{{color:#205b43;text-underline-offset:3px}}
 .card:hover{{transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,.1)}}
-.card-stripe{{height:4px;background:linear-gradient(90deg,#183d2f,#52c48a)}}
+.card-art{{height:115px;display:grid;place-items:center;background:linear-gradient(135deg,#dcebe1,#e8e5ce);color:#356a4d;font-size:40px}} .card:nth-child(3n+2) .card-art{{background:linear-gradient(135deg,#e9e0d5,#d5e9e6)}} .card:nth-child(3n+3) .card-art{{background:linear-gradient(135deg,#e0e8d6,#dce2ef)}}
 .card-body{{padding:14px}}
 .card-tag{{font-size:10px;color:#2d7d5a;letter-spacing:1.5px;text-transform:uppercase;font-weight:600;margin-bottom:5px}}
 .card-title{{font-family:'Lora',serif;font-size:14px;line-height:1.4;color:#1c1c1c}}
@@ -480,7 +480,7 @@ footer a{{color:#52c48a;text-decoration:none}}
 </nav>
 <div class="hero">
   <h1>Move better.<br><em>Feel better.</em> Live fully.</h1>
-  <p>Daily expert tips on joint care, muscle recovery and massage — featuring Artrovex & Hondrocream guides. Updated every day in 5 languages.</p>
+  <p>Practical ideas for comfortable movement, everyday routines and mindful massage. Guides in German, Italian, French, English and Spanish.</p>
   <a href="https://www.artrovex.shop" target="_blank">Discover original Artrovex & Hondrocream →</a>
 </div>
 <div class="trust-bar">
