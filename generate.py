@@ -1251,13 +1251,13 @@ def generate_about_page():
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About Body Advice — Wellness Blog | bodyadvice.site</title>
-<meta name="description" content="Body Advice is an independent wellness blog publishing daily expert tips on joint care, muscle recovery and massage. We cover Artrovex and Hondrocream massage creams honestly and transparently.">
+<meta name="description" content="Body Advice publishes editorial articles about everyday movement, hydration, food and daily routines in five languages.">
 <link rel="canonical" href="{DOMAIN}/about.html">
 <script type="application/ld+json">{json.dumps({
     "@context": "https://schema.org",
     "@type": "AboutPage",
     "name": "About Body Advice",
-    "description": "Independent wellness blog — daily tips on joint care, muscle recovery and massage.",
+    "description": "Lifestyle articles about food, hydration, movement and everyday routines.",
     "publisher": {
         "@type": "Organization",
         "name": "Body Advice",
@@ -1291,14 +1291,14 @@ footer a{{color:#52c48a;text-decoration:none}}
 </nav>
 <div class="wrap">
   <h1>About Body Advice</h1>
-  <p>Body Advice is an independent wellness blog dedicated to practical, honest guidance on joint care, muscle recovery, massage techniques and daily movement. We publish new content every day in five languages: English, German, Italian, Spanish and French.</p>
+  <p>Body Advice is a multilingual lifestyle publication about food, hydration, movement and everyday routines. Articles are published in English, German, Italian, Spanish and French.</p><p>Editorial content is attributed to the Body Advice Editorial Team. This is an organizational byline, not a fictional individual or a claim of medical qualifications.</p>
 
   <h2>What We Cover</h2>
-  <p>We write about the things that matter for people who want to stay active and take care of their bodies — joint mobility, muscle care, massage routines, warm-up and cool-down techniques, and the small daily habits that make a real difference over time.</p>
+  <p>We cover everyday meals, hydration, comfortable movement, rest, family life and practical habits. Where factual recommendations are given, we aim to link to identifiable primary sources.</p>
 
   <h2>Our Approach to Products</h2>
-  <p>We cover cosmetic massage products honestly and transparently. We mention Artrovex and Hondrocream massage creams — both made by a small brand that we believe cares genuinely about product quality. We explain what these products are (cosmetic massage creams), what they are not (medicines), and where to buy the originals safely.</p>
-  <p>We have covered the history of counterfeit products in this space honestly — including the 2019 issues with unauthorized distributors — because we believe consumers deserve accurate, complete information.</p>
+  <p>Body Advice is associated with the Artrovex and Hondrocream brands and may link to their store. Product-related content is therefore not presented as independent third-party product testing.</p>
+  <p>Editorial articles are intended to inform, not to replace professional advice. We aim to distinguish general lifestyle information from commercial references.</p>
 
   <h2>No Medical Claims</h2>
   <p>Nothing on this site constitutes medical advice. All content is for general wellness and informational purposes only. Always consult a qualified healthcare professional for medical concerns.</p>
