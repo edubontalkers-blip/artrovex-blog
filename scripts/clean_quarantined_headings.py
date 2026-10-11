@@ -23,7 +23,7 @@ for path in sorted(ROOT.glob("*.html")):
     h1 = re.search(r'<h1(?:\s[^>]*)?>(.*?)</h1>', html, re.S)
     if not title or not h1:
         continue
-    leaked = ("Wait, that", "Hmm, let me think", "\n\n")
+    leaked = ("Wait, that", "Hmm, let me think", "\n\n", "Redaktionelle Prüfung:", "Revisione editoriale:", "Editorial review:", "Revisión editorial:", "Révision éditoriale:")
     if not any(marker in title.group(1) for marker in leaked) and not any(marker in h1.group(1) for marker in leaked):
         continue
     safe = HEADINGS[lang.group(1)]
