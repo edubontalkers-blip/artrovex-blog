@@ -32,6 +32,30 @@ def fix():
                 head = re.search(r'</head\s*>', content, re.I)
                 if head:
                     content = content[:head.start()] + f'<link rel="alternate" hreflang="{language}" href="{expected}">\n' + content[head.start():]
+
+        # Rebuild reciprocal language links only from actual sibling translations.
+        # Do not advertise missing translations or redirect to unrelated pages.
+        stem = path.stem
+        suffix = re.search(r'-(en|de|it|es|fr)
+            path.write_text(content, encoding="utf-8")
+            modified += 1
+    print(f"Normalized canonical and hreflang in {modified} HTML files")
+
+if __name__ == "__main__":
+    fix()
+, stem)
+        if suffix and language == suffix.group(1):
+            base = stem[:-3]
+            siblings = {lang: path.with_name(base + "-" + lang + ".html")
+                        for lang in LANGS}
+            siblings = {lang: sibling for lang, sibling in siblings.items()
+                        if sibling.is_file()}
+            if len(siblings) > 1:
+                alternate_tag = re.compile(r'<link\\b(?=[^>]*\\brel=[\\"\\']alternate[\\"\\'])(?=[^>]*\\bhreflang=[\\"\\'])[^>]*>\\s*', re.I)
+                content = alternate_tag.sub("", content)
+                tags = "".join(f'<link rel="alternate" hreflang="{lang}" href="{canonical(sibling)}">\\n'
+                               for lang, sibling in sorted(siblings.items()))
+                content = re.sub(r'</head\\s*>', lambda m: tags + m.group(0), content, count=1, flags=re.I)
         if content != original:
             path.write_text(content, encoding="utf-8")
             modified += 1
