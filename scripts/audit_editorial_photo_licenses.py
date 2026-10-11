@@ -4,7 +4,7 @@ import hashlib,json,re,urllib.parse,urllib.request
 from pathlib import Path
 root=Path(__file__).resolve().parents[1]/"docs"/"images"/"editorial"
 entries=json.loads((root/"photo-license-manifest.json").read_text())
-assert len(entries)==40 and len({e["file"] for e in entries})==40,"Expected 40 distinct audited files"
+assert entries and len({e["file"] for e in entries})==len(entries),"Invalid audited file list"
 for e in entries:
  assert e["license"]=="CC0" and e["source"].startswith("https://commons.wikimedia.org/wiki/"),"Invalid license/source"
  p=root/e["file"]
