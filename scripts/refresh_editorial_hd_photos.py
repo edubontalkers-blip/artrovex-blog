@@ -21,7 +21,9 @@ def candidates(q):
   url=i.get("thumburl") or i.get("url")
   if url and re.search(r"\.(jpe?g|png|webp)(\?|$)",url,re.I):yield p["title"],url,i.get("descriptionurl",""),lic
 used=set();credits=[];manifest=[];count=0
+verified_by_theme={}
 for n,q in enumerate(queries,1):
+ theme=("food" if any(k in q for k in ("salad","food","vegetable","breakfast","fruit","meal","cooking")) else "nature" if any(k in q for k in ("hiking","mountain","forest","trail","nature","walk")) else "mind" if any(k in q for k in ("meditation","mindfulness","sunshine","wellness")) else "movement")
  for title,url,source,license_name in candidates(q):
   if title in used:continue
   try:
@@ -32,13 +34,25 @@ for n,q in enumerate(queries,1):
    out=root/"images"/"editorial"/f"bodyadvice_{n:02d}.webp"
    im.save(out,"WEBP",quality=86,method=6)
    used.add(title);count+=1
+   verified_by_theme.setdefault(theme,[]).append((title,url,source,license_name,out.name))
    digest=hashlib.sha256(out.read_bytes()).hexdigest()
    manifest.append({"file":out.name,"title":title,"source":source,"license":license_name,"sha256":digest})
    credits.append(f"| {n:02d} | [{title}]({source}) | {license_name} |")
    print(n,title,im.size,flush=True)
    break
   except Exception as e:print("Skipping:",str(e)[:130],flush=True)
- else:print("No suitable verified CC0 image:",n,q,flush=True)
+ else:
+  print("No suitable verified CC0 image:",n,q,flush=True)
+  # Reuse a verified photograph only within its editorial theme; never use unlicensed stock.
+  available=verified_by_theme.get(theme,[])
+  if available:
+   title,url,source,license_name,original=available[(n-1)%len(available)]
+   out=root/"images"/"editorial"/f"bodyadvice_{n:02d}.webp"
+   out.write_bytes((root/"images"/"editorial"/original).read_bytes())
+   count+=1
+   digest=hashlib.sha256(out.read_bytes()).hexdigest()
+   manifest.append({"file":out.name,"title":title,"source":source,"license":license_name,"sha256":digest})
+   credits.append(f"| {n:02d} | [{title}]({source}) | {license_name} (reused) |")
  time.sleep(.2)
 (root/"image-credits.md").write_text("# BodyAdvice editorial photo sources\n\nPhotos identified as CC0 or public domain in Wikimedia Commons metadata at download time.\n\n| Image | Source | License |\n|---|---|---|\n"+"\n".join(credits)+"\n")
 (root/"images"/"editorial"/"photo-license-manifest.json").write_text(json.dumps(manifest,indent=2,ensure_ascii=False)+"\\n")
