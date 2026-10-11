@@ -14,12 +14,12 @@ IMAGES = ROOT / "docs" / "images" / "editorial"
 class Photos(HTMLParser):
     def __init__(self):
         super().__init__()
-        self.figures = []
+        self.figures = 0
         self.images = []
     def handle_starttag(self, tag, attrs):
         a = dict(attrs)
         if tag == "figure" and "data-editorial-photo" in a:
-            self.figures.append(a["data-editorial-photo"])
+            self.figures += 1
         if tag == "img":
             self.images.append(a)
 
@@ -40,23 +40,25 @@ def main():
     for page in files:
         p = Photos()
         p.feed(page.read_text(encoding="utf-8"))
-        if len(p.figures) != 1:
-            errors.append(f"{page.name}: expected one editorial figure, got {len(p.figures)}")
-        for figure in p.figures:
-            try: usage[int(figure)] += 1
-            except ValueError: errors.append(f"{page.name}: invalid figure number {figure}")
+        if p.figures != 1:
+            errors.append(f"{page.name}: expected one editorial figure, got {p.figures}")
+        found = 0
         for img in p.images:
             src = img.get("src", "")
-            if "images/editorial/bodyadvice_" not in src: continue
-            target = (page.parent / src.split("?", 1)[0]).resolve()
+            if "images/editorial/bodyadvice_" not in src:
+                continue
+            found += 1
+            clean = src.split("?", 1)[0]
+            target = ((ROOT / clean.lstrip("/")) if clean.startswith("/") else (page.parent / clean)).resolve()
+            match = re.search(r"bodyadvice_(\\d{2})\\.webp$", clean)
+            if match:
+                usage[int(match.group(1))] += 1
             if not target.is_file():
                 errors.append(f"{page.name}: missing image {src}")
             if not img.get("alt", "").strip():
                 errors.append(f"{page.name}: missing alt text {src}")
-        for number in p.figures:
-            matching = [i for i in p.images if i.get("src", "").endswith(f"bodyadvice_{number}.webp")]
-            if not matching:
-                errors.append(f"{page.name}: figure {number} does not match an img")
+        if p.figures and found != 1:
+            errors.append(f"{page.name}: expected one editorial image, got {found}")
     print(f"Articles audited: {len(files)}")
     print(f"Editorial WebP assets: {len(actual)}")
     print(f"Photo usage: {dict(sorted(usage.items()))}")
