@@ -50,3 +50,5 @@ jobs:
 # Run editorial draft-artifact guard across all article languages.
 
 # Revalidate quarantine of draft-text Spanish article.
+
+# Recheck draft detector on rendered article text.
