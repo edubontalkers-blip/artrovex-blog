@@ -14,7 +14,10 @@ def candidates(q):
  for p in sorted(data.get("query",{}).get("pages",{}).values(),key=lambda v:v.get("index",999)):
   i=(p.get("imageinfo") or [{}])[0]
   lic=re.sub("<[^>]*>","",i.get("extmetadata",{}).get("LicenseShortName",{}).get("value",""))
-  if lic not in ("CC0","Public domain","Public Domain Mark") or i.get("width",0)<1200 or i.get("height",0)<700:continue
+  if lic != "CC0" or i.get("width",0)<1200 or i.get("height",0)<700:continue
+  meta=i.get("extmetadata",{})
+  usage=re.sub("<[^>]*>","",meta.get("UsageTerms",{}).get("value","")).strip().lower()
+  if usage and "cc0" not in usage and "public domain" not in usage and "no rights reserved" not in usage:continue
   url=i.get("thumburl") or i.get("url")
   if url and re.search(r"\.(jpe?g|png|webp)(\?|$)",url,re.I):yield p["title"],url,i.get("descriptionurl",""),lic
 used=set();credits=[];count=0
@@ -37,4 +40,4 @@ for n,q in enumerate(queries,1):
  time.sleep(.2)
 (root/"image-credits.md").write_text("# BodyAdvice editorial photo sources\n\nPhotos identified as CC0 or public domain in Wikimedia Commons metadata at download time.\n\n| Image | Source | License |\n|---|---|---|\n"+"\n".join(credits)+"\n")
 print("Successfully replaced",count,"of 40 photos")
-if count<30:raise SystemExit("Not enough photos; do not publish this batch")
+if count!=40:raise SystemExit("Require all 40 individually verified CC0 images; do not publish partial batch")
