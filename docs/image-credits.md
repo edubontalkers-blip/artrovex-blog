@@ -36,11 +36,11 @@ Wikimedia Commons CC0 photographs, with original source links.
 | 30 | [File:Mountain landscape in kerala.jpg](https://commons.wikimedia.org/wiki/File:Mountain_landscape_in_kerala.jpg) | CC0 |
 | 31 | [File:Hike in the green mountains (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Hike_in_the_green_mountains_(Unsplash).jpg) | CC0 |
 | 32 | [File:Fresh Vegetables in Indonesia Restaurant.jpg](https://commons.wikimedia.org/wiki/File:Fresh_Vegetables_in_Indonesia_Restaurant.jpg) | CC0 |
-| 33 | REPLACEMENT REQUIRED — duplicate of 01; new image and license not yet verified | Pending |
+| 33 | [File:Maintaining a healthy lifestyle.jpg](https://commons.wikimedia.org/wiki/File:Maintaining_a_healthy_lifestyle.jpg) | CC0 (source page checked 2026-10-11; asset not yet installed) |
 | 34 | [File:Lady fern at Myrstigen trail 1.jpg](https://commons.wikimedia.org/wiki/File:Lady_fern_at_Myrstigen_trail_1.jpg) | CC0 |
 | 35 | [File:Thorpe Park Walking Dead 2024-03-25.jpg](https://commons.wikimedia.org/wiki/File:Thorpe_Park_Walking_Dead_2024-03-25.jpg) | CC0 |
-| 36 | REPLACEMENT REQUIRED — duplicate of 18; new image and license not yet verified | Pending |
-| 37 | REPLACEMENT REQUIRED — duplicate of 19; new image and license not yet verified | Pending |
-| 38 | REPLACEMENT REQUIRED — duplicate of 21; new image and license not yet verified | Pending |
+| 36 | [File:Walking in Park.jpg](https://commons.wikimedia.org/wiki/File:Walking_in_Park.jpg) | CC0 (source page checked 2026-10-11; asset not yet installed) |
+| 37 | [File:Yoga and fitness work out.jpg](https://commons.wikimedia.org/wiki/File:Yoga_and_fitness_work_out.jpg) | CC0 (source page checked 2026-10-11; asset not yet installed) |
+| 38 | [File:Wikimedia Nigeria Imo State Network Fitness Walk and Exercise 3.jpg](https://commons.wikimedia.org/wiki/File:Wikimedia_Nigeria_Imo_State_Network_Fitness_Walk_and_Exercise_3.jpg) | CC0 (source page checked 2026-10-11; asset not yet installed) |
 | 39 | [File:Bean salad.jpg](https://commons.wikimedia.org/wiki/File:Bean_salad.jpg) | CC0 |
 | 40 | [File:Male barefooter letting his feet rest on a patch of moss (20628).jpg](https://commons.wikimedia.org/wiki/File:Male_barefooter_letting_his_feet_rest_on_a_patch_of_moss_(20628).jpg) | CC0 |
