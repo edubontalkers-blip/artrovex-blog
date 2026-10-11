@@ -99,6 +99,9 @@ def main():
     print(f"Articles: {len(files)}; blocking issues: {len(failures)}; editorial warnings: {len(warnings)}")
     warning_types=Counter(message.split(":")[0] for _,message in warnings)
     print("EDITORIAL WARNING BREAKDOWN:", dict(warning_types))
+    by_language=Counter((filename.rsplit("-",1)[-1].replace(".html",""), message.split(":")[0]) for filename,message in warnings)
+    print("WARNINGS BY LANGUAGE:", {language:{kind:count for (lang,kind),count in by_language.items() if lang==language} for language in sorted(LANGS)})
+
     for f,e in failures[:60]:print("BLOCK",f,e)
     for f,e in warnings[:30]:print("REVIEW",f,e)
     print("Human editorial approval remains mandatory: pattern matching does not guarantee claim-free content.")
