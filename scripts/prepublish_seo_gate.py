@@ -61,7 +61,8 @@ def audit(path):
     raw = path.read_text(encoding="utf-8")
     draft_markers = ("Wait, that", "Hmm, let me think", "Revisione editoriale:", "Redaktionelle Prüfung:", "Editorial review:", "Revisión editorial:", "Révision éditoriale:")
     visible_text = re.sub(r"<[^>]+>", " ", raw)
-    if any(marker.lower() in visible_text.lower() for marker in draft_markers):
+    matched_drafts = [marker for marker in draft_markers if marker.lower() in visible_text.lower()]
+    if matched_drafts:
         if p.noindex:
             warnings.append("draft-generation text on noindex page; remove before publication")
         else:
@@ -119,6 +120,9 @@ def main():
         print("PRIORITY REVIEW",lang,"total",len(priority[lang]))
         for filename,message in priority[lang][:25]:
             print("PRIORITY",lang,filename,message)
+    draft_files=[filename for filename,message in warnings if message.startswith("draft-generation text")]
+    print("DRAFT REVIEW FILES:",len(draft_files))
+    for filename in draft_files:print("DRAFT FILE",filename)
     for f,e in failures[:60]:print("BLOCK",f,e)
     for f,e in warnings[:30]:print("REVIEW",f,e)
     print("Human editorial approval remains mandatory: pattern matching does not guarantee claim-free content.")
