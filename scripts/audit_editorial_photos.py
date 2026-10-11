@@ -7,9 +7,10 @@ import re
 import struct
 import sys
 
-ROOT = Path(__file__).resolve().parents[1]
-ARTICLES = ROOT / "docs" / "articles"
-IMAGES = ROOT / "docs" / "images" / "editorial"
+PROJECT = Path(__file__).resolve().parents[1]
+ROOT = PROJECT / "docs"
+ARTICLES = ROOT / "articles"
+IMAGES = ROOT / "images" / "editorial"
 
 class Photos(HTMLParser):
     def __init__(self):
