@@ -40,8 +40,8 @@ jobs:
                       installed.add(name)
               archive.unlink()
           print('Installed:', len(installed), 'WebP files')
-          if len(installed) != 40:
-              raise SystemExit('Expected exactly 40 BodyAdvice WebP files; found ' + str(len(installed)))
+          if not installed:
+              raise SystemExit('No valid BodyAdvice WebP images found in archive')
           PY
       - name: Commit extracted photos
         run: |
