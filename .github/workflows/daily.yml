@@ -36,6 +36,9 @@ jobs:
       - name: Normalize editorial author attribution
         run: python scripts/normalize_editorial_authors.py
 
+      - name: Remove external shop promotions
+        run: python scripts/remove_shop_promotions.py
+
       - name: Validate editorial integrity
         run: python scripts/audit_editorial_integrity.py
 
