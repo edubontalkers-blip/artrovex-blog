@@ -102,6 +102,16 @@ def main():
     by_language=Counter((filename.rsplit("-",1)[-1].replace(".html",""), message.split(":")[0]) for filename,message in warnings)
     print("WARNINGS BY LANGUAGE:", {language:{kind:count for (lang,kind),count in by_language.items() if lang==language} for language in sorted(LANGS)})
 
+    from collections import defaultdict
+    priority=defaultdict(list)
+    for filename,message in warnings:
+        lang=filename.rsplit("-",1)[-1].replace(".html","")
+        if lang in ("de","it") and not message.startswith("quoted third-party"):
+            priority[lang].append((filename,message))
+    for lang in ("de","it"):
+        print("PRIORITY REVIEW",lang,"total",len(priority[lang]))
+        for filename,message in priority[lang][:25]:
+            print("PRIORITY",lang,filename,message)
     for f,e in failures[:60]:print("BLOCK",f,e)
     for f,e in warnings[:30]:print("REVIEW",f,e)
     print("Human editorial approval remains mandatory: pattern matching does not guarantee claim-free content.")
