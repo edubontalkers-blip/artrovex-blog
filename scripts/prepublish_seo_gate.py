@@ -74,7 +74,8 @@ def audit(path):
                 "claims we never made", "niemals gemacht", "nunca hemos",
                 "mai fatto", "jamais fait"
             ))
-            if counterfeit:
+            rejected = any(word in context for word in ("niemals", "nunca", "mai ", "jamais", "never", "not true", "falsch", "false", "falso", "fausse"))
+            if counterfeit and rejected:
                 warnings.append("quoted third-party medical claim; review context: " + match.group(0))
             else:
                 errors.append("potential medical claim: " + match.group(0))
