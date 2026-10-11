@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Replace BodyAdvice miniatures using high-resolution CC0 Commons photographs."""
-import io,json,re,time,urllib.parse,urllib.request
+import io,json,re,time,hashlib,urllib.parse,urllib.request
 from pathlib import Path
 from PIL import Image,ImageOps
 root=Path(__file__).resolve().parents[1]/"docs"
@@ -20,7 +20,7 @@ def candidates(q):
   if usage and "cc0" not in usage and "public domain" not in usage and "no rights reserved" not in usage:continue
   url=i.get("thumburl") or i.get("url")
   if url and re.search(r"\.(jpe?g|png|webp)(\?|$)",url,re.I):yield p["title"],url,i.get("descriptionurl",""),lic
-used=set();credits=[];count=0
+used=set();credits=[];manifest=[];count=0
 for n,q in enumerate(queries,1):
  for title,url,source,license_name in candidates(q):
   if title in used:continue
@@ -32,6 +32,8 @@ for n,q in enumerate(queries,1):
    out=root/"images"/"editorial"/f"bodyadvice_{n:02d}.webp"
    im.save(out,"WEBP",quality=86,method=6)
    used.add(title);count+=1
+   digest=hashlib.sha256(out.read_bytes()).hexdigest()
+   manifest.append({"file":out.name,"title":title,"source":source,"license":license_name,"sha256":digest})
    credits.append(f"| {n:02d} | [{title}]({source}) | {license_name} |")
    print(n,title,im.size,flush=True)
    break
@@ -39,5 +41,6 @@ for n,q in enumerate(queries,1):
  else:print("No suitable verified CC0 image:",n,q,flush=True)
  time.sleep(.2)
 (root/"image-credits.md").write_text("# BodyAdvice editorial photo sources\n\nPhotos identified as CC0 or public domain in Wikimedia Commons metadata at download time.\n\n| Image | Source | License |\n|---|---|---|\n"+"\n".join(credits)+"\n")
+(root/"images"/"editorial"/"photo-license-manifest.json").write_text(json.dumps(manifest,indent=2,ensure_ascii=False)+"\\n")
 print("Successfully replaced",count,"of 40 photos")
 if count!=40:raise SystemExit("Require all 40 individually verified CC0 images; do not publish partial batch")
