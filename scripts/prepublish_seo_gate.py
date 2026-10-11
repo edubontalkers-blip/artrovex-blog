@@ -97,6 +97,8 @@ def main():
         if not p.noindex and p.title and titles[(p.lang,p.title.strip().casefold())]>1:failures.append((f.name,"duplicate title within language"))
         if not p.noindex and p.meta and descriptions[(p.lang,p.meta[0].strip().casefold())]>1:failures.append((f.name,"duplicate description within language"))
     print(f"Articles: {len(files)}; blocking issues: {len(failures)}; editorial warnings: {len(warnings)}")
+    warning_types=Counter(message.split(":")[0] for _,message in warnings)
+    print("EDITORIAL WARNING BREAKDOWN:", dict(warning_types))
     for f,e in failures[:60]:print("BLOCK",f,e)
     for f,e in warnings[:30]:print("REVIEW",f,e)
     print("Human editorial approval remains mandatory: pattern matching does not guarantee claim-free content.")
