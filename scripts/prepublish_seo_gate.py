@@ -63,7 +63,21 @@ def audit(path):
     searchable = " ".join([text, p.title, *p.meta, *[i.get("alt", "") for i in p.img]])
     for pattern in CLAIM_PATTERNS:
         for match in pattern.finditer(searchable):
-            errors.append("potential medical claim: " + match.group(0))
+            start = max(0, match.start() - 240)
+            end = min(len(searchable), match.end() + 180)
+            context = searchable[start:end].lower()
+            # Quotes describing fraudulent sellers are not endorsements.
+            # Still surface them for human review, but do not block automatically.
+            counterfeit = any(word in context for word in (
+                "fälschung", "fälschungen", "falsific", "contraffatt",
+                "counterfeit", "fake seller", "contrefaçon", "contrefaçons",
+                "claims we never made", "niemals gemacht", "nunca hemos",
+                "mai fatto", "jamais fait"
+            ))
+            if counterfeit:
+                warnings.append("quoted third-party medical claim; review context: " + match.group(0))
+            else:
+                errors.append("potential medical claim: " + match.group(0))
     if not p.noindex and len(text.split())<250:warnings.append("short article; review depth and search intent")
     return errors,warnings,p
 
