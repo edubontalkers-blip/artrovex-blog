@@ -37,3 +37,5 @@ jobs:
 # Verify manually revised DE/IT SEO titles in review branch.
 
 # Verify revised localized metadata after claim-safe copy edits.
+
+# Validate Italian article descriptions and no-medical-claims rule.
