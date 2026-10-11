@@ -62,5 +62,12 @@ jobs:
         run: python scripts/seo_audit.py
       - name: Check SEO normalization is idempotent
         run: |
-          python scripts/normalize_seo.py
-          git diff --exit-code -- docs || { echo 'SEO normalization is not idempotent'; exit 1; }
+          python - <<'PY'
+          import hashlib, pathlib, subprocess
+          files = sorted(pathlib.Path('docs').rglob('*.html'))
+          before = {str(p): hashlib.sha256(p.read_bytes()).hexdigest() for p in files}
+          subprocess.run(['python', 'scripts/normalize_seo.py'], check=True)
+          after = {str(p): hashlib.sha256(p.read_bytes()).hexdigest() for p in files}
+          assert before == after, 'SEO normalization is not idempotent'
+          print('SEO normalization is idempotent')
+          PY
