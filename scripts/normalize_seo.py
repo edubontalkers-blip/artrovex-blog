@@ -6,8 +6,8 @@ import re
 ROOT = Path("docs")
 DOMAIN = "https://bodyadvice.site"
 LANGS = ("en", "de", "it", "es", "fr")
-CANONICAL = re.compile(r'<link\\b(?=[^>]*\\brel=["\\x27]canonical["\\x27])[^>]*>\\s*', re.I)
-ALTERNATE = re.compile(r'<link\\b(?=[^>]*\\brel=["\\x27]alternate["\\x27])(?=[^>]*\\bhreflang=)[^>]*>\\s*', re.I)
+CANONICAL = re.compile(r'<link\b(?=[^>]*\brel=["\x27]canonical["\x27])[^>]*>\s*', re.I)
+ALTERNATE = re.compile(r'<link\b(?=[^>]*\brel=["\x27]alternate["\x27])(?=[^>]*\bhreflang=)[^>]*>\s*', re.I)
 
 def canonical(path):
     rel = path.relative_to(ROOT).as_posix()
@@ -23,7 +23,7 @@ def fix():
         content = CANONICAL.sub("", content)
         content = ALTERNATE.sub("", content)
         tags = ['<link rel="canonical" href="' + expected + '">']
-        lang_match = re.search(r'<html\\b[^>]*\\blang=["\\x27]([a-z]{2})["\\x27]', content, re.I)
+        lang_match = re.search(r'<html\b[^>]*\blang=["\x27]([a-z]{2})["\x27]', content, re.I)
         language = lang_match.group(1) if lang_match else None
         suffix = re.search(r'-(en|de|it|es|fr)$', path.stem)
         if suffix and language == suffix.group(1):
@@ -34,7 +34,7 @@ def fix():
             if len(siblings) > 1:
                 for lang, target in sorted(siblings.items()):
                     tags.append('<link rel="alternate" hreflang="' + lang + '" href="' + canonical(target) + '">')
-        content, count = re.subn(r'</head\\s*>', lambda m: "\\n".join(tags) + "\\n" + m.group(0), content, count=1, flags=re.I)
+        content, count = re.subn(r'</head\s*>', lambda m: "\n".join(tags) + "\n" + m.group(0), content, count=1, flags=re.I)
         if not count:
             print("WARNING: No head tag:", path)
         if content != old:
