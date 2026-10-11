@@ -6,6 +6,8 @@ on:
       - 'scripts/install_editorial_photos.py'
       - 'docs/images/editorial/**'
   workflow_dispatch:
+  schedule:
+    - cron: '17 3 * * *'
 permissions:
   contents: write
 concurrency:
