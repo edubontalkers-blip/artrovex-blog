@@ -1,0 +1,32 @@
+name: Stage canonical and hreflang fixes
+on:
+  push:
+    branches:
+      - fix/seo-image-validation-20261011
+    paths:
+      - '.github/workflows/stage-seo-fixes.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  normalize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/seo-image-validation-20261011
+      - name: Normalize SEO tags on review branch
+        run: python scripts/normalize_seo_review.py
+      - name: Validate SEO and photos
+        run: |
+          python scripts/audit_editorial_photos.py
+          python scripts/seo_audit.py
+      - name: Commit staged changes if validated
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs
+          if ! git diff --cached --quiet; then
+            git commit -m "Normalize canonical and reciprocal hreflang in review HTML"
+            git push origin HEAD:fix/seo-image-validation-20261011
+          fi
