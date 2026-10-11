@@ -12,6 +12,8 @@ on:
       - 'docs/**'
   pull_request:
     paths:
+      - 'scripts/normalize_seo.py'
+      - 'scripts/seo_audit.py'
       - 'generate.py'
       - 'scripts/audit_editorial_integrity.py'
       - 'scripts/normalize_editorial_authors.py'
@@ -29,7 +31,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Validate generator syntax and XML
         run: |
-          python -m py_compile generate.py
+          python -m py_compile generate.py scripts/normalize_seo.py scripts/seo_audit.py scripts/audit_editorial_integrity.py
           python - <<'PY'
           import pathlib, xml.etree.ElementTree as ET, json, re
           root = pathlib.Path("docs")
@@ -58,3 +60,14 @@ jobs:
         run: python scripts/normalize_seo.py
       - name: Audit internal links, metadata, schema and live sitemap responses
         run: python scripts/seo_audit.py
+      - name: Check SEO normalization is idempotent
+        run: |
+          python - <<'PY'
+          import hashlib, pathlib, subprocess
+          files = sorted(pathlib.Path('docs').rglob('*.html'))
+          before = {str(p): hashlib.sha256(p.read_bytes()).hexdigest() for p in files}
+          subprocess.run(['python', 'scripts/normalize_seo.py'], check=True)
+          after = {str(p): hashlib.sha256(p.read_bytes()).hexdigest() for p in files}
+          assert before == after, 'SEO normalization is not idempotent'
+          print('SEO normalization is idempotent')
+          PY

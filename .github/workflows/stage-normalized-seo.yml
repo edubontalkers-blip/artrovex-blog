@@ -1,0 +1,31 @@
+name: Stage normalized SEO HTML without production deploy
+on:
+  push:
+    branches: [seo/predeploy-audit-oct-2026]
+    paths:
+      - '.github/workflows/stage-normalized-seo.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: seo/predeploy-audit-oct-2026
+          fetch-depth: 0
+      - name: Normalize staged HTML
+        run: python scripts/normalize_seo.py
+      - name: Verify normalized SEO
+        run: python scripts/seo_audit.py
+      - name: Commit normalized pages to staging only
+        run: |
+          git config user.name "Body Advice SEO Bot"
+          git config user.email "bot@bodyadvice.site"
+          git add docs
+          if ! git diff --cached --quiet; then
+            git commit -m "Stage audited canonical and hreflang fixes for review"
+            git pull --rebase origin seo/predeploy-audit-oct-2026
+            git push origin HEAD:seo/predeploy-audit-oct-2026
+          fi
