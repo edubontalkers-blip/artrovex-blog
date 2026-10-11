@@ -36,11 +36,11 @@ Wikimedia Commons CC0 photographs, with original source links.
 | 30 | [File:Mountain landscape in kerala.jpg](https://commons.wikimedia.org/wiki/File:Mountain_landscape_in_kerala.jpg) | CC0 |
 | 31 | [File:Hike in the green mountains (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Hike_in_the_green_mountains_(Unsplash).jpg) | CC0 |
 | 32 | [File:Fresh Vegetables in Indonesia Restaurant.jpg](https://commons.wikimedia.org/wiki/File:Fresh_Vegetables_in_Indonesia_Restaurant.jpg) | CC0 |
-| 33 | [File:Séance de sport en salle et natation - team building 04.jpg](https://commons.wikimedia.org/wiki/File:S%C3%A9ance_de_sport_en_salle_et_natation_-_team_building_04.jpg) | CC0 |
+| 33 | REPLACEMENT REQUIRED — duplicate of 01; new image and license not yet verified | Pending |
 | 34 | [File:Lady fern at Myrstigen trail 1.jpg](https://commons.wikimedia.org/wiki/File:Lady_fern_at_Myrstigen_trail_1.jpg) | CC0 |
 | 35 | [File:Thorpe Park Walking Dead 2024-03-25.jpg](https://commons.wikimedia.org/wiki/File:Thorpe_Park_Walking_Dead_2024-03-25.jpg) | CC0 |
-| 36 | [File:This is a cold water bottle..jpg](https://commons.wikimedia.org/wiki/File:This_is_a_cold_water_bottle..jpg) | CC0 |
-| 37 | [File:Yoga pose image.png](https://commons.wikimedia.org/wiki/File:Yoga_pose_image.png) | CC0 |
-| 38 | [File:Outdoor Gym Krautstraße 30 Berlin-Friedrichshain.jpg](https://commons.wikimedia.org/wiki/File:Outdoor_Gym_Krautstra%C3%9Fe_30_Berlin-Friedrichshain.jpg) | CC0 |
+| 36 | REPLACEMENT REQUIRED — duplicate of 18; new image and license not yet verified | Pending |
+| 37 | REPLACEMENT REQUIRED — duplicate of 19; new image and license not yet verified | Pending |
+| 38 | REPLACEMENT REQUIRED — duplicate of 21; new image and license not yet verified | Pending |
 | 39 | [File:Bean salad.jpg](https://commons.wikimedia.org/wiki/File:Bean_salad.jpg) | CC0 |
 | 40 | [File:Male barefooter letting his feet rest on a patch of moss (20628).jpg](https://commons.wikimedia.org/wiki/File:Male_barefooter_letting_his_feet_rest_on_a_patch_of_moss_(20628).jpg) | CC0 |
