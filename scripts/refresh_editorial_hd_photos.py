@@ -55,6 +55,6 @@ for n,q in enumerate(queries,1):
    credits.append(f"| {n:02d} | [{title}]({source}) | {license_name} (reused) |")
  time.sleep(.2)
 (root/"image-credits.md").write_text("# BodyAdvice editorial photo sources\n\nPhotos identified as CC0 or public domain in Wikimedia Commons metadata at download time.\n\n| Image | Source | License |\n|---|---|---|\n"+"\n".join(credits)+"\n")
-(root/"images"/"editorial"/"photo-license-manifest.json").write_text(json.dumps(manifest,indent=2,ensure_ascii=False)+"\\n")
+(root/"images"/"editorial"/"photo-license-manifest.json").write_text(json.dumps(manifest,indent=2,ensure_ascii=False)+"\n")
 print("Successfully replaced",count,"of 40 photos")
 if count==0:raise SystemExit("No verified images found")
