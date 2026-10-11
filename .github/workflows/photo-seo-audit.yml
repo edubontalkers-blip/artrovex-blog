@@ -6,6 +6,7 @@ on:
     paths:
       - '.github/workflows/photo-seo-audit.yml'
       - 'scripts/audit_editorial_photos.py'
+      - 'scripts/seo_audit.py'
   workflow_dispatch:
 permissions:
   contents: read
