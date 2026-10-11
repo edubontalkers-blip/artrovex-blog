@@ -35,3 +35,5 @@ jobs:
             git commit -m "Normalize existing article section heading hierarchy"
             git push origin HEAD:fix/seo-image-validation-20261011
           fi
+
+# Run conservative title suffix cleanup with article QA in the same batch.
