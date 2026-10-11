@@ -1,0 +1,53 @@
+name: Unpack BodyAdvice editorial photos
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'docs/images/editorial/*.zip'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  unpack:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Extract only valid editorial WebP images
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from zipfile import ZipFile
+          import re
+          folder = Path('docs/images/editorial')
+          archives = sorted(folder.glob('*.zip'))
+          if not archives:
+              raise SystemExit('No ZIP files found in docs/images/editorial')
+          installed = set()
+          for archive in archives:
+              with ZipFile(archive) as z:
+                  for member in z.infolist():
+                      if member.is_dir():
+                          continue
+                      name = Path(member.filename).name
+                      if not re.fullmatch(r'bodyadvice_\d{2}\.webp', name, re.I):
+                          continue
+                      data = z.read(member)
+                      if not (data[:4] == b'RIFF' and data[8:12] == b'WEBP'):
+                          raise SystemExit('Invalid WebP: ' + name)
+                      (folder / name).write_bytes(data)
+                      installed.add(name)
+              archive.unlink()
+          print('Installed:', len(installed), 'WebP files')
+          if len(installed) != 40:
+              raise SystemExit('Expected exactly 40 BodyAdvice WebP files; found ' + str(len(installed)))
+          PY
+      - name: Commit extracted photos
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A docs/images/editorial
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Install 40 BodyAdvice editorial photos from uploaded ZIP"
+          git push
