@@ -31,3 +31,5 @@ jobs:
 # Read-only checks; never deploy production.
 
 # Recheck explicit rejection of counterfeit medical claims.
+
+# Include editorial warning breakdown for prioritization.
