@@ -10,6 +10,15 @@ import sys
 ROOT=Path("docs")
 ARTICLES=ROOT/"articles"
 LANGS={"de","it","en","es","fr"}
+CLAIM_PATTERNS = [
+    re.compile("\\b(?:cures?|treats?|prevents?|heals?)\\s+(?:arthritis|disease|inflammation|chronic pain)\\b", re.I),
+    re.compile("\\b(?:guaranteed|permanent)\\s+(?:pain relief|recovery|cure)\\b", re.I),
+    re.compile("\\b(?:cura|trata|previene|elimina)\\s+(?:la\\s+)?(?:artritis|inflamaci[oó]n|dolor cr[oó]nico)\\b", re.I),
+    re.compile("\\b(?:guarisce|cura|previene|elimina)\\s+(?:l[’']?)?(?:artrite|infiammazione|dolore cronico)\\b", re.I),
+    re.compile("\\b(?:heilt|behandelt|verhindert|beseitigt)\\s+(?:arthritis|entz[uü]ndungen|chronische schmerzen)\\b", re.I),
+    re.compile("\\b(?:gu[eé]rit|traite|pr[eé]vient|[eé]limine)\\s+(?:l[’']?)?(?:arthrite|inflammation|douleur chronique)\\b", re.I),
+]
+
 class Page(HTMLParser):
     def __init__(self):
         super().__init__();self.title="";self.h1=[];self.h2=[];self.meta=[];self.canon=[];self.lang="";self.img=[];self.links=[];self._capture=None
@@ -48,7 +57,12 @@ def audit(path):
         src=i.get("src","").split("?",1)[0]
         if src.startswith("/") and not (ROOT/src.lstrip("/")).is_file():errors.append("missing local image")
     if not any("articles/" in href or href.endswith(".html") for href in p.links):warnings.append("no editorial internal links")
-    text=re.sub(r"<[^>]+>"," ",path.read_text(encoding="utf-8"))
+    raw = path.read_text(encoding="utf-8")
+    text = re.sub(r"<[^>]+>", " ", raw)
+    searchable = " ".join([text, p.title, *p.meta, *[i.get("alt", "") for i in p.img]])
+    for pattern in CLAIM_PATTERNS:
+        for match in pattern.finditer(searchable):
+            errors.append("potential medical claim: " + match.group(0))
     if len(text.split())<250:warnings.append("short article; review depth and search intent")
     return errors,warnings,p
 
@@ -68,7 +82,7 @@ def main():
     print(f"Articles: {len(files)}; blocking issues: {len(failures)}; editorial warnings: {len(warnings)}")
     for f,e in failures[:60]:print("BLOCK",f,e)
     for f,e in warnings[:30]:print("REVIEW",f,e)
-    print("Human editorial approval remains mandatory for accuracy, search intent, medical claims, and image relevance.")
+    print("Human editorial approval remains mandatory: pattern matching does not guarantee claim-free content.")
     if failures:sys.exit(1)
 
 if __name__=="__main__":main()
