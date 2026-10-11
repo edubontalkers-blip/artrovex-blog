@@ -51,7 +51,7 @@ def main():
             found += 1
             clean = src.split("?", 1)[0]
             target = ((ROOT / clean.lstrip("/")) if clean.startswith("/") else (page.parent / clean)).resolve()
-            match = re.search(r"bodyadvice_(\\d{2})\\.webp$", clean)
+            match = re.search(r"bodyadvice_(\d{2})\.webp$", clean)
             if match:
                 usage[int(match.group(1))] += 1
             if not target.is_file():
