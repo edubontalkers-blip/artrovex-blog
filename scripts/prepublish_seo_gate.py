@@ -59,6 +59,12 @@ def audit(path):
         if src.startswith("/") and not (ROOT/src.lstrip("/")).is_file():errors.append("missing local image")
     if not p.noindex and not any("articles/" in href or href.endswith(".html") for href in p.links):warnings.append("no editorial internal links")
     raw = path.read_text(encoding="utf-8")
+    draft_markers = ("Wait, that", "Hmm, let me think", "Revisione editoriale:", "Redaktionelle Prüfung:", "Editorial review:", "Revisión editorial:", "Révision éditoriale:")
+    if any(marker.lower() in raw.lower() for marker in draft_markers):
+        if p.noindex:
+            warnings.append("draft-generation text on noindex page; remove before publication")
+        else:
+            errors.append("draft-generation text on indexable page")
     text = re.sub(r"<[^>]+>", " ", raw)
     searchable = " ".join([text, p.title, *p.meta, *[i.get("alt", "") for i in p.img]])
     for pattern in CLAIM_PATTERNS:
