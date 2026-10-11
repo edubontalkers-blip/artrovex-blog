@@ -39,6 +39,9 @@ jobs:
       - name: Remove external shop promotions
         run: python scripts/remove_shop_promotions.py
 
+      - name: Add editorial photographs to new articles
+        run: python scripts/install_editorial_photos.py
+
       - name: Validate editorial integrity
         run: python scripts/audit_editorial_integrity.py
 
