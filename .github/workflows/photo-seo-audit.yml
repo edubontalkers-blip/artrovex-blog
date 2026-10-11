@@ -26,3 +26,5 @@ jobs:
       - name: Audit technical SEO
         if: always()
         run: python scripts/seo_audit.py
+
+# Read-only checks; never deploy production.
