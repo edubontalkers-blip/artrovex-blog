@@ -1,0 +1,32 @@
+name: Safe automatic ZIP extraction
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'incoming-zips/*.zip'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: zip-extraction-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  unpack:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Validate and unpack ZIPs
+        run: python3 scripts/safe_unpack_zips.py
+      - name: Commit extracted files and remove ZIPs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A incoming-zips imported-zips
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Unpack approved ZIP uploads safely"
+          git pull --rebase origin main
+          git push origin HEAD:main
