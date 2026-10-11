@@ -70,7 +70,7 @@ def audit(path):
             # Still surface them for human review, but do not block automatically.
             counterfeit = any(word in context for word in (
                 "fälschung", "fälschungen", "falsific", "contraffatt",
-                "counterfeit", "fake seller", "contrefaçon", "contrefaçons",
+                "counterfeit", "fake products", "unauthorized distributors", "fake seller", "contrefaçon", "contrefaçons",
                 "claims we never made", "niemals gemacht", "nunca hemos",
                 "mai fatto", "jamais fait"
             ))
