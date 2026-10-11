@@ -5,6 +5,7 @@ on:
       - fix/seo-image-validation-20261011
     paths:
       - '.github/workflows/photo-seo-audit.yml'
+      - 'scripts/audit_editorial_photos.py'
   workflow_dispatch:
 permissions:
   contents: read
