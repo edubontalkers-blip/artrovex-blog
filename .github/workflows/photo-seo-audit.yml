@@ -1,0 +1,22 @@
+name: Photo integration and SEO audit
+on:
+  push:
+    branches:
+      - fix/seo-image-validation-20261011
+    paths:
+      - '.github/workflows/photo-seo-audit.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/seo-image-validation-20261011
+      - name: Check photo integration across all articles
+        run: python scripts/audit_editorial_photos.py
+      - name: Audit technical SEO
+        if: always()
+        run: python scripts/seo_audit.py
