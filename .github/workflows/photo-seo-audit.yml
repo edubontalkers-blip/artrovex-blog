@@ -54,3 +54,5 @@ jobs:
 # Recheck draft detector on rendered article text.
 
 # Generate complete draft remediation inventory for editorial batches.
+
+# Release-readiness verification after quarantine heading batch.
