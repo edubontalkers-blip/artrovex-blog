@@ -29,6 +29,7 @@ def main():
  with ZipFile(sys.argv[1]) as archive:
   DEST.mkdir(parents=True,exist_ok=True)
   seen = {}
+  pending = {}
   for i in range(1,41):
    name=f'bodyadvice_{i:02d}.webp'
    data=archive.read(name)
@@ -37,7 +38,9 @@ def main():
    if digest in seen:
     raise ValueError(f'Duplicate image content: {name} matches {seen[digest]}')
    seen[digest] = name
-   (DEST/name).write_bytes(data)
+   pending[name] = data
+ for name, data in pending.items():
+  (DEST/name).write_bytes(data)
  count=sum(add_image(p) for p in (DOCS/'articles').glob('*.html'))
  print(f'Installed 40 WebP photos and added illustrative photos to {count} articles.')
 if __name__=='__main__':main()
