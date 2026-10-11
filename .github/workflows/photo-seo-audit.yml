@@ -46,3 +46,5 @@ jobs:
 # Recheck batch DE/IT foot and racket-sport metadata refinements.
 
 # Validate localized cuboid and brachialis SEO metadata batch.
+
+# Run editorial draft-artifact guard across all article languages.
