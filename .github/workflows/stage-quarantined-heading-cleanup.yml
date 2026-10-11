@@ -1,0 +1,29 @@
+name: Stage quarantined heading cleanup
+on:
+  push:
+    branches:
+      - fix/seo-image-validation-20261011
+    paths:
+      - .github/workflows/stage-quarantined-heading-cleanup.yml
+permissions:
+  contents: write
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/seo-image-validation-20261011
+      - name: Clean leaked draft headings on noindex pages
+        run: python3 scripts/clean_quarantined_headings.py
+      - name: Commit cleaned headings to review branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/articles
+          if ! git diff --cached --quiet; then
+            git commit -m "Clean draft generation artifacts from quarantined headings"
+            git push origin HEAD:fix/seo-image-validation-20261011
+          fi
+
+# Normalize provisional review headings across all languages.

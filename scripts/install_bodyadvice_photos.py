@@ -5,7 +5,8 @@ Then review and commit docs/images/editorial and updated HTML.
 """
 from pathlib import Path
 from zipfile import ZipFile
-import re, sys, html
+from io import BytesIO
+import re, sys, html, hashlib
 ROOT=Path(__file__).resolve().parents[1]
 DOCS=ROOT/'docs'
 DEST=DOCS/'images'/'editorial'
@@ -27,12 +28,22 @@ def add_image(path):
 def main():
  if len(sys.argv)!=2:raise SystemExit('Provide the path to the supplied photo ZIP.')
  with ZipFile(sys.argv[1]) as archive:
-  DEST.mkdir(parents=True,exist_ok=True)
+  seen = {}
+  pending = {}
   for i in range(1,41):
    name=f'bodyadvice_{i:02d}.webp'
    data=archive.read(name)
    if data[:4]!=b'RIFF' or data[8:12]!=b'WEBP':raise ValueError(name+' is not WebP')
-   (DEST/name).write_bytes(data)
+   if len(data) < 1024: raise ValueError(name+' is suspiciously small')
+   digest = hashlib.sha256(data).hexdigest()
+   if digest in seen:
+    raise ValueError(f'Duplicate image content: {name} matches {seen[digest]}')
+   seen[digest] = name
+   pending[name] = data
+ # All 40 entries are validated before any files are written.
+ DEST.mkdir(parents=True,exist_ok=True)
+ for name, data in pending.items():
+  (DEST/name).write_bytes(data)
  count=sum(add_image(p) for p in (DOCS/'articles').glob('*.html'))
  print(f'Installed 40 WebP photos and added illustrative photos to {count} articles.')
 if __name__=='__main__':main()

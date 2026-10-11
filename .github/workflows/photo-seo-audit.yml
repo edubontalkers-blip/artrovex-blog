@@ -1,0 +1,60 @@
+name: Photo integration and SEO audit
+on:
+  push:
+    branches:
+      - fix/seo-image-validation-20261011
+    paths:
+      - '.github/workflows/photo-seo-audit.yml'
+      - 'scripts/audit_editorial_photos.py'
+      - 'scripts/photo_relevance_review.py'
+      - 'scripts/seo_audit.py'
+      - 'scripts/prepublish_seo_gate.py'
+      - 'scripts/normalize_seo_review.py'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/seo-image-validation-20261011
+      - name: Check photo integration across all articles
+        run: python scripts/audit_editorial_photos.py
+      - name: Review editorial photo relevance
+        run: python scripts/photo_relevance_review.py
+      - name: Check article prepublication readiness
+        if: always()
+        run: python scripts/prepublish_seo_gate.py
+      - name: Audit technical SEO
+        if: always()
+        run: python scripts/seo_audit.py
+
+# Read-only checks; never deploy production.
+
+# Recheck explicit rejection of counterfeit medical claims.
+
+# Include editorial warning breakdown for prioritization.
+
+# Verify manually revised DE/IT SEO titles in review branch.
+
+# Verify revised localized metadata after claim-safe copy edits.
+
+# Validate Italian article descriptions and no-medical-claims rule.
+
+# Recheck batch DE/IT foot and racket-sport metadata refinements.
+
+# Validate localized cuboid and brachialis SEO metadata batch.
+
+# Run editorial draft-artifact guard across all article languages.
+
+# Revalidate quarantine of draft-text Spanish article.
+
+# Recheck draft detector on rendered article text.
+
+# Generate complete draft remediation inventory for editorial batches.
+
+# Release-readiness verification after quarantine heading batch.
+
+# Verify sitemap correction and final release SEO readiness.

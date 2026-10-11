@@ -88,7 +88,7 @@ for source in pages:
         if path is not None and not exists_link(path, source):
             report("missing_local_image", source, src)
     for src in p.alts: report("missing_image_alt", source, src)
-    expected = DOMAIN + "/" + (str(source.relative_to(ROOT)) if source.name != "index.html" else str(source.parent.relative_to(ROOT)).replace(".", ""))
+    expected = canonical_url_for_file(source)
     if not p.canonicals: report("missing_canonical", source, expected)
     elif len(p.canonicals) != 1: report("duplicate_canonical", source, p.canonicals)
     elif p.canonicals[0] != expected: report("canonical_mismatch", source, f"{p.canonicals[0]} expected {expected}")
@@ -137,5 +137,5 @@ print("AUDIT COUNTS:", json.dumps(issues, sort_keys=True))
 for kind, items in examples.items():
     print(f"\\n[{kind}]")
     for item in items: print("  " + item)
-if any(issues[k] for k in ("missing_sitemap_target", "duplicate_sitemap_urls", "invalid_jsonld", "hreflang_missing_target", "hreflang_wrong_language", "hreflang_not_reciprocal", "hreflang_target_not_canonical")):
+if any(issues[k] for k in ("broken_internal_link", "missing_local_image", "missing_image_alt", "missing_canonical", "duplicate_canonical", "canonical_mismatch", "missing_sitemap_target", "duplicate_sitemap_urls", "invalid_jsonld", "hreflang_missing_target", "hreflang_wrong_language", "hreflang_not_reciprocal", "hreflang_target_not_canonical")):
     raise SystemExit("Critical audit errors")

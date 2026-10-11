@@ -1,0 +1,39 @@
+name: Stage article heading hierarchy
+on:
+  push:
+    branches: [fix/seo-image-validation-20261011]
+    paths:
+      - '.github/workflows/stage-article-headings.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/seo-image-validation-20261011
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Promote existing authored article section headings
+        run: python scripts/normalize_article_heading_hierarchy.py
+      - name: Validate editorial images
+        run: python scripts/audit_editorial_photos.py
+      - name: Validate editorial content
+        run: python scripts/prepublish_seo_gate.py
+      - name: Validate technical SEO
+        run: python scripts/seo_audit.py
+      - name: Commit only after all gates pass
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/articles
+          if ! git diff --cached --quiet; then
+            git commit -m "Normalize existing article section heading hierarchy"
+            git push origin HEAD:fix/seo-image-validation-20261011
+          fi
+
+# Run conservative title suffix cleanup with article QA in the same batch.
