@@ -8,6 +8,7 @@ on:
       - 'scripts/audit_editorial_photos.py'
       - 'scripts/seo_audit.py'
       - 'scripts/prepublish_seo_gate.py'
+      - 'scripts/normalize_seo_review.py'
   workflow_dispatch:
 permissions:
   contents: read
