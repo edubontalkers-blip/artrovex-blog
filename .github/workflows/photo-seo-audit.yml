@@ -52,3 +52,5 @@ jobs:
 # Revalidate quarantine of draft-text Spanish article.
 
 # Recheck draft detector on rendered article text.
+
+# Generate complete draft remediation inventory for editorial batches.
