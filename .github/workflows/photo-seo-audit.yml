@@ -29,3 +29,5 @@ jobs:
         run: python scripts/seo_audit.py
 
 # Read-only checks; never deploy production.
+
+# Recheck explicit rejection of counterfeit medical claims.
