@@ -39,6 +39,7 @@ def main():
     raise ValueError(f'Duplicate image content: {name} matches {seen[digest]}')
    seen[digest] = name
    pending[name] = data
+ # All 40 entries are validated before any files are written.
  for name, data in pending.items():
   (DEST/name).write_bytes(data)
  count=sum(add_image(p) for p in (DOCS/'articles').glob('*.html'))
