@@ -25,3 +25,5 @@ jobs:
             git commit -m "Clean draft generation artifacts from quarantined headings"
             git push origin HEAD:fix/seo-image-validation-20261011
           fi
+
+# Normalize provisional review headings across all languages.
