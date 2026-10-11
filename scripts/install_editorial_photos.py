@@ -9,10 +9,10 @@ IMAGES = "/images/editorial/"
 MARKER = "data-editorial-photo=\"v1\""
 STYLE = """
 <style id="editorial-photo-style">
-.editorial-photo{margin:22px 0 32px;overflow:hidden;border-radius:18px;background:#e6ede6;box-shadow:0 8px 24px rgba(17,57,43,.1)}
-.editorial-photo img{display:block;width:100%;height:clamp(200px,32vw,390px);object-fit:cover;object-position:center}
+.editorial-photo{margin:22px 0 32px;overflow:hidden;border-radius:14px;background:#e6ede6;max-width:320px;box-shadow:0 4px 12px rgba(17,57,43,.08)}
+.editorial-photo img{display:block;width:100%;height:auto;aspect-ratio:192/174;object-fit:cover;object-position:center}
 .editorial-photo figcaption{font:13px/1.5 system-ui,sans-serif;color:#52695b;padding:9px 14px;background:#f5f8f3}
-@media(max-width:600px){.editorial-photo{margin:16px 0 24px;border-radius:12px}.editorial-photo img{height:210px}}
+@media(max-width:600px){.editorial-photo{margin:16px 0 24px;border-radius:12px}.editorial-photo img{height:auto}}
 </style>
 """
 CATEGORY = {
@@ -50,6 +50,10 @@ def choose(path):
 def process(path):
     html = path.read_text(encoding="utf-8")
     if MARKER in html or "editorial-photo-style" in html:
+        revised = re.sub(r'<style id="editorial-photo-style">.*?</style>', STYLE.strip(), html, count=1, flags=re.S)
+        if revised != html:
+            path.write_text(revised, encoding="utf-8")
+            return True
         return False
     if not re.search(r"<h1\b[^>]*>", html, re.I):
         return False
@@ -63,7 +67,7 @@ def process(path):
     alt = ALT.get(lang, ALT["en"])
     figure = (f'<figure class="editorial-photo" {MARKER}>'
               f'<img src="{IMAGES}bodyadvice_{num:02d}.webp" alt="{alt}" '
-              f'loading="lazy" decoding="async" width="1200" height="800"></figure>')
+              f'loading="lazy" decoding="async" width="192" height="174"></figure>')
     # Insert immediately after the first page title; avoid modifying title text.
     html, count = re.subn(r"(</h1\s*>)", lambda m: m.group(1) + "\n" + figure, html, count=1, flags=re.I)
     if not count:
