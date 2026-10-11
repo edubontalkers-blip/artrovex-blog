@@ -60,3 +60,7 @@ jobs:
         run: python scripts/normalize_seo.py
       - name: Audit internal links, metadata, schema and live sitemap responses
         run: python scripts/seo_audit.py
+      - name: Check SEO normalization is idempotent
+        run: |
+          python scripts/normalize_seo.py
+          git diff --exit-code -- docs || { echo 'SEO normalization is not idempotent'; exit 1; }
