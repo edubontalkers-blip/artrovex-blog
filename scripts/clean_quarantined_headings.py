@@ -20,15 +20,15 @@ for path in sorted(ROOT.glob("*.html")):
     if not lang:
         continue
     title = re.search(r'<title>(.*?)</title>', html, re.S)
-    h1 = re.search(r'<h1(?:\\s[^>]*)?>(.*?)</h1>', html, re.S)
+    h1 = re.search(r'<h1(?:\s[^>]*)?>(.*?)</h1>', html, re.S)
     if not title or not h1:
         continue
-    leaked = ("Wait, that", "Hmm, let me think", "\\n\\n")
+    leaked = ("Wait, that", "Hmm, let me think", "\n\n")
     if not any(marker in title.group(1) for marker in leaked) and not any(marker in h1.group(1) for marker in leaked):
         continue
     safe = HEADINGS[lang.group(1)]
     html = html[:title.start(1)] + safe + html[title.end(1):]
-    h1 = re.search(r'<h1(?:\\s[^>]*)?>(.*?)</h1>', html, re.S)
+    h1 = re.search(r'<h1(?:\s[^>]*)?>(.*?)</h1>', html, re.S)
     html = html[:h1.start(1)] + safe + html[h1.end(1):]
     path.write_text(html, encoding="utf-8")
     changed.append(str(path))
